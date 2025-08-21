@@ -33,9 +33,11 @@ utils/                 # Utility functions
 visualization/         # Plotting and chart generation
 └── plotting.py       # Individual wave and overview charts (supports 6 & 8 point waves)
 
-main.py               # Main application entry point with enhanced workflow
-test.ipynb           # Interactive debugging notebook
-latest_code.py       # Reference implementation for latest features
+main.py                    # Main application entry point with enhanced workflow
+test.ipynb               # Interactive debugging notebook
+wave_maturity_test.ipynb # Additional testing notebook
+latest_code.py           # Reference implementation for latest features
+wave_detector_functions.py # Legacy wave detection functions
 ```
 
 ### Key Components
@@ -120,7 +122,7 @@ CSV files must contain:
 - `datetime` column - timestamps (will be converted to datetime index)
 - `close` column - closing prices for analysis
 
-Default data files: `BTC.csv`, `btc_with_rsi.csv`
+Default data files: `BTC.csv`, `ETH.csv`, `btc_with_rsi.csv`
 
 ## Implementation Notes
 
