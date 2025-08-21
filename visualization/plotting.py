@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points, plot_range_days=15, wave_number=1, wave_type=""):
     """
     绘制单个波浪的详细图表，包括价格和 RSI
+    支持6点和8点波浪的动态显示
     
     参数:
         close_prices (pd.Series): 收盘价序列
@@ -26,15 +27,15 @@ def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points,
 
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 12), gridspec_kw={'height_ratios': [3, 1]}, sharex=True)
     
-    # 上半部分：价格图
     ax1.plot(plot_prices.index, plot_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
     
     wave_points_dates = close_prices.index[wave_indices]
     wave_points_prices = close_prices.iloc[wave_indices].values
-    color = 'red' if wave_type == 'strict' else 'green' if wave_type == 'relaxed' else 'purple'
+    color = 'red' if wave_type == 'strict' else 'green' if wave_type == 'relaxed' else 'magenta'
     ax1.plot(wave_points_dates, wave_points_prices, 'o-', color=color, label=f'{wave_type.capitalize()} Wave', markersize=6)
     
-    for j in range(6):
+    # 动态处理点位标注，以适应6点和8点波浪
+    for j in range(len(wave_indices)):
         ax1.annotate(f'P{j+1}', (wave_points_dates[j], wave_points_prices[j]), xytext=(5, 5), textcoords='offset points', fontsize=10, color=color, fontweight='bold')
         
     for point in trigger_points:
@@ -52,11 +53,10 @@ def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points,
     ax1.legend(unique_labels.values(), unique_labels.keys())
     ax1.grid(True)
     
-    # 下半部分：RSI图
     ax2.plot(plot_rsi.index, plot_rsi.values, color='purple', label='14-Day RSI', linewidth=1.5)
     wave_points_rsi = rsi_series.loc[wave_points_dates].values
     ax2.plot(wave_points_dates, wave_points_rsi, 'o', color=color, markersize=6)
-    for j in range(6):
+    for j in range(len(wave_indices)):
         ax2.annotate(f'P{j+1} ({wave_points_rsi[j]:.2f})', (wave_points_dates[j], wave_points_rsi[j]), xytext=(5, 5), textcoords='offset points', fontsize=8, color=color, fontweight='bold')
     
     for point in trigger_points:
@@ -64,8 +64,7 @@ def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points,
             marker = 'v' if point['type'] == 'drop' else '^'
             ax2.plot(point['date'], point['rsi_value'], marker, color='orange', markersize=8, label='Trigger Point')
             ax2.axvline(point['date'], color='gray', linestyle='--', alpha=0.5)
-
-            # RSI 值的注释
+            
             rsi_value_text = f"{point['rsi_value']:.2f}"
             y_offset = -10 if point['type'] == 'drop' else 10
             ax2.annotate(rsi_value_text, (point['date'], point['rsi_value']),
@@ -84,41 +83,16 @@ def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points,
     unique_labels = dict(zip(labels, handles))
     ax2.legend(unique_labels.values(), unique_labels.keys())
     
-    # 创建文本框显示 RSI 触发事件
-    textbox_content = "RSI Trigger Events:\n"
-    for point in trigger_points:
-        if point['date'] >= start_date and point['date'] <= end_date:
-            event_type = "Drop Trigger" if point['type'] == 'drop' else "Rise Trigger"
-            trigger_date = point['date'].strftime('%Y-%m-%d')
-            trigger_rsi = point['rsi_value']
-            threshold = point.get('threshold', 'N/A')
-            change = point.get('change', 'N/A')
-            
-            message = ""
-            if point['type'] == 'drop':
-                prev_extreme_rsi = point.get('peak_rsi', 'N/A')
-                message = f"[{trigger_date}] {event_type}. From Peak {prev_extreme_rsi:.2f}, dropped to {trigger_rsi:.2f}. Change: {change:.2f} > Threshold: {threshold:.2f}."
-            else:  # rise trigger
-                prev_extreme_rsi = point.get('valley_rsi', 'N/A')
-                message = f"[{trigger_date}] {event_type}. From Valley {prev_extreme_rsi:.2f}, rose to {trigger_rsi:.2f}. Change: {change:.2f} > Threshold: {threshold:.2f}."
-            
-            textbox_content += f"- {message}\n"
-    
-    ax2.text(1, 1, textbox_content, transform=ax2.transAxes, fontsize=10,
-             verticalalignment='top', horizontalalignment='right',
-             bbox=dict(boxstyle="round,pad=0.5", facecolor='wheat', alpha=0.5))
-    
     plt.tight_layout()
     plt.show()
 
-def plot_overview_chart(close_prices, strict_waves, relaxed_waves, start_date_all, end_date_all, rsi_drop_threshold, rsi_rise_ratio):
+def plot_overview_chart(close_prices, all_waves, start_date_all, end_date_all, rsi_drop_threshold, rsi_rise_ratio):
     """
-    绘制概览图表，显示所有识别的波浪
+    绘制概览图表，显示所有识别的波浪（支持新的波浪结构）
     
     参数:
         close_prices (pd.Series): 收盘价序列
-        strict_waves (list): 严格波浪列表
-        relaxed_waves (list): 宽松波浪列表
+        all_waves (dict): 包含final_waves和merged_waves的字典
         start_date_all (datetime): 开始日期
         end_date_all (datetime): 结束日期
         rsi_drop_threshold (float): RSI 下跌阈值
@@ -127,28 +101,53 @@ def plot_overview_chart(close_prices, strict_waves, relaxed_waves, start_date_al
     plt.style.use('seaborn-v0_8-darkgrid')
     fig, ax = plt.subplots(figsize=(15, 8))
     
+    # Plot Close Price first
     ax.plot(close_prices.index, close_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
 
-    if strict_waves:
-        print(f"\n成功识别出 {len(strict_waves)} 个不重叠的严格下跌五浪结构。")
-        for i, wave_indices in enumerate(strict_waves):
-            wave_points_dates = close_prices.index[wave_indices]
-            ax.plot(wave_points_dates, close_prices.iloc[wave_indices].values, 'ro-', markersize=6)
-            print(f"  - 结构 {i+1}: 从 {wave_points_dates[0].date()} 到 {wave_points_dates[-1].date()}。")
-            ax.annotate(f'Strict Wave {i+1}', (wave_points_dates[0], close_prices.iloc[wave_indices[0]]), xytext=(5, 10), textcoords='offset points', fontsize=10, color='red', fontweight='bold')
+    # Flags to plot a single label for each wave type
+    plotted_merged_label = False
+    plotted_strict_label = False
+    plotted_relaxed_label = False
 
-    if relaxed_waves:
-        print(f"\n成功识别出 {len(relaxed_waves)} 个不重叠的宽松下跌五浪结构。")
-        for i, wave_indices in enumerate(relaxed_waves):
+    if 'merged_waves' in all_waves and all_waves['merged_waves']:
+        print(f"\n成功识别出 {len(all_waves['merged_waves'])} 个合并波浪结构。")
+        for i, wave in enumerate(all_waves['merged_waves']):
+            wave_indices = wave['indices']
             wave_points_dates = close_prices.index[wave_indices]
-            ax.plot(wave_points_dates, close_prices.iloc[wave_indices].values, 'go-', markersize=6)
-            print(f"  - 结构 {i+1}: 从 {wave_points_dates[0].date()} 到 {wave_points_dates[-1].date()}。")
-            ax.annotate(f'Relaxed Wave {i+1}', (wave_points_dates[0], close_prices.iloc[wave_indices[0]]), xytext=(5, 10), textcoords='offset points', fontsize=10, color='green', fontweight='bold')
+            label = 'Merged Wave' if not plotted_merged_label else None
+            ax.plot(wave_points_dates, close_prices.iloc[wave_indices].values, 'mo-', markersize=6, label=label)
+            plotted_merged_label = True
+            print(f"   - 合并波浪 {i+1}: 从 {wave_points_dates[0].date()} 到 {wave_points_dates[-1].date()}。")
+            ax.annotate(f'Merged Wave {i+1}', (wave_points_dates[0], close_prices.iloc[wave_indices[0]]), xytext=(5, 10), textcoords='offset points', fontsize=10, color='magenta', fontweight='bold')
+
+    if 'final_waves' in all_waves and all_waves['final_waves']:
+        print(f"\n成功识别出 {len(all_waves['final_waves'])} 个不重叠的波浪结构。")
+        for i, wave in enumerate(all_waves['final_waves']):
+            wave_indices = wave['indices']
+            wave_type = wave['type']
+            wave_points_dates = close_prices.index[wave_indices]
+            color = 'red' if wave_type == 'strict' else 'green'
             
-    handles, labels = ax.get_legend_handles_labels()
-    unique_labels = sorted(set(labels), key=labels.index)
-    ax.legend([handles[labels.index(l)] for l in unique_labels], unique_labels, loc='upper right')
-    ax.set_title(f'BTC Price Chart: {start_date_all} to {end_date_all} (All Waves Marked), rsi_drop_threshold={rsi_drop_threshold}, rsi_rise_ratio={round(rsi_rise_ratio,2)}', fontsize=16)
+            if wave_type == 'strict' and not plotted_strict_label:
+                label = 'Strict Wave'
+                plotted_strict_label = True
+            elif wave_type == 'relaxed' and not plotted_relaxed_label:
+                label = 'Relaxed Wave'
+                plotted_relaxed_label = True
+            else:
+                label = None
+
+            ax.plot(wave_points_dates, close_prices.iloc[wave_indices].values, f'{color[0]}o-', markersize=6, label=label)
+            
+            print(f"   - {wave_type.capitalize()} 波浪 {i+1}: 从 {wave_points_dates[0].date()} 到 {wave_points_dates[-1].date()}。")
+            ax.annotate(f'{wave_type.capitalize()} Wave {i+1}', (wave_points_dates[0], close_prices.iloc[wave_indices[0]]), xytext=(5, 10), textcoords='offset points', fontsize=10, color=color, fontweight='bold')
+            
+    ax.legend(loc='upper right')
+
+    title_str = f'BTC Price Chart: {start_date_all} to {end_date_all} (Waves Marked)\n'
+    title_str += f'RSI Drop Threshold: {rsi_drop_threshold}, RSI Rise Ratio: {rsi_rise_ratio:.2f}'
+    ax.set_title(title_str, fontsize=16)
+
     ax.set_xlabel('Date', fontsize=12)
     ax.set_ylabel('Close Price', fontsize=12)
     plt.tight_layout()
