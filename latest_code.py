@@ -331,10 +331,9 @@ def main(file_path='BTC.csv', rsi_drop_threshold = 15, rsi_rise_ratio = 1/4):
     extremas, all_trigger_points = find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=rsi_drop_threshold, rsi_rise_ratio=rsi_rise_ratio)
 
     print("正在从 RSI 驱动的峰谷点中寻找波浪结构...")
-    strict_waves_all = find_downtrend_wave_patterns(close_prices, extremas, length=6)
-    relaxed_waves_all = find_downtrend_wave_patterns(close_prices, extremas, length=6)
+    all_waves = find_downtrend_wave_patterns(close_prices, extremas, length=6)
 
-    final_waves, merged_waves = handle_overlapping_waves(strict_waves_all + relaxed_waves_all, close_prices, extremas)
+    final_waves, merged_waves = handle_overlapping_waves(all_waves, close_prices, extremas)
 
     plt.style.use('seaborn-v0_8-darkgrid')
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 12), gridspec_kw={'height_ratios': [3, 1]}, sharex=True)
@@ -355,7 +354,7 @@ def main(file_path='BTC.csv', rsi_drop_threshold = 15, rsi_rise_ratio = 1/4):
             wave_indices = wave['indices']
             wave_points_dates = close_prices.index[wave_indices]
             label = 'Merged Wave' if not plotted_merged_label else None
-            ax1.plot(wave_points_dates, close_prices.iloc[wave_indices].values, 'mo-', markersize=6, label=label)
+            ax1.plot(wave_points_dates, close_prices.iloc[wave_indices].values, 'ms-', markersize=6, label=label)
             plotted_merged_label = True
             print(f"   - 合并波浪 {i+1}: 从 {wave_points_dates[0].date()} 到 {wave_points_dates[-1].date()}。")
             ax1.annotate(f'Merged Wave {i+1}', (wave_points_dates[0], close_prices.iloc[wave_indices[0]]), xytext=(5, 10), textcoords='offset points', fontsize=10, color='magenta', fontweight='bold')
@@ -458,3 +457,6 @@ def main(file_path='BTC.csv', rsi_drop_threshold = 15, rsi_rise_ratio = 1/4):
     print("\n=== 波浪检测完成 ===")
 
     print(f"总共识别出 {len(final_waves) + len(merged_waves)} 个有效波浪结构。")
+
+if __name__ == "__main__":
+    main(file_path='BTC.csv', rsi_drop_threshold = 10, rsi_rise_ratio = 1/3)

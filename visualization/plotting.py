@@ -115,7 +115,7 @@ def plot_overview_chart(close_prices, all_waves, start_date_all, end_date_all, r
             wave_indices = wave['indices']
             wave_points_dates = close_prices.index[wave_indices]
             label = 'Merged Wave' if not plotted_merged_label else None
-            ax.plot(wave_points_dates, close_prices.iloc[wave_indices].values, 'mo-', markersize=6, label=label)
+            ax.plot(wave_points_dates, close_prices.iloc[wave_indices].values, 'ms-', markersize=6, label=label)
             plotted_merged_label = True
             print(f"   - 合并波浪 {i+1}: 从 {wave_points_dates[0].date()} 到 {wave_points_dates[-1].date()}。")
             ax.annotate(f'Merged Wave {i+1}', (wave_points_dates[0], close_prices.iloc[wave_indices[0]]), xytext=(5, 10), textcoords='offset points', fontsize=10, color='magenta', fontweight='bold')
