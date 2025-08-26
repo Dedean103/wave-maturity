@@ -69,6 +69,11 @@ python main.py
 jupyter notebook test.ipynb
 ```
 
+### Code Testing and Git Workflow
+**IMPORTANT**: After completing any code changes, always:
+1. **Test the code**: Run `python3 main.py` to verify the implementation works correctly
+2. **Commit and push changes**: Automatically run git commit and push to save progress
+
 ### Testing and Development
 The `test.ipynb` notebook provides:
 - Step-by-step analysis execution
@@ -140,3 +145,4 @@ Use `test.ipynb` for:
 - Inspecting intermediate processing steps
 - Quick parameter sensitivity analysis
 - Visual validation of wave detection quality
+- memorize never mention claude in the git commit message
