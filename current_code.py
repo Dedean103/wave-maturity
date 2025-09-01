@@ -31,6 +31,68 @@ def calculate_rsi(series, period=14):
     return rsi
 
 # =========================================================
+# Bidirectional price refinement functions
+# =========================================================
+
+def refine_peak_with_price(close_prices, rsi_peak_date, window_days=5):
+    """
+    Refine RSI-confirmed peak using price data (bidirectional search)
+    Look for higher price within window centered around RSI peak
+    """
+    try:
+        peak_idx = close_prices.index.get_loc(rsi_peak_date)
+        
+        # Define bidirectional search window
+        start_idx = max(0, peak_idx - window_days//2)
+        end_idx = min(len(close_prices), peak_idx + window_days//2 + 1)
+        search_window = close_prices.iloc[start_idx:end_idx]
+        
+        # Find highest price point in window
+        max_price_idx_local = search_window.idxmax()
+        max_price = search_window.max()
+        
+        # Get original RSI peak price for comparison
+        original_price = close_prices.iloc[peak_idx]
+        
+        # If higher price found, adjust peak point
+        if max_price > original_price:
+            print(f"   -> Price refinement: Peak from {rsi_peak_date.date()} (${original_price:.2f}) to {max_price_idx_local.date()} (${max_price:.2f})")
+            return max_price_idx_local
+        else:
+            return rsi_peak_date
+    except:
+        return rsi_peak_date
+
+def refine_valley_with_price(close_prices, rsi_valley_date, window_days=5):
+    """
+    Refine RSI-confirmed valley using price data (bidirectional search)
+    Look for lower price within window centered around RSI valley
+    """
+    try:
+        valley_idx = close_prices.index.get_loc(rsi_valley_date)
+        
+        # Define bidirectional search window
+        start_idx = max(0, valley_idx - window_days//2)
+        end_idx = min(len(close_prices), valley_idx + window_days//2 + 1)
+        search_window = close_prices.iloc[start_idx:end_idx]
+        
+        # Find lowest price point in window
+        min_price_idx_local = search_window.idxmin()
+        min_price = search_window.min()
+        
+        # Get original RSI valley price for comparison
+        original_price = close_prices.iloc[valley_idx]
+        
+        # If lower price found, adjust valley point
+        if min_price < original_price:
+            print(f"   -> Price refinement: Valley from {rsi_valley_date.date()} (${original_price:.2f}) to {min_price_idx_local.date()} (${min_price:.2f})")
+            return min_price_idx_local
+        else:
+            return rsi_valley_date
+    except:
+        return rsi_valley_date
+
+# =========================================================
 # Trend validation functions
 # =========================================================
 
@@ -62,7 +124,7 @@ def validate_wave_overall_trend(close_prices, wave_indices, trend_threshold=0.95
 # RSI-driven extrema detection (from latest_code.py)
 # =========================================================
 
-def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, rsi_rise_ratio=1/3):
+def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, rsi_rise_ratio=1/3, price_refinement_window=5):
     rsi_series = calculate_rsi(close_prices, period=rsi_period).dropna()
     extremas = []
     trigger_points = []
@@ -89,8 +151,11 @@ def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, r
             
             rsi_drop_change = peak_rsi - current_rsi
             if rsi_drop_change >= rsi_drop_threshold:
-                if not extremas or extremas[-1] != peak_date:
-                    extremas.append(peak_date)
+                # Apply bidirectional price refinement for peak
+                refined_peak_date = refine_peak_with_price(close_prices, peak_date, price_refinement_window)
+                
+                if not extremas or extremas[-1] != refined_peak_date:
+                    extremas.append(refined_peak_date)
                 
                 trigger_points.append({
                     'date': current_date, 
@@ -99,7 +164,8 @@ def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, r
                     'peak_rsi': peak_rsi,
                     'valley_rsi': valley_rsi,
                     'change': rsi_drop_change,
-                    'threshold': rsi_drop_threshold
+                    'threshold': rsi_drop_threshold,
+                    'refined_peak_date': refined_peak_date
                 })
                 
                 direction = -1
@@ -117,8 +183,11 @@ def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, r
             rise_threshold = drop_amount_for_threshold * rsi_rise_ratio
             
             if rsi_rise_change >= rise_threshold and drop_amount_for_threshold > 0:
-                if not extremas or extremas[-1] != valley_date:
-                    extremas.append(valley_date)
+                # Apply bidirectional price refinement for valley
+                refined_valley_date = refine_valley_with_price(close_prices, valley_date, price_refinement_window)
+                
+                if not extremas or extremas[-1] != refined_valley_date:
+                    extremas.append(refined_valley_date)
                 
                 trigger_points.append({
                     'date': current_date, 
@@ -127,7 +196,8 @@ def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, r
                     'peak_rsi': peak_rsi,
                     'valley_rsi': valley_rsi,
                     'change': rsi_rise_change,
-                    'threshold': rise_threshold
+                    'threshold': rise_threshold,
+                    'refined_valley_date': refined_valley_date
                 })
                 
                 direction = 1
@@ -186,12 +256,12 @@ def find_valid_wave_patterns(close_prices, extremas, trend_threshold=0.95):
 
 def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14, 
                             rsi_drop_threshold=10, rsi_rise_ratio=1/3, 
-                            trend_threshold=0.95, recent_days=50):
+                            trend_threshold=0.95, recent_days=50, price_refinement_window=5):
     """
     Sequential P0 selection with progressive wave detection and dual filtering
     """
     print(f"=== Sequential RSI P0 + Progressive Wave Detection ===")
-    print(f"Parameters: lookback_days={lookback_days}, trend_threshold={trend_threshold}")
+    print(f"Parameters: lookback_days={lookback_days}, trend_threshold={trend_threshold}, price_refinement_window={price_refinement_window}")
     
     all_waves = []
     all_trigger_points = []
@@ -220,9 +290,16 @@ def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14,
             current_position += lookback_days // 2
             continue
             
-        p0_date = search_rsi.idxmax()
+        rsi_p0_date = search_rsi.idxmax()
         p0_rsi = search_rsi.max()
-        print(f"P0 selected: {p0_date.date()}, RSI: {p0_rsi:.2f}")
+        
+        # Apply bidirectional price refinement to P0
+        p0_date = refine_peak_with_price(close_prices, rsi_p0_date, price_refinement_window)
+        p0_price = close_prices.loc[p0_date]
+        
+        print(f"P0 selected: RSI peak at {rsi_p0_date.date()} (RSI: {p0_rsi:.2f})")
+        if p0_date != rsi_p0_date:
+            print(f"P0 refined to: {p0_date.date()} (${p0_price:.2f})")
         
         # Progressive wave detection from P0
         p0_position = close_prices.index.get_loc(p0_date)
@@ -233,17 +310,17 @@ def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14,
             current_position += lookback_days // 2
             continue
         
-        # Progressive RSI extrema detection with wave search
-        print("Starting progressive extrema detection and wave search...")
+        # Progressive RSI extrema detection with price refinement
+        print("Starting progressive extrema detection with price refinement...")
         extremas, triggers = find_extremas_with_rsi(
-            remaining_data, rsi_period, rsi_drop_threshold, rsi_rise_ratio
+            remaining_data, rsi_period, rsi_drop_threshold, rsi_rise_ratio, price_refinement_window
         )
         
         # Ensure P0 is first extrema
         if not extremas or extremas[0] != p0_date:
             extremas.insert(0, p0_date)
         
-        print(f"Found {len(extremas)} extrema points")
+        print(f"Found {len(extremas)} extrema points (with price refinement)")
         
         # Try to find valid waves with dual filtering
         if len(extremas) >= 6:
@@ -256,7 +333,7 @@ def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14,
                 
                 # Advance past this wave
                 wave_end_idx = wave['indices'][-1]
-                current_position = wave_end_idx + recent_days
+                current_position = wave_end_idx + 1  # Start immediately after wave ends
                 print(f"Wave found! Advancing to position {current_position}")
             else:
                 print("No valid waves found (rejected by dual filtering). Advancing position.")
@@ -274,15 +351,18 @@ def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14,
 # Plotting functions (simplified from latest_code.py)
 # =========================================================
 
-def plot_overview_chart(close_prices, all_waves, rsi_drop_threshold, rsi_rise_ratio):
+def plot_overview_chart(close_prices, all_waves, rsi_series, all_trigger_points, rsi_drop_threshold, rsi_rise_ratio):
     """
-    Plot overview chart showing all detected waves
+    Plot overview chart showing all detected waves with RSI subplot
     """
     plt.style.use('default')
-    fig, ax = plt.subplots(figsize=(15, 8))
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 12), gridspec_kw={'height_ratios': [3, 1]}, sharex=True)
     
-    # Plot price line (fix pandas indexing issue)
-    ax.plot(close_prices.index.values, close_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
+    start_date_all = close_prices.index.min().date()
+    end_date_all = close_prices.index.max().date()
+    
+    # Subplot 1: Price Chart
+    ax1.plot(close_prices.index.values, close_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
     
     # Plot waves
     plotted_strict_label = False
@@ -304,27 +384,65 @@ def plot_overview_chart(close_prices, all_waves, rsi_drop_threshold, rsi_rise_ra
         else:
             label = None
 
-        ax.plot(wave_points_dates.values, close_prices.iloc[wave_indices].values, f'{color[0]}o-', markersize=6, label=label)
-        ax.annotate(f'{wave_type.capitalize()} Wave {i+1}', 
-                   (wave_points_dates[0], close_prices.iloc[wave_indices[0]]), 
-                   xytext=(5, 10), textcoords='offset points', 
-                   fontsize=10, color=color, fontweight='bold')
+        ax1.plot(wave_points_dates.values, close_prices.iloc[wave_indices].values, f'{color[0]}o-', markersize=6, label=label)
+        ax1.annotate(f'{wave_type.capitalize()} Wave {i+1}', 
+                    (wave_points_dates[0], close_prices.iloc[wave_indices[0]]), 
+                    xytext=(5, 10), textcoords='offset points', 
+                    fontsize=10, color=color, fontweight='bold')
         
-    ax.legend(loc='upper right')
-    start_date = close_prices.index.min().date()
-    end_date = close_prices.index.max().date()
-    title_str = f'BTC Price Chart: {start_date} to {end_date} (Valid Downtrend Waves)\n'
+    ax1.legend(loc='upper right')
+    title_str = f'BTC Price Chart: {start_date_all} to {end_date_all} (Waves Marked)\n'
     title_str += f'RSI Drop Threshold: {rsi_drop_threshold}, RSI Rise Ratio: {rsi_rise_ratio:.2f}'
-    ax.set_title(title_str, fontsize=16)
-    ax.set_xlabel('Date', fontsize=12)
-    ax.set_ylabel('Close Price', fontsize=12)
-    ax.grid(True)
+    ax1.set_title(title_str, fontsize=16)
+    ax1.set_ylabel('Close Price', fontsize=12)
+    ax1.grid(True)
+    
+    # Subplot 2: RSI Chart
+    ax2.plot(rsi_series.index.values, rsi_series.values, color='purple', label='14-Day RSI', linewidth=1.5)
+    ax2.axhline(70, linestyle='--', color='lightcoral', alpha=0.7)
+    ax2.axhline(30, linestyle='--', color='lightgreen', alpha=0.7)
+    
+    # Plot trigger points (avoid duplicates)
+    plotted_triggers = set()
+    
+    def get_first_last_triggers(wave_indices, all_trigger_points, close_prices):
+        wave_start_date = close_prices.index[wave_indices[0]]
+        wave_end_date = close_prices.index[wave_indices[-1]]
+        
+        wave_triggers = [p for p in all_trigger_points if p['date'] >= wave_start_date and p['date'] <= wave_end_date]
+        
+        first_trigger = wave_triggers[0] if wave_triggers else None
+        last_trigger = wave_triggers[-1] if wave_triggers else None
+        
+        return first_trigger, last_trigger
+    
+    # Plot trigger points for all waves
+    for wave in all_waves:
+        first_trigger, last_trigger = get_first_last_triggers(wave['indices'], all_trigger_points, close_prices)
+        if first_trigger and (first_trigger['date'], first_trigger['rsi_value']) not in plotted_triggers:
+            marker = 'v' if first_trigger['type'] == 'drop' else '^'
+            ax2.plot(first_trigger['date'], first_trigger['rsi_value'], marker, color='orange', markersize=8, label='Trigger Point')
+            plotted_triggers.add((first_trigger['date'], first_trigger['rsi_value']))
+        
+        if last_trigger and (last_trigger['date'], last_trigger['rsi_value']) not in plotted_triggers:
+            marker = 'v' if last_trigger['type'] == 'drop' else '^'
+            ax2.plot(last_trigger['date'], last_trigger['rsi_value'], marker, color='orange', markersize=8, label='Trigger Point')
+            plotted_triggers.add((last_trigger['date'], last_trigger['rsi_value']))
+    
+    handles, labels = ax2.get_legend_handles_labels()
+    unique_labels = dict(zip(labels, handles))
+    ax2.legend(unique_labels.values(), unique_labels.keys())
+    ax2.set_xlabel('Date', fontsize=12)
+    ax2.set_ylabel('RSI', fontsize=12)
+    ax2.set_ylim(0, 100)
+    ax2.grid(True)
+    
     plt.tight_layout()
     plt.show()
 
-def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points, wave_number=1, wave_type="", plot_range_days=15):
+def plot_individual_wave(file_path, close_prices, rsi_series, wave_indices, trigger_points, plot_range_days=15, wave_number=1, wave_type="", if_plot_rsi=True):
     """
-    Plot individual wave with RSI subplot
+    Plot individual wave with optional RSI subplot
     """
     wave_start_date = close_prices.index[wave_indices[0]] 
     wave_end_date = close_prices.index[wave_indices[-1]]
@@ -333,16 +451,19 @@ def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points,
     end_date = wave_end_date + pd.Timedelta(days=plot_range_days)
     
     plot_prices = close_prices.loc[start_date:end_date]
-    plot_rsi = rsi_series.loc[start_date:end_date]
-
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 12), gridspec_kw={'height_ratios': [3, 1]}, sharex=True)
     
-    # Price subplot (fix pandas indexing issue)
-    ax1.plot(plot_prices.index.values, plot_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
+    # Conditionally create subplots
+    if if_plot_rsi:
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 12), gridspec_kw={'height_ratios': [3, 1]}, sharex=True)
+        ax1.plot(plot_prices.index.values, plot_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
+    else:
+        fig, ax1 = plt.subplots(1, 1, figsize=(15, 8))
+        ax2 = None
+        ax1.plot(plot_prices.index.values, plot_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
     
     wave_points_dates = close_prices.index[wave_indices]
     wave_points_prices = close_prices.iloc[wave_indices].values
-    color = 'red' if wave_type == 'strict' else 'green'
+    color = 'red' if wave_type == 'strict' else 'green' if wave_type == 'relaxed' else 'magenta'
     ax1.plot(wave_points_dates.values, wave_points_prices, 'o-', color=color, label=f'{wave_type.capitalize()} Wave', markersize=6)
     
     # Point annotations
@@ -350,30 +471,60 @@ def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points,
         ax1.annotate(f'P{j+1}', (wave_points_dates[j], wave_points_prices[j]), 
                     xytext=(5, 5), textcoords='offset points', 
                     fontsize=10, color=color, fontweight='bold')
+    
+    # Plot trigger points on price chart
+    for point in trigger_points:
+        if point['date'] >= start_date and point['date'] <= end_date:
+            trigger_price = close_prices.loc[point['date']]
+            ax1.axvline(point['date'], color='gray', linestyle='--', alpha=0.5)
+            marker = 'v' if point['type'] == 'drop' else '^'
+            label = 'RSI Drop Trigger' if point['type'] == 'drop' else 'RSI Rise Trigger'
+            ax1.plot(point['date'], trigger_price, marker, color='orange', markersize=8, label=label)
         
-    ax1.set_title(f'BTC {wave_type.capitalize()} Wave {wave_number}: {wave_start_date.date()} to {wave_end_date.date()}', fontsize=16)
+    ax1.set_title(f'{file_path[:4]} {wave_type.capitalize()} Wave {wave_number}: {wave_start_date.date()} to {wave_end_date.date()}', fontsize=16)
     ax1.set_ylabel('Close Price', fontsize=12)
-    ax1.legend()
+    handles, labels = ax1.get_legend_handles_labels()
+    unique_labels = dict(zip(labels, handles))
+    ax1.legend(unique_labels.values(), unique_labels.keys())
     ax1.grid(True)
     
-    # RSI subplot (fix pandas indexing issue)
-    ax2.plot(plot_rsi.index.values, plot_rsi.values, color='purple', label='14-Day RSI', linewidth=1.5)
-    wave_points_rsi = rsi_series.loc[wave_points_dates].values
-    ax2.plot(wave_points_dates.values, wave_points_rsi, 'o', color=color, markersize=6)
-    
-    for j in range(len(wave_indices)):
-        ax2.annotate(f'P{j+1} ({wave_points_rsi[j]:.2f})', 
-                    (wave_points_dates[j], wave_points_rsi[j]), 
-                    xytext=(5, 5), textcoords='offset points', 
-                    fontsize=8, color=color, fontweight='bold')
-    
-    ax2.axhline(70, linestyle='--', color='lightcoral', alpha=0.7)
-    ax2.axhline(30, linestyle='--', color='lightgreen', alpha=0.7)
-    ax2.set_xlabel('Date', fontsize=12)
-    ax2.set_ylabel('RSI', fontsize=12)
-    ax2.set_ylim(0, 100)
-    ax2.legend()
-    ax2.grid(True)
+    # Only plot the RSI subplot if if_plot_rsi is True
+    if if_plot_rsi:
+        plot_rsi = rsi_series.loc[start_date:end_date]
+        ax2.plot(plot_rsi.index.values, plot_rsi.values, color='purple', label='14-Day RSI', linewidth=1.5)
+        wave_points_rsi = rsi_series.loc[wave_points_dates].values
+        ax2.plot(wave_points_dates.values, wave_points_rsi, 'o', color=color, markersize=6)
+        
+        for j in range(len(wave_indices)):
+            ax2.annotate(f'P{j+1} ({wave_points_rsi[j]:.2f})', 
+                        (wave_points_dates[j], wave_points_rsi[j]), 
+                        xytext=(5, 5), textcoords='offset points', 
+                        fontsize=8, color=color, fontweight='bold')
+        
+        # Plot trigger points on RSI chart
+        for point in trigger_points:
+            if point['date'] >= start_date and point['date'] <= end_date:
+                marker = 'v' if point['type'] == 'drop' else '^'
+                ax2.plot(point['date'], point['rsi_value'], marker, color='orange', markersize=8, label='Trigger Point')
+                ax2.axvline(point['date'], color='gray', linestyle='--', alpha=0.5)
+                
+                rsi_value_text = f"{point['rsi_value']:.2f}"
+                y_offset = -10 if point['type'] == 'drop' else 10
+                ax2.annotate(rsi_value_text, (point['date'], point['rsi_value']),
+                             xytext=(0, y_offset), textcoords='offset points',
+                             ha='center', va='center', fontsize=10, color='orange',
+                             bbox=dict(facecolor='white', edgecolor='lightgray', boxstyle='round,pad=0.3'))
+        
+        ax2.axhline(70, linestyle='--', color='lightcoral', alpha=0.7)
+        ax2.axhline(30, linestyle='--', color='lightgreen', alpha=0.7)
+        ax2.set_xlabel('Date', fontsize=12)
+        ax2.set_ylabel('RSI', fontsize=12)
+        ax2.set_ylim(0, 100)
+        ax2.grid(True)
+        
+        handles, labels = ax2.get_legend_handles_labels()
+        unique_labels = dict(zip(labels, handles))
+        ax2.legend(unique_labels.values(), unique_labels.keys())
     
     plt.tight_layout()
     plt.show()
@@ -382,7 +533,8 @@ def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points,
 # Main function
 # =========================================================
 
-def main(file_path='BTC.csv'):
+def main(file_path='BTC.csv', lookback_days=50, rsi_period=14, rsi_drop_threshold=10, 
+         rsi_rise_ratio=1/3, trend_threshold=0.95, recent_days=50, price_refinement_window=5):
     print("=== BTC Wave Detection System (Approach 2) ===")
     print("Sequential P0 + Progressive Detection with Dual Filtering")
     
@@ -401,7 +553,10 @@ def main(file_path='BTC.csv'):
     rsi_series = calculate_rsi(close_prices)
     
     # Run sequential wave detection
-    all_waves, all_trigger_points = sequential_wave_detection(close_prices)
+    all_waves, all_trigger_points = sequential_wave_detection(
+        close_prices, lookback_days, rsi_period, rsi_drop_threshold, 
+        rsi_rise_ratio, trend_threshold, recent_days, price_refinement_window
+    )
     
     # Results summary
     print(f"\n=== Results ===")
@@ -413,7 +568,7 @@ def main(file_path='BTC.csv'):
     # Plot overview chart
     if all_waves:
         print("\nGenerating overview chart...")
-        plot_overview_chart(close_prices, all_waves, 10, 1/3)
+        plot_overview_chart(close_prices, all_waves, rsi_series, all_trigger_points, rsi_drop_threshold, rsi_rise_ratio)
         
         # Plot individual waves
         print("Generating individual wave charts...")
@@ -427,8 +582,8 @@ def main(file_path='BTC.csv'):
             wave_trigger_points = [p for p in all_trigger_points 
                                  if p['date'] >= wave_start_date and p['date'] <= wave_end_date]
             
-            plot_individual_wave(close_prices, rsi_series, wave_indices, wave_trigger_points, 
-                               wave_number=i+1, wave_type=wave_type)
+            plot_individual_wave('BTC.csv', close_prices, rsi_series, wave_indices, wave_trigger_points, 
+                               plot_range_days=15, wave_number=i+1, wave_type=wave_type, if_plot_rsi=True)
 
 if __name__ == "__main__":
     main()

@@ -1,149 +1,117 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance when working with code in this repository.
 
 ## Project Overview
 
-This is a Bitcoin wave detection system that implements RSI-driven Elliott Wave pattern recognition. The system identifies downtrend five-wave and seven-wave structures in cryptocurrency price data using relative strength index (RSI) indicators to detect peaks and valleys.
+This is a Bitcoin wave detection system that implements RSI-driven Elliott Wave pattern recognition. The system identifies downtrend wave structures in cryptocurrency price data using relative strength index (RSI) indicators combined with bidirectional price refinement for precise entry/exit points.
 
-**Latest Version Features:**
-- **Enhanced Wave Detection**: Support for both 5-wave (6-point) and 7-wave (8-point) patterns
-- **Intelligent Overlap Handling**: Automatically merges overlapping 5-wave patterns into 7-wave structures
-- **Improved Architecture**: Modular design with clear separation of concerns
-- **Advanced Visualization**: Dynamic plotting that adapts to different wave structures
+**Current Version Features:**
+- **Sequential P0 Selection**: Progressive wave detection using highest RSI points in sliding windows
+- **Bidirectional Price Refinement**: Refines RSI-detected peaks/valleys using actual price data within ±window
+- **Dual Filtering**: Pattern validation + trend validation (trend_ratio < 0.95) to prevent uptrend false positives
+- **Real-time Trading Ready**: Designed for live trading with progressive detection approach
 
 **Version History:**
 - v1.2: Pure spot price (close) to detect waves
 - v1.3: RSI to detect waves  
 - v1.4: Correct RSI implementation
 - v1.5: Separated plots and adjustable RSI parameters
-- **Latest**: Enhanced overlap detection and 7-wave pattern support
+- **Current**: Sequential P0 + bidirectional price refinement with dual filtering
 
 ## Core Architecture
 
-### Modular Structure
+### Key Files
 ```
-core/                  # Core analysis modules
-├── wave_detection.py  # Wave pattern recognition, validation, and overlap handling
-└── rsi_analysis.py   # RSI-driven extrema identification
-
-utils/                 # Utility functions
-└── technical_indicators.py  # RSI calculation
-
-visualization/         # Plotting and chart generation
-└── plotting.py       # Individual wave and overview charts (supports 6 & 8 point waves)
-
-main.py                    # Main application entry point with enhanced workflow
-test.ipynb               # Interactive debugging notebook
-wave_maturity_test.ipynb # Additional testing notebook
-latest_code.py           # Reference implementation for latest features
-wave_detector_functions.py # Legacy wave detection functions
+current_code.py        # Main implementation - sequential P0 + progressive detection
+latest_code.py         # Reference implementation (do not modify until instructed)
+main.py               # Legacy implementation (not actively used)
+BTC.csv               # Primary Bitcoin price data
+analysis_log.txt      # Latest analysis results
 ```
 
-### Key Components
+### Key Functions (current_code.py)
 
-1. **Enhanced Wave Detection Engine** (`core/wave_detection.py`):
-   - `find_downtrend_wave_patterns()`: Generalized function supporting 6-point and 8-point waves
-   - `is_downtrend_seven_wave()`: New 7-wave pattern validation
-   - `handle_overlapping_waves()`: Smart overlap resolution with merging capability
-   - Legacy functions maintained for backward compatibility
+1. **Sequential Wave Detection** (`sequential_wave_detection()`):
+   - Progressive P0 selection using highest RSI in 50-day windows
+   - Corrected position advancement: `wave_end_idx + 1` (no data skipping)
+   - Dual filtering: pattern + trend validation
 
-2. **RSI Analysis Engine** (`core/rsi_analysis.py`):
-   - Uses RSI drop/rise triggers to identify price extrema
-   - Dynamic threshold calculation based on wave amplitude
-   - Configurable RSI period, drop threshold, and rise ratio
+2. **Bidirectional Price Refinement**:
+   - `refine_peak_with_price()`: Finds higher prices within ±window of RSI peaks
+   - `refine_valley_with_price()`: Finds lower prices within ±window of RSI valleys
+   - Applied to both P0 selection and RSI extrema detection
 
-3. **Enhanced Visualization System** (`visualization/plotting.py`):
-   - `plot_overview_chart()`: Shows all wave types (strict, relaxed, merged)
-   - `plot_individual_wave()`: Adapts to both 6-point and 8-point waves
-   - Improved color coding: Red (strict), Green (relaxed), Magenta (merged)
+3. **Enhanced Plotting** (`plot_overview_chart()`, `plot_individual_wave()`):
+   - Dual subplot layout (price + RSI) matching latest_code.py style
+   - Trigger point annotations with RSI values
+   - Dynamic point labeling (P1-P6 for waves)
 
 ## Development Commands
 
 ### Running the Analysis
 ```bash
-# Main analysis (uses BTC.csv by default)
-python main.py
+# Main analysis with default parameters
+python3 current_code.py
 
-# Interactive debugging and parameter tuning
-jupyter notebook test.ipynb
+# With custom parameters (all configurable)
+python3 -c "
+from current_code import main
+main(file_path='BTC.csv', lookback_days=50, rsi_period=14, 
+     rsi_drop_threshold=10, rsi_rise_ratio=1/3, trend_threshold=0.95, 
+     recent_days=50, price_refinement_window=5)
+"
 ```
 
 ### Code Testing and Git Workflow
 **IMPORTANT**: After completing any code changes, always:
-1. **Test the code**: Run `python3 main.py` to verify the implementation works correctly
-2. **Commit and push changes**: Automatically run git commit and push to save progress
-3. Never change the latest_code.py until being told
-
-### Testing and Development
-The `test.ipynb` notebook provides:
-- Step-by-step analysis execution
-- Parameter sensitivity testing
-- Debugging tools and statistics
-- Visual inspection of each processing stage
-
-### Python Environment
-```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Required packages:
-# - pandas>=1.3.0
-# - numpy>=1.21.0  
-# - matplotlib>=3.5.0
-# - seaborn>=0.11.0
-```
+1. **Test the code**: Run `python3 current_code.py` to verify functionality
+2. **Commit and push changes**: Run git commit and push to save progress
+3. **Never modify latest_code.py** until instructed
 
 ## Key Configuration Parameters
 
-Located in `main.py` and configurable in `test.ipynb`:
+All parameters are configurable through main() function:
+- `lookback_days = 50` - P0 search window size
 - `rsi_period = 14` - RSI calculation period
 - `rsi_drop_threshold = 10` - RSI drop threshold for peak detection
 - `rsi_rise_ratio = 1/3` - Proportional rise threshold for valley detection
+- `trend_threshold = 0.95` - Trend validation threshold (< 0.95 = downtrend)
+- `price_refinement_window = 5` - Bidirectional price search window (±2-3 days)
 
-## New Features in Latest Version
+## Current System Behavior
 
-### 1. Seven-Wave Pattern Detection
-- Detects 8-point downtrend patterns following P1>P2<P3>P4<P5>P6<P7>P8 structure
-- Additional validation: P8 < P6 (ensures proper downtrend completion)
+### Sequential P0 Selection Process
+1. **Start**: From beginning of data or after previous wave
+2. **P0 Search**: Find highest RSI point in next 50-day window
+3. **Price Refinement**: Search ±5 days for better entry price
+4. **Progressive Detection**: Find subsequent extrema from P0 onwards
+5. **Dual Validation**: Check pattern rules + downtrend requirement
+6. **Advance**: Move to `wave_end_idx + 1` (no data skipping)
 
-### 2. Intelligent Overlap Handling
-- Automatically detects overlapping 5-wave patterns
-- Attempts to merge overlapping waves into 7-wave structures
-- Falls back to removing both waves if merging fails
-- Detailed logging of merge operations
-
-### 3. Enhanced Data Structures
-- Wave objects now contain `{'indices': [...], 'type': 'strict'|'relaxed'|'merged'}`
-- Backward compatibility maintained with legacy tuple returns
-
-### 4. Improved Visualization
-- Dynamic point labeling (P1-P6 for 5-waves, P1-P8 for 7-waves)
-- Color-coded wave types for easy identification
-- Enhanced overview charts with proper legend management
-
-## Data Format Requirements
+### Data Format Requirements
 
 CSV files must contain:
-- `datetime` column - timestamps (will be converted to datetime index)
+- `datetime` column - timestamps (converted to datetime index)
 - `close` column - closing prices for analysis
 
-Default data files: `BTC.csv`, `ETH.csv`, `btc_with_rsi.csv`
+Primary data file: `BTC.csv` (2021-12-20 to 2025-06-02, 1261 records)
 
 ## Implementation Notes
 
-- The system now prioritizes quality over quantity by merging overlapping patterns
-- 7-wave patterns provide more comprehensive market structure analysis
-- All legacy functions remain available for backward compatibility
-- The notebook environment is optimized for parameter experimentation
-- Enhanced error handling and detailed progress reporting
+- **Approach 2**: Progressive detection (find waves as extrema are discovered)
+- **No overlap handling**: Simplified compared to latest_code.py complex merging
+- **Real-time compatible**: Suitable for live trading applications
+- **Position advancement corrected**: No longer skips 50 days between waves
+- **Bidirectional refinement**: Improves trading accuracy with precise entry/exit points
 
-## Debugging and Parameter Tuning
+## Latest Results
 
-Use `test.ipynb` for:
-- Testing different RSI thresholds and ratios
-- Analyzing the impact of parameter changes
-- Inspecting intermediate processing steps
-- Quick parameter sensitivity analysis
-- Visual validation of wave detection quality
-- memorize never mention claude in the git commit message
+Current detection: **8 valid downtrend waves** covering major Bitcoin bear market periods:
+- Wave detection spans 2022-2025 data
+- All waves pass dual filtering (pattern + downtrend validation)
+- Price refinement active throughout detection pipeline
+
+## Important Notes
+
+- **NEVER mention Claude in git commit messages** - use descriptive technical messages only
