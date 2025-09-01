@@ -2,7 +2,7 @@
 Sequential P0 + Progressive Detection with Dual Filtering
 Loaded 1261 data points: 2021-12-20 to 2025-06-02
 === Sequential RSI P0 + Progressive Wave Detection ===
-Parameters: lookback_days=50, trend_threshold=0.95, price_refinement_window=5
+Parameters: lookback_days=50, trend_threshold=0.95, price_refinement_window=10
 
 --- Wave Search 1 ---
 P0 search window: 2021-12-20 to 2022-02-07 (50 days)
@@ -10,122 +10,321 @@ P0 search window: 2021-12-20 to 2022-02-07 (50 days)
 P0 selected: RSI peak at 2021-12-21 (RSI: 100.00)
 P0 refined to: 2021-12-23 ($50838.81)
 Starting progressive extrema detection with price refinement...
-   -> Price refinement: Peak from 2021-12-26 ($50775.49) to 2021-12-24 ($50820.00)
+   -> Price refinement: Peak from 2021-12-26 ($50775.49) to 2021-12-23 ($50838.81)
    -> Price refinement: Valley from 2021-12-29 ($46464.66) to 2021-12-31 ($46216.93)
-   -> Price refinement: Valley from 2022-05-09 ($30076.31) to 2022-05-11 ($29103.94)
+   -> Price refinement: Peak from 2022-01-01 ($47722.65) to 2021-12-27 ($50701.44)
+   -> Price refinement: Valley from 2022-02-13 ($42053.66) to 2022-02-18 ($39974.44)
+   -> Price refinement: Valley from 2022-04-26 ($38112.65) to 2022-04-30 ($37630.80)
+   -> Price refinement: Valley from 2022-05-09 ($30076.31) to 2022-05-12 ($29029.75)
+   -> Price refinement: Peak from 2022-10-26 ($20771.59) to 2022-10-29 ($20809.67)
    -> Price refinement: Peak from 2023-01-14 ($20954.92) to 2023-01-16 ($21185.65)
-   -> Price refinement: Peak from 2023-01-21 ($22783.55) to 2023-01-23 ($22916.45)
-   -> Price refinement: Peak from 2023-02-15 ($24324.05) to 2023-02-17 ($24569.97)
-   -> Price refinement: Peak from 2023-03-17 ($27395.13) to 2023-03-19 ($27972.87)
-   -> Price refinement: Peak from 2023-04-11 ($30200.42) to 2023-04-13 ($30373.84)
-   -> Price refinement: Valley from 2023-04-17 ($29430.27) to 2023-04-19 ($28797.10)
+   -> Price refinement: Valley from 2023-01-18 ($20677.47) to 2023-01-13 ($19930.01)
+   -> Price refinement: Peak from 2023-01-21 ($22783.55) to 2023-01-25 ($23060.94)
+   -> Price refinement: Peak from 2023-02-15 ($24324.05) to 2023-02-20 ($24842.20)
+   -> Price refinement: Peak from 2023-03-17 ($27395.13) to 2023-03-21 ($28105.47)
+   -> Price refinement: Peak from 2023-04-11 ($30200.42) to 2023-04-14 ($30466.93)
+   -> Price refinement: Valley from 2023-04-17 ($29430.27) to 2023-04-21 ($27262.84)
+   -> Price refinement: Peak from 2023-04-18 ($30380.01) to 2023-04-14 ($30466.93)
+   -> Price refinement: Valley from 2023-06-01 ($26817.93) to 2023-06-05 ($25728.20)
+   -> Price refinement: Peak from 2023-06-02 ($27242.59) to 2023-05-28 ($28065.00)
+   -> Price refinement: Peak from 2023-06-06 ($27230.08) to 2023-06-02 ($27242.59)
+   -> Price refinement: Peak from 2023-06-23 ($30688.50) to 2023-06-27 ($30692.44)
+   -> Price refinement: Valley from 2023-09-01 ($25805.05) to 2023-09-06 ($25759.95)
+   -> Price refinement: Valley from 2023-10-05 ($27410.39) to 2023-09-30 ($26962.56)
+   -> Price refinement: Peak from 2023-10-25 ($34496.05) to 2023-10-29 ($34525.89)
+   -> Price refinement: Valley from 2023-11-03 ($34716.78) to 2023-10-30 ($34474.73)
+   -> Price refinement: Peak from 2023-11-10 ($37301.63) to 2023-11-15 ($37858.20)
    -> Price refinement: Valley from 2023-11-16 ($36163.51) to 2023-11-14 ($35551.19)
-   -> Price refinement: Peak from 2024-02-16 ($52124.11) to 2024-02-18 ($52137.67)
-   -> Price refinement: Valley from 2024-03-05 ($63724.01) to 2024-03-03 ($63113.97)
+   -> Price refinement: Peak from 2023-11-20 ($37448.78) to 2023-11-15 ($37858.20)
+   -> Price refinement: Peak from 2023-12-05 ($44073.32) to 2023-12-08 ($44170.99)
+   -> Price refinement: Valley from 2023-12-26 ($42508.93) to 2023-12-29 ($42066.95)
+   -> Price refinement: Valley from 2024-01-03 ($42845.23) to 2023-12-29 ($42066.95)
+   -> Price refinement: Peak from 2024-02-16 ($52124.11) to 2024-02-20 ($52258.82)
+   -> Price refinement: Peak from 2024-02-28 ($62432.10) to 2024-03-04 ($68245.71)
+   -> Price refinement: Valley from 2024-03-05 ($63724.01) to 2024-02-29 ($61130.98)
    -> Price refinement: Peak from 2024-03-11 ($72078.10) to 2024-03-13 ($73072.41)
    -> Price refinement: Valley from 2024-07-05 ($56628.79) to 2024-07-07 ($55857.81)
-   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-13 ($90375.20)
-   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-03-01 ($86064.53)
-Found 154 extrema points (with price refinement)
-✓ Valid strict wave: 2022-03-29 to 2022-05-11, trend ratio: 0.614
-Wave found! Advancing to position 192
+   -> Price refinement: Valley from 2024-09-01 ($57301.86) to 2024-09-06 ($53962.97)
+   -> Price refinement: Peak from 2024-09-02 ($59132.13) to 2024-08-29 ($59359.01)
+   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-15 ($91032.07)
+   -> Price refinement: Valley from 2024-11-17 ($89855.99) to 2024-11-14 ($87325.59)
+   -> Price refinement: Peak from 2024-12-08 ($101109.59) to 2024-12-13 ($101424.25)
+   -> Price refinement: Valley from 2024-12-23 ($94881.47) to 2024-12-27 ($94299.03)
+   -> Price refinement: Peak from 2025-01-18 ($104556.23) to 2025-01-21 ($106143.82)
+   -> Price refinement: Valley from 2025-01-28 ($101335.52) to 2025-02-02 ($97700.59)
+   -> Price refinement: Peak from 2025-01-30 ($104722.94) to 2025-01-25 ($104746.85)
+   -> Price refinement: Valley from 2025-02-02 ($97700.59) to 2025-02-07 ($96506.80)
+   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-02-26 ($84250.09)
+   -> Price refinement: Peak from 2025-03-05 ($90606.01) to 2025-03-02 ($94270.00)
+   -> Price refinement: Peak from 2025-04-01 ($85158.34) to 2025-03-27 ($87232.01)
+Found 153 extrema points (with price refinement)
+✓ Valid relaxed wave: 2021-12-27 to 2022-02-18, trend ratio: 0.788
+Wave found! Advancing to position 61
 
 --- Wave Search 2 ---
-P0 search window: 2022-06-30 to 2022-08-18 (50 days)
-P0 selected: RSI peak at 2022-08-13 (RSI: 60.11)
+P0 search window: 2022-02-19 to 2022-04-09 (50 days)
+P0 selected: RSI peak at 2022-03-29 (RSI: 64.33)
 Starting progressive extrema detection with price refinement...
+   -> Price refinement: Valley from 2022-05-09 ($30076.31) to 2022-05-12 ($29029.75)
+   -> Price refinement: Peak from 2022-10-26 ($20771.59) to 2022-10-29 ($20809.67)
    -> Price refinement: Peak from 2023-01-14 ($20954.92) to 2023-01-16 ($21185.65)
-   -> Price refinement: Peak from 2023-01-21 ($22783.55) to 2023-01-23 ($22916.45)
-   -> Price refinement: Peak from 2023-02-15 ($24324.05) to 2023-02-17 ($24569.97)
-   -> Price refinement: Peak from 2023-03-17 ($27395.13) to 2023-03-19 ($27972.87)
-   -> Price refinement: Peak from 2023-04-11 ($30200.42) to 2023-04-13 ($30373.84)
-   -> Price refinement: Valley from 2023-04-17 ($29430.27) to 2023-04-19 ($28797.10)
+   -> Price refinement: Valley from 2023-01-18 ($20677.47) to 2023-01-13 ($19930.01)
+   -> Price refinement: Peak from 2023-01-21 ($22783.55) to 2023-01-25 ($23060.94)
+   -> Price refinement: Peak from 2023-02-15 ($24324.05) to 2023-02-20 ($24842.20)
+   -> Price refinement: Peak from 2023-03-17 ($27395.13) to 2023-03-21 ($28105.47)
+   -> Price refinement: Peak from 2023-04-11 ($30200.42) to 2023-04-14 ($30466.93)
+   -> Price refinement: Valley from 2023-04-17 ($29430.27) to 2023-04-21 ($27262.84)
+   -> Price refinement: Peak from 2023-04-18 ($30380.01) to 2023-04-14 ($30466.93)
+   -> Price refinement: Valley from 2023-06-01 ($26817.93) to 2023-06-05 ($25728.20)
+   -> Price refinement: Peak from 2023-06-02 ($27242.59) to 2023-05-28 ($28065.00)
+   -> Price refinement: Peak from 2023-06-06 ($27230.08) to 2023-06-02 ($27242.59)
+   -> Price refinement: Peak from 2023-06-23 ($30688.50) to 2023-06-27 ($30692.44)
+   -> Price refinement: Valley from 2023-09-01 ($25805.05) to 2023-09-06 ($25759.95)
+   -> Price refinement: Valley from 2023-10-05 ($27410.39) to 2023-09-30 ($26962.56)
+   -> Price refinement: Peak from 2023-10-25 ($34496.05) to 2023-10-29 ($34525.89)
+   -> Price refinement: Valley from 2023-11-03 ($34716.78) to 2023-10-30 ($34474.73)
+   -> Price refinement: Peak from 2023-11-10 ($37301.63) to 2023-11-15 ($37858.20)
    -> Price refinement: Valley from 2023-11-16 ($36163.51) to 2023-11-14 ($35551.19)
-   -> Price refinement: Peak from 2024-02-16 ($52124.11) to 2024-02-18 ($52137.67)
-   -> Price refinement: Valley from 2024-03-05 ($63724.01) to 2024-03-03 ($63113.97)
+   -> Price refinement: Peak from 2023-11-20 ($37448.78) to 2023-11-15 ($37858.20)
+   -> Price refinement: Peak from 2023-12-05 ($44073.32) to 2023-12-08 ($44170.99)
+   -> Price refinement: Valley from 2023-12-26 ($42508.93) to 2023-12-29 ($42066.95)
+   -> Price refinement: Valley from 2024-01-03 ($42845.23) to 2023-12-29 ($42066.95)
+   -> Price refinement: Peak from 2024-02-16 ($52124.11) to 2024-02-20 ($52258.82)
+   -> Price refinement: Peak from 2024-02-28 ($62432.10) to 2024-03-04 ($68245.71)
+   -> Price refinement: Valley from 2024-03-05 ($63724.01) to 2024-02-29 ($61130.98)
    -> Price refinement: Peak from 2024-03-11 ($72078.10) to 2024-03-13 ($73072.41)
    -> Price refinement: Valley from 2024-07-05 ($56628.79) to 2024-07-07 ($55857.81)
-   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-13 ($90375.20)
-   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-03-01 ($86064.53)
-Found 126 extrema points (with price refinement)
-✓ Valid relaxed wave: 2023-04-18 to 2023-05-13, trend ratio: 0.881
-Wave found! Advancing to position 559
+   -> Price refinement: Valley from 2024-09-01 ($57301.86) to 2024-09-06 ($53962.97)
+   -> Price refinement: Peak from 2024-09-02 ($59132.13) to 2024-08-29 ($59359.01)
+   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-15 ($91032.07)
+   -> Price refinement: Valley from 2024-11-17 ($89855.99) to 2024-11-14 ($87325.59)
+   -> Price refinement: Peak from 2024-12-08 ($101109.59) to 2024-12-13 ($101424.25)
+   -> Price refinement: Valley from 2024-12-23 ($94881.47) to 2024-12-27 ($94299.03)
+   -> Price refinement: Peak from 2025-01-18 ($104556.23) to 2025-01-21 ($106143.82)
+   -> Price refinement: Valley from 2025-01-28 ($101335.52) to 2025-02-02 ($97700.59)
+   -> Price refinement: Peak from 2025-01-30 ($104722.94) to 2025-01-25 ($104746.85)
+   -> Price refinement: Valley from 2025-02-02 ($97700.59) to 2025-02-07 ($96506.80)
+   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-02-26 ($84250.09)
+   -> Price refinement: Peak from 2025-03-05 ($90606.01) to 2025-03-02 ($94270.00)
+   -> Price refinement: Peak from 2025-04-01 ($85158.34) to 2025-03-27 ($87232.01)
+Found 136 extrema points (with price refinement)
+✓ Valid relaxed wave: 2022-08-13 to 2022-10-11, trend ratio: 0.780
+Wave found! Advancing to position 296
 
 --- Wave Search 3 ---
-P0 search window: 2023-07-02 to 2023-08-20 (50 days)
-P0 selected: RSI peak at 2023-07-03 (RSI: 100.00)
+P0 search window: 2022-10-12 to 2022-11-30 (50 days)
+   -> Price refinement: Peak from 2022-10-13 ($19375.13) to 2022-10-17 ($19549.86)
+P0 selected: RSI peak at 2022-10-13 (RSI: 100.00)
+P0 refined to: 2022-10-17 ($19549.86)
 Starting progressive extrema detection with price refinement...
+   -> Price refinement: Peak from 2023-01-14 ($20954.92) to 2023-01-16 ($21185.65)
+   -> Price refinement: Valley from 2023-01-18 ($20677.47) to 2023-01-13 ($19930.01)
+   -> Price refinement: Peak from 2023-01-21 ($22783.55) to 2023-01-25 ($23060.94)
+   -> Price refinement: Peak from 2023-02-15 ($24324.05) to 2023-02-20 ($24842.20)
+   -> Price refinement: Peak from 2023-03-17 ($27395.13) to 2023-03-21 ($28105.47)
+   -> Price refinement: Peak from 2023-04-11 ($30200.42) to 2023-04-14 ($30466.93)
+   -> Price refinement: Valley from 2023-04-17 ($29430.27) to 2023-04-21 ($27262.84)
+   -> Price refinement: Peak from 2023-04-18 ($30380.01) to 2023-04-14 ($30466.93)
+   -> Price refinement: Valley from 2023-06-01 ($26817.93) to 2023-06-05 ($25728.20)
+   -> Price refinement: Peak from 2023-06-02 ($27242.59) to 2023-05-28 ($28065.00)
+   -> Price refinement: Peak from 2023-06-06 ($27230.08) to 2023-06-02 ($27242.59)
+   -> Price refinement: Peak from 2023-06-23 ($30688.50) to 2023-06-27 ($30692.44)
+   -> Price refinement: Valley from 2023-09-01 ($25805.05) to 2023-09-06 ($25759.95)
+   -> Price refinement: Valley from 2023-10-05 ($27410.39) to 2023-09-30 ($26962.56)
+   -> Price refinement: Peak from 2023-10-25 ($34496.05) to 2023-10-29 ($34525.89)
+   -> Price refinement: Valley from 2023-11-03 ($34716.78) to 2023-10-30 ($34474.73)
+   -> Price refinement: Peak from 2023-11-10 ($37301.63) to 2023-11-15 ($37858.20)
    -> Price refinement: Valley from 2023-11-16 ($36163.51) to 2023-11-14 ($35551.19)
-   -> Price refinement: Peak from 2024-02-16 ($52124.11) to 2024-02-18 ($52137.67)
-   -> Price refinement: Valley from 2024-03-05 ($63724.01) to 2024-03-03 ($63113.97)
+   -> Price refinement: Peak from 2023-11-20 ($37448.78) to 2023-11-15 ($37858.20)
+   -> Price refinement: Peak from 2023-12-05 ($44073.32) to 2023-12-08 ($44170.99)
+   -> Price refinement: Valley from 2023-12-26 ($42508.93) to 2023-12-29 ($42066.95)
+   -> Price refinement: Valley from 2024-01-03 ($42845.23) to 2023-12-29 ($42066.95)
+   -> Price refinement: Peak from 2024-02-16 ($52124.11) to 2024-02-20 ($52258.82)
+   -> Price refinement: Peak from 2024-02-28 ($62432.10) to 2024-03-04 ($68245.71)
+   -> Price refinement: Valley from 2024-03-05 ($63724.01) to 2024-02-29 ($61130.98)
    -> Price refinement: Peak from 2024-03-11 ($72078.10) to 2024-03-13 ($73072.41)
    -> Price refinement: Valley from 2024-07-05 ($56628.79) to 2024-07-07 ($55857.81)
-   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-13 ($90375.20)
-   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-03-01 ($86064.53)
-Found 90 extrema points (with price refinement)
-✓ Valid strict wave: 2023-08-08 to 2023-09-11, trend ratio: 0.845
-Wave found! Advancing to position 680
+   -> Price refinement: Valley from 2024-09-01 ($57301.86) to 2024-09-06 ($53962.97)
+   -> Price refinement: Peak from 2024-09-02 ($59132.13) to 2024-08-29 ($59359.01)
+   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-15 ($91032.07)
+   -> Price refinement: Valley from 2024-11-17 ($89855.99) to 2024-11-14 ($87325.59)
+   -> Price refinement: Peak from 2024-12-08 ($101109.59) to 2024-12-13 ($101424.25)
+   -> Price refinement: Valley from 2024-12-23 ($94881.47) to 2024-12-27 ($94299.03)
+   -> Price refinement: Peak from 2025-01-18 ($104556.23) to 2025-01-21 ($106143.82)
+   -> Price refinement: Valley from 2025-01-28 ($101335.52) to 2025-02-02 ($97700.59)
+   -> Price refinement: Peak from 2025-01-30 ($104722.94) to 2025-01-25 ($104746.85)
+   -> Price refinement: Valley from 2025-02-02 ($97700.59) to 2025-02-07 ($96506.80)
+   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-02-26 ($84250.09)
+   -> Price refinement: Peak from 2025-03-05 ($90606.01) to 2025-03-02 ($94270.00)
+   -> Price refinement: Peak from 2025-04-01 ($85158.34) to 2025-03-27 ($87232.01)
+Found 120 extrema points (with price refinement)
+✓ Valid relaxed wave: 2023-04-14 to 2023-05-13, trend ratio: 0.879
+Wave found! Advancing to position 510
 
 --- Wave Search 4 ---
-P0 search window: 2023-10-31 to 2023-12-19 (50 days)
-P0 selected: RSI peak at 2023-11-01 (RSI: 100.00)
+P0 search window: 2023-05-14 to 2023-07-02 (50 days)
+   -> Price refinement: Peak from 2023-05-15 ($27162.14) to 2023-05-10 ($27598.75)
+P0 selected: RSI peak at 2023-05-15 (RSI: 100.00)
+P0 refined to: 2023-05-10 ($27598.75)
 Starting progressive extrema detection with price refinement...
-   -> Price refinement: Peak from 2024-02-16 ($52124.11) to 2024-02-18 ($52137.67)
-   -> Price refinement: Valley from 2024-03-05 ($63724.01) to 2024-03-03 ($63113.97)
+   -> Price refinement: Peak from 2023-06-06 ($27230.08) to 2023-06-02 ($27242.59)
+   -> Price refinement: Peak from 2023-06-23 ($30688.50) to 2023-06-27 ($30692.44)
+   -> Price refinement: Valley from 2023-09-01 ($25805.05) to 2023-09-06 ($25759.95)
+   -> Price refinement: Valley from 2023-10-05 ($27410.39) to 2023-09-30 ($26962.56)
+   -> Price refinement: Peak from 2023-10-25 ($34496.05) to 2023-10-29 ($34525.89)
+   -> Price refinement: Valley from 2023-11-03 ($34716.78) to 2023-10-30 ($34474.73)
+   -> Price refinement: Peak from 2023-11-10 ($37301.63) to 2023-11-15 ($37858.20)
+   -> Price refinement: Valley from 2023-11-16 ($36163.51) to 2023-11-14 ($35551.19)
+   -> Price refinement: Peak from 2023-11-20 ($37448.78) to 2023-11-15 ($37858.20)
+   -> Price refinement: Peak from 2023-12-05 ($44073.32) to 2023-12-08 ($44170.99)
+   -> Price refinement: Valley from 2023-12-26 ($42508.93) to 2023-12-29 ($42066.95)
+   -> Price refinement: Valley from 2024-01-03 ($42845.23) to 2023-12-29 ($42066.95)
+   -> Price refinement: Peak from 2024-02-16 ($52124.11) to 2024-02-20 ($52258.82)
+   -> Price refinement: Peak from 2024-02-28 ($62432.10) to 2024-03-04 ($68245.71)
+   -> Price refinement: Valley from 2024-03-05 ($63724.01) to 2024-02-29 ($61130.98)
    -> Price refinement: Peak from 2024-03-11 ($72078.10) to 2024-03-13 ($73072.41)
    -> Price refinement: Valley from 2024-07-05 ($56628.79) to 2024-07-07 ($55857.81)
-   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-13 ($90375.20)
-   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-03-01 ($86064.53)
-Found 70 extrema points (with price refinement)
-✓ Valid relaxed wave: 2024-03-13 to 2024-04-17, trend ratio: 0.839
-Wave found! Advancing to position 899
+   -> Price refinement: Valley from 2024-09-01 ($57301.86) to 2024-09-06 ($53962.97)
+   -> Price refinement: Peak from 2024-09-02 ($59132.13) to 2024-08-29 ($59359.01)
+   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-15 ($91032.07)
+   -> Price refinement: Valley from 2024-11-17 ($89855.99) to 2024-11-14 ($87325.59)
+   -> Price refinement: Peak from 2024-12-08 ($101109.59) to 2024-12-13 ($101424.25)
+   -> Price refinement: Valley from 2024-12-23 ($94881.47) to 2024-12-27 ($94299.03)
+   -> Price refinement: Peak from 2025-01-18 ($104556.23) to 2025-01-21 ($106143.82)
+   -> Price refinement: Valley from 2025-01-28 ($101335.52) to 2025-02-02 ($97700.59)
+   -> Price refinement: Peak from 2025-01-30 ($104722.94) to 2025-01-25 ($104746.85)
+   -> Price refinement: Valley from 2025-02-02 ($97700.59) to 2025-02-07 ($96506.80)
+   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-02-26 ($84250.09)
+   -> Price refinement: Peak from 2025-03-05 ($90606.01) to 2025-03-02 ($94270.00)
+   -> Price refinement: Peak from 2025-04-01 ($85158.34) to 2025-03-27 ($87232.01)
+Found 98 extrema points (with price refinement)
+✓ Valid strict wave: 2023-08-08 to 2023-09-11, trend ratio: 0.845
+Wave found! Advancing to position 631
 
 --- Wave Search 5 ---
-P0 search window: 2024-06-06 to 2024-07-25 (50 days)
-P0 selected: RSI peak at 2024-07-21 (RSI: 65.01)
+P0 search window: 2023-09-12 to 2023-10-31 (50 days)
+   -> Price refinement: Peak from 2023-09-13 ($26222.00) to 2023-09-18 ($26762.51)
+P0 selected: RSI peak at 2023-09-13 (RSI: 100.00)
+P0 refined to: 2023-09-18 ($26762.51)
 Starting progressive extrema detection with price refinement...
-   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-13 ($90375.20)
-   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-03-01 ($86064.53)
-Found 42 extrema points (with price refinement)
-✓ Valid relaxed wave: 2024-07-28 to 2024-09-06, trend ratio: 0.791
-Wave found! Advancing to position 1041
+   -> Price refinement: Peak from 2023-10-25 ($34496.05) to 2023-10-29 ($34525.89)
+   -> Price refinement: Valley from 2023-11-03 ($34716.78) to 2023-10-30 ($34474.73)
+   -> Price refinement: Peak from 2023-11-10 ($37301.63) to 2023-11-15 ($37858.20)
+   -> Price refinement: Valley from 2023-11-16 ($36163.51) to 2023-11-14 ($35551.19)
+   -> Price refinement: Peak from 2023-11-20 ($37448.78) to 2023-11-15 ($37858.20)
+   -> Price refinement: Peak from 2023-12-05 ($44073.32) to 2023-12-08 ($44170.99)
+   -> Price refinement: Valley from 2023-12-26 ($42508.93) to 2023-12-29 ($42066.95)
+   -> Price refinement: Valley from 2024-01-03 ($42845.23) to 2023-12-29 ($42066.95)
+   -> Price refinement: Peak from 2024-02-16 ($52124.11) to 2024-02-20 ($52258.82)
+   -> Price refinement: Peak from 2024-02-28 ($62432.10) to 2024-03-04 ($68245.71)
+   -> Price refinement: Valley from 2024-03-05 ($63724.01) to 2024-02-29 ($61130.98)
+   -> Price refinement: Peak from 2024-03-11 ($72078.10) to 2024-03-13 ($73072.41)
+   -> Price refinement: Valley from 2024-07-05 ($56628.79) to 2024-07-07 ($55857.81)
+   -> Price refinement: Valley from 2024-09-01 ($57301.86) to 2024-09-06 ($53962.97)
+   -> Price refinement: Peak from 2024-09-02 ($59132.13) to 2024-08-29 ($59359.01)
+   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-15 ($91032.07)
+   -> Price refinement: Valley from 2024-11-17 ($89855.99) to 2024-11-14 ($87325.59)
+   -> Price refinement: Peak from 2024-12-08 ($101109.59) to 2024-12-13 ($101424.25)
+   -> Price refinement: Valley from 2024-12-23 ($94881.47) to 2024-12-27 ($94299.03)
+   -> Price refinement: Peak from 2025-01-18 ($104556.23) to 2025-01-21 ($106143.82)
+   -> Price refinement: Valley from 2025-01-28 ($101335.52) to 2025-02-02 ($97700.59)
+   -> Price refinement: Peak from 2025-01-30 ($104722.94) to 2025-01-25 ($104746.85)
+   -> Price refinement: Valley from 2025-02-02 ($97700.59) to 2025-02-07 ($96506.80)
+   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-02-26 ($84250.09)
+   -> Price refinement: Peak from 2025-03-05 ($90606.01) to 2025-03-02 ($94270.00)
+   -> Price refinement: Peak from 2025-04-01 ($85158.34) to 2025-03-27 ($87232.01)
+Found 80 extrema points (with price refinement)
+✓ Valid relaxed wave: 2024-03-13 to 2024-04-17, trend ratio: 0.839
+Wave found! Advancing to position 850
 
 --- Wave Search 6 ---
-P0 search window: 2024-10-26 to 2024-12-14 (50 days)
-   -> Price refinement: Peak from 2024-10-27 ($68021.70) to 2024-10-29 ($72736.42)
-P0 selected: RSI peak at 2024-10-27 (RSI: 100.00)
-P0 refined to: 2024-10-29 ($72736.42)
+P0 search window: 2024-04-18 to 2024-06-06 (50 days)
+   -> Price refinement: Peak from 2024-04-19 ($63818.01) to 2024-04-22 ($66819.32)
+P0 selected: RSI peak at 2024-04-19 (RSI: 100.00)
+P0 refined to: 2024-04-22 ($66819.32)
 Starting progressive extrema detection with price refinement...
-   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-13 ($90375.20)
-   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-03-01 ($86064.53)
-Found 28 extrema points (with price refinement)
-✓ Valid relaxed wave: 2024-12-17 to 2025-01-09, trend ratio: 0.872
-Wave found! Advancing to position 1166
+   -> Price refinement: Valley from 2024-07-05 ($56628.79) to 2024-07-07 ($55857.81)
+   -> Price refinement: Valley from 2024-09-01 ($57301.86) to 2024-09-06 ($53962.97)
+   -> Price refinement: Peak from 2024-09-02 ($59132.13) to 2024-08-29 ($59359.01)
+   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-15 ($91032.07)
+   -> Price refinement: Valley from 2024-11-17 ($89855.99) to 2024-11-14 ($87325.59)
+   -> Price refinement: Peak from 2024-12-08 ($101109.59) to 2024-12-13 ($101424.25)
+   -> Price refinement: Valley from 2024-12-23 ($94881.47) to 2024-12-27 ($94299.03)
+   -> Price refinement: Peak from 2025-01-18 ($104556.23) to 2025-01-21 ($106143.82)
+   -> Price refinement: Valley from 2025-01-28 ($101335.52) to 2025-02-02 ($97700.59)
+   -> Price refinement: Peak from 2025-01-30 ($104722.94) to 2025-01-25 ($104746.85)
+   -> Price refinement: Valley from 2025-02-02 ($97700.59) to 2025-02-07 ($96506.80)
+   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-02-26 ($84250.09)
+   -> Price refinement: Peak from 2025-03-05 ($90606.01) to 2025-03-02 ($94270.00)
+   -> Price refinement: Peak from 2025-04-01 ($85158.34) to 2025-03-27 ($87232.01)
+Found 50 extrema points (with price refinement)
+✓ Valid relaxed wave: 2024-07-28 to 2024-09-06, trend ratio: 0.791
+Wave found! Advancing to position 992
 
 --- Wave Search 7 ---
-P0 search window: 2025-02-28 to 2025-04-18 (50 days)
-   -> Price refinement: Peak from 2025-03-01 ($86064.53) to 2025-03-02 ($94270.00)
-P0 selected: RSI peak at 2025-03-01 (RSI: 100.00)
-P0 refined to: 2025-03-02 ($94270.00)
+P0 search window: 2024-09-07 to 2024-10-26 (50 days)
+   -> Price refinement: Peak from 2024-09-08 ($54869.95) to 2024-09-13 ($60498.00)
+P0 selected: RSI peak at 2024-09-08 (RSI: 100.00)
+P0 refined to: 2024-09-13 ($60498.00)
 Starting progressive extrema detection with price refinement...
-Found 2 extrema points (with price refinement)
-Only 2 extrema points. Need ≥6. Advancing position.
+   -> Price refinement: Peak from 2024-11-11 ($88647.99) to 2024-11-15 ($91032.07)
+   -> Price refinement: Valley from 2024-11-17 ($89855.99) to 2024-11-14 ($87325.59)
+   -> Price refinement: Peak from 2024-12-08 ($101109.59) to 2024-12-13 ($101424.25)
+   -> Price refinement: Valley from 2024-12-23 ($94881.47) to 2024-12-27 ($94299.03)
+   -> Price refinement: Peak from 2025-01-18 ($104556.23) to 2025-01-21 ($106143.82)
+   -> Price refinement: Valley from 2025-01-28 ($101335.52) to 2025-02-02 ($97700.59)
+   -> Price refinement: Peak from 2025-01-30 ($104722.94) to 2025-01-25 ($104746.85)
+   -> Price refinement: Valley from 2025-02-02 ($97700.59) to 2025-02-07 ($96506.80)
+   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-02-26 ($84250.09)
+   -> Price refinement: Peak from 2025-03-05 ($90606.01) to 2025-03-02 ($94270.00)
+   -> Price refinement: Peak from 2025-04-01 ($85158.34) to 2025-03-27 ($87232.01)
+Found 36 extrema points (with price refinement)
+✓ Valid relaxed wave: 2024-12-17 to 2025-01-09, trend ratio: 0.872
+Wave found! Advancing to position 1117
 
 --- Wave Search 8 ---
-P0 search window: 2025-03-25 to 2025-05-13 (50 days)
-P0 selected: RSI peak at 2025-05-10 (RSI: 77.13)
+P0 search window: 2025-01-10 to 2025-02-28 (50 days)
+   -> Price refinement: Peak from 2025-01-18 ($104556.23) to 2025-01-21 ($106143.82)
+P0 selected: RSI peak at 2025-01-18 (RSI: 85.36)
+P0 refined to: 2025-01-21 ($106143.82)
+Starting progressive extrema detection with price refinement...
+   -> Price refinement: Valley from 2025-03-03 ($86220.61) to 2025-02-26 ($84250.09)
+   -> Price refinement: Peak from 2025-03-05 ($90606.01) to 2025-03-02 ($94270.00)
+   -> Price refinement: Peak from 2025-04-01 ($85158.34) to 2025-03-27 ($87232.01)
+Found 12 extrema points (with price refinement)
+✓ Valid relaxed wave: 2025-02-20 to 2025-03-10, trend ratio: 0.800
+Wave found! Advancing to position 1177
+
+--- Wave Search 9 ---
+P0 search window: 2025-03-11 to 2025-04-29 (50 days)
+   -> Price refinement: Peak from 2025-03-12 ($83680.12) to 2025-03-07 ($86801.75)
+P0 selected: RSI peak at 2025-03-12 (RSI: 100.00)
+P0 refined to: 2025-03-07 ($86801.75)
+Starting progressive extrema detection with price refinement...
+   -> Price refinement: Peak from 2025-04-01 ($85158.34) to 2025-03-27 ($87232.01)
+   -> Price refinement: Peak from 2025-05-02 ($96887.14) to 2025-05-07 ($97030.50)
+   -> Price refinement: Valley from 2025-05-04 ($94277.62) to 2025-04-30 ($94172.00)
+   -> Price refinement: Valley from 2025-05-17 ($103126.65) to 2025-05-12 ($102791.32)
+Found 10 extrema points (with price refinement)
+No valid waves found (rejected by dual filtering). Advancing position.
+
+--- Wave Search 10 ---
+P0 search window: 2025-04-05 to 2025-05-24 (50 days)
+P0 selected: RSI peak at 2025-05-22 (RSI: 71.15)
 Insufficient data after P0. Advancing position.
 
 === Sequential Detection Complete ===
-Total valid waves: 6
+Total valid waves: 8
 
 === Results ===
-Total waves detected: 6
-Wave 1: strict - 2022-03-29 to 2022-05-11
-Wave 2: relaxed - 2023-04-18 to 2023-05-13
-Wave 3: strict - 2023-08-08 to 2023-09-11
-Wave 4: relaxed - 2024-03-13 to 2024-04-17
-Wave 5: relaxed - 2024-07-28 to 2024-09-06
-Wave 6: relaxed - 2024-12-17 to 2025-01-09
+Total waves detected: 8
+Wave 1: relaxed - 2021-12-27 to 2022-02-18
+Wave 2: relaxed - 2022-08-13 to 2022-10-11
+Wave 3: relaxed - 2023-04-14 to 2023-05-13
+Wave 4: strict - 2023-08-08 to 2023-09-11
+Wave 5: relaxed - 2024-03-13 to 2024-04-17
+Wave 6: relaxed - 2024-07-28 to 2024-09-06
+Wave 7: relaxed - 2024-12-17 to 2025-01-09
+Wave 8: relaxed - 2025-02-20 to 2025-03-10
 
 Generating overview chart...
