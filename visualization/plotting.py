@@ -98,11 +98,14 @@ def plot_overview_chart(close_prices, all_waves, start_date_all, end_date_all, r
         rsi_drop_threshold (float): RSI 下跌阈值
         rsi_rise_ratio (float): RSI 上涨比例
     """
-    plt.style.use('seaborn-v0_8-darkgrid')
+    try:
+        plt.style.use('seaborn-v0_8-darkgrid')
+    except:
+        plt.style.use('default')
     fig, ax = plt.subplots(figsize=(15, 8))
     
     # Plot Close Price first
-    ax.plot(close_prices.index, close_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
+    ax.plot(close_prices.index.values, close_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
 
     # Flags to plot a single label for each wave type
     plotted_merged_label = False

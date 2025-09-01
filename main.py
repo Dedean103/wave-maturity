@@ -19,6 +19,44 @@ from core.rsi_analysis import find_extremas_with_rsi
 from utils.technical_indicators import calculate_rsi
 from visualization.plotting import plot_individual_wave, plot_overview_chart
 
+def get_benchmark_wave_count():
+    """
+    从benchmark.txt文件中解析基准波浪数量
+    
+    返回:
+        int: 基准波浪总数
+    """
+    try:
+        with open('benchmark.txt', 'r', encoding='utf-8') as f:
+            content = f.read()
+            
+        # 查找总波浪数量的行
+        lines = content.split('\n')
+        for line in lines:
+            if '原始识别:' in line and '个波浪结构' in line:
+                # 提取数字
+                import re
+                match = re.search(r'(\d+)\s*个波浪结构', line)
+                if match:
+                    original_count = int(match.group(1))
+                    
+            if '处理后:' in line and '个独立波浪' in line and '个合并波浪' in line:
+                # 提取独立和合并波浪数量
+                matches = re.findall(r'(\d+)\s*个', line)
+                if len(matches) >= 2:
+                    independent_count = int(matches[0])
+                    merged_count = int(matches[1])
+                    return independent_count + merged_count
+                    
+        return 0
+        
+    except FileNotFoundError:
+        print("基准文件 benchmark.txt 未找到")
+        return 0
+    except Exception as e:
+        print(f"解析基准文件时出错: {e}")
+        return 0
+
 def load_data(file_path):
     """
     加载 CSV 数据文件
@@ -58,14 +96,15 @@ def run_wave_analysis(file_path='BTC.csv', recent_days=50, rsi_period=14, rsi_dr
     返回:
         dict: 分析结果字典
     """
-    print("=== BTC 波浪检测系统 (Latest Version with Recent High RSI Start) ===")
-    print("基于最近高RSI点的持续波浪检测系统")
-    print("支持智能P0选择、重叠波浪合并和持续波浪发现")
+    print("=== BTC 波浪检测系统 (Enhanced RSI P0 Selection) ===")
+    print("基于最高RSI点起始的连续波浪检测系统")
+    print("支持智能P0选择、重叠波浪合并和基准质量验证")
     print()
     
     print(f"配置参数:")
     print(f"  - 数据文件: {file_path}")
-    print(f"  - 搜索最近天数: {recent_days}")
+    print(f"  - 回望天数 (P0搜索): {recent_days}")
+    print(f"  - 最小间隔要求: {recent_days}")
     print(f"  - RSI 周期: {rsi_period}")
     print(f"  - RSI 下跌阈值: {rsi_drop_threshold}")
     print(f"  - RSI 上涨比例: {rsi_rise_ratio}")
@@ -85,8 +124,8 @@ def run_wave_analysis(file_path='BTC.csv', recent_days=50, rsi_period=14, rsi_dr
     print("RSI 计算完成")
     print()
     
-    # 使用新的持续波浪检测逻辑
-    print("正在执行基于最近高RSI点的持续波浪检测...")
+    # 使用新的基于高RSI点的连续波浪检测逻辑
+    print("正在执行基于最高RSI点的连续波浪检测...")
     all_waves, all_trigger_points = find_continuous_waves_from_recent_highs(
         close_prices, 
         recent_days=recent_days,
@@ -128,30 +167,52 @@ def run_wave_analysis(file_path='BTC.csv', recent_days=50, rsi_period=14, rsi_dr
     end_date_all = close_prices.index.max().date()
     
     print("正在生成概览图表...")
-    plot_overview_chart(
-        close_prices, 
-        wave_data,
-        start_date_all, 
-        end_date_all, 
-        rsi_drop_threshold, 
-        rsi_rise_ratio
-    )
+    try:
+        plot_overview_chart(
+            close_prices, 
+            wave_data,
+            start_date_all, 
+            end_date_all, 
+            rsi_drop_threshold, 
+            rsi_rise_ratio
+        )
+    except Exception as e:
+        print(f"绘图出错: {e}")
+        print("跳过绘图，继续分析...")
     
     # 绘制每个波浪的详细图
     all_processed_waves = final_waves + merged_waves
     if all_processed_waves:
-        print("\n正在为每个识别出的波浪生成独立的放大图...")
+        print(f"\n正在为每个识别出的波浪生成独立的放大图...")
         for i, wave in enumerate(all_processed_waves):
             wave_indices = wave['indices']
             wave_type = wave['type']
             wave_start_date = close_prices.index[wave_indices[0]]
             wave_end_date = close_prices.index[wave_indices[-1]]
             wave_trigger_points = [p for p in all_trigger_points if p['date'] >= wave_start_date and p['date'] <= wave_end_date]
-            plot_individual_wave(close_prices, rsi_series, wave_indices, wave_trigger_points, plot_range_days=15, wave_number=i+1, wave_type=wave_type)
+            try:
+                plot_individual_wave(close_prices, rsi_series, wave_indices, wave_trigger_points, plot_range_days=15, wave_number=i+1, wave_type=wave_type)
+            except Exception as e:
+                print(f"绘制波浪 {i+1} 时出错: {e}")
+                continue
     
     print("\n=== 波浪检测完成 ===")
     total_waves = len(final_waves) + len(merged_waves)
     print(f"总共识别出 {total_waves} 个有效波浪结构")
+    
+    # 基准验证
+    benchmark_count = get_benchmark_wave_count()
+    if benchmark_count > 0:
+        detection_rate = total_waves / benchmark_count
+        print(f"\n=== 基准验证 ===")
+        print(f"检测到波浪数: {total_waves}")
+        print(f"基准波浪数: {benchmark_count}")
+        print(f"检测率: {detection_rate:.2%}")
+        
+        if detection_rate < 0.8:
+            print("⚠️  警告: 检测率低于80%，建议调整算法参数或逻辑")
+        elif detection_rate >= 0.8:
+            print("✅ 检测率满足质量要求 (≥80%)")
     
     # 返回分析结果
     return {

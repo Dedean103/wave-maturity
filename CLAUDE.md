@@ -73,6 +73,7 @@ jupyter notebook test.ipynb
 **IMPORTANT**: After completing any code changes, always:
 1. **Test the code**: Run `python3 main.py` to verify the implementation works correctly
 2. **Commit and push changes**: Automatically run git commit and push to save progress
+3. Never change the latest_code.py until being told
 
 ### Testing and Development
 The `test.ipynb` notebook provides:

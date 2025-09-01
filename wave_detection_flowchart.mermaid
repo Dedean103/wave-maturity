@@ -1,0 +1,91 @@
+flowchart TD
+    A[Start: Load Price Data] --> B[Calculate 14-Period RSI]
+    
+    B --> C[Initialize RSI Extrema Detection]
+    C --> D{RSI Direction Analysis}
+    
+    D --> E[Track Peak RSI & Valley RSI]
+    E --> F{Current Direction?}
+    
+    F -->|Upward/Neutral| G[Monitor for RSI Drop]
+    F -->|Downward| H[Monitor for RSI Rise]
+    
+    G --> I{RSI Drop ≥ Threshold?<br/>Default: 15 points}
+    I -->|Yes| J[Mark Peak as Extrema<br/>Switch to Downward Direction]
+    I -->|No| K[Continue Tracking Peak]
+    
+    H --> L{RSI Rise ≥ Dynamic Threshold?<br/>Threshold = Drop Amount × Rise Ratio<br/>Default Ratio: 1/4}
+    L -->|Yes| M[Mark Valley as Extrema<br/>Switch to Upward Direction]
+    L -->|No| N[Continue Tracking Valley]
+    
+    J --> O[Add to Extrema List]
+    M --> O
+    K --> G
+    N --> H
+    
+    O --> P{More Data Points?}
+    P -->|Yes| E
+    P -->|No| Q[Extrema Detection Complete]
+    
+    Q --> R[Search for Wave Patterns<br/>in Extrema Sequence]
+    
+    R --> S[Extract 6-Point Sequences<br/>from Extrema List]
+    
+    S --> T{Check Alternating<br/>Peak-Valley Pattern?}
+    T -->|No| U[Skip Sequence]
+    T -->|Yes| V[Validate Wave Structure]
+    
+    V --> W{Apply Strict Rules?}
+    W -->|Yes| X[Strict 5-Wave Validation:<br/>• P0 > P1 < P2 > P3 < P4 > P5<br/>• P2 < P0 AND P4 < P2<br/>• P3 > P1 AND P5 > P3<br/>• P4 > P1]
+    W -->|No| Y[Relaxed 5-Wave Validation:<br/>• P0 > P1 < P2 > P3 < P4 > P5<br/>• P2 < P0 AND P4 < P0<br/>• P5 > P1 AND P4 > P1]
+    
+    X --> Z{Valid Strict Wave?}
+    Y --> AA{Valid Relaxed Wave?}
+    
+    Z -->|Yes| BB[Add as Strict Wave]
+    Z -->|No| U
+    AA -->|Yes| CC[Add as Relaxed Wave]
+    AA -->|No| U
+    
+    BB --> DD[Collect All Valid Waves]
+    CC --> DD
+    U --> EE{More Sequences?}
+    EE -->|Yes| S
+    EE -->|No| DD
+    
+    DD --> FF[Handle Overlapping Waves]
+    
+    FF --> GG{Check for Overlaps<br/>Between Wave Pairs}
+    GG -->|No Overlap| HH[Add to Final Waves]
+    GG -->|Overlap Found| II[Define Extended Search Range<br/>From Wave A Start to Wave B End]
+    
+    II --> JJ[Search for 8-Point Wave<br/>in Extended Range]
+    JJ --> KK{Valid 7-Wave Found?<br/>• Alternating pattern<br/>• P8 < P6}
+    KK -->|Yes| LL[Add as Merged Wave<br/>Remove Original Overlapping Waves]
+    KK -->|No| MM[Remove Both Overlapping Waves]
+    
+    HH --> NN[Final Wave Collection]
+    LL --> NN
+    MM --> NN
+    
+    NN --> OO{More Wave Pairs to Check?}
+    OO -->|Yes| GG
+    OO -->|No| PP[Generate Visualizations]
+    
+    PP --> QQ[Plot Overall Price Chart<br/>with All Waves Marked]
+    QQ --> RR[Generate Individual Wave<br/>Detail Charts with RSI]
+    
+    RR --> SS[End: Analysis Complete]
+    
+    %% Styling
+    classDef startEnd fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef process fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef validation fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef output fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    
+    class A,SS startEnd
+    class B,C,E,O,Q,R,S,FF,II,JJ,PP,QQ,RR process
+    class D,F,I,L,P,T,W,Z,AA,GG,KK,OO decision
+    class X,Y,V validation
+    class BB,CC,HH,LL,MM,NN output

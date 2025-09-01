@@ -189,3 +189,134 @@ def remove_overlapping_waves(waves_list, close_prices):
             non_overlapping_waves.append(wave)
     
     return [w['indices'] for w in non_overlapping_waves]
+
+def find_continuous_waves_from_recent_highs(close_prices, recent_days=50, rsi_period=14, 
+                                          rsi_drop_threshold=10, rsi_rise_ratio=1/3, 
+                                          price_refinement_window=5):
+    """
+    基于最近高RSI点的连续波浪检测新逻辑
+    
+    参数:
+        close_prices (pd.Series): 收盘价序列
+        recent_days (int): 查找P0的回望天数
+        rsi_period (int): RSI计算周期
+        rsi_drop_threshold (int): RSI下跌阈值
+        rsi_rise_ratio (float): RSI上涨比例
+        price_refinement_window (int): 价格微调窗口
+    
+    返回:
+        tuple: (所有波浪列表, 所有触发点列表)
+    """
+    from utils.technical_indicators import calculate_rsi
+    from core.rsi_analysis import find_extremas_with_rsi
+    
+    print(f"\n=== 开始基于高RSI点的连续波浪检测 ===")
+    print(f"参数: 回望天数={recent_days}, RSI周期={rsi_period}, 下跌阈值={rsi_drop_threshold}, 上涨比例={rsi_rise_ratio}")
+    
+    # 计算完整数据的RSI
+    rsi_series = calculate_rsi(close_prices, period=rsi_period).dropna()
+    
+    all_waves = []
+    all_trigger_points = []
+    
+    # 从RSI数据开始位置开始搜索（跳过NaN值）
+    rsi_start_idx = close_prices.index.get_loc(rsi_series.index[0])
+    used_data_end = rsi_start_idx  # 跟踪已使用数据的结束位置
+    
+    wave_count = 0
+    max_iterations = 50  # 防止无限循环
+    
+    while used_data_end < len(close_prices) - recent_days and wave_count < max_iterations:
+        wave_count += 1
+        print(f"\n--- 搜索第 {wave_count} 个波浪 ---")
+        
+        # 定义搜索窗口
+        search_start = used_data_end
+        search_end = min(search_start + recent_days, len(close_prices))
+        
+        if search_end - search_start < recent_days:
+            print(f"剩余数据不足 {recent_days} 天，停止搜索")
+            break
+            
+        # 获取搜索窗口内的数据
+        window_close = close_prices.iloc[search_start:search_end]
+        
+        # 只获取RSI数据中存在的日期
+        window_dates = window_close.index
+        available_rsi_dates = rsi_series.index.intersection(window_dates)
+        
+        if len(available_rsi_dates) == 0:
+            print(f"窗口内没有可用的RSI数据，停止搜索")
+            break
+            
+        window_rsi = rsi_series[available_rsi_dates]
+            
+        # 找到最高RSI点作为P0候选
+        max_rsi_idx = window_rsi.idxmax()
+        max_rsi_value = window_rsi.loc[max_rsi_idx]
+        
+        print(f"搜索窗口: {available_rsi_dates[0].date()} 到 {available_rsi_dates[-1].date()} (共{len(available_rsi_dates)}天)")
+        print(f"最高RSI点: {max_rsi_idx.date()}, RSI值: {max_rsi_value:.2f}")
+        
+        # 价格微调：在微调窗口内寻找最高价格点
+        refinement_start = max(0, close_prices.index.get_loc(max_rsi_idx) - price_refinement_window//2)
+        refinement_end = min(len(close_prices), close_prices.index.get_loc(max_rsi_idx) + price_refinement_window//2 + 1)
+        
+        refinement_window = close_prices.iloc[refinement_start:refinement_end]
+        if len(refinement_window) > 1:
+            max_price_idx = refinement_window.idxmax()
+            if max_price_idx != max_rsi_idx:
+                print(f"价格微调: P0从 {max_rsi_idx.date()} ({close_prices[max_rsi_idx]:.2f}) 调整到 {max_price_idx.date()} ({close_prices[max_price_idx]:.2f})")
+                p0_date = max_price_idx
+            else:
+                p0_date = max_rsi_idx
+        else:
+            p0_date = max_rsi_idx
+            
+        # 从P0开始，寻找完整数据中的后续极值点
+        p0_index = close_prices.index.get_loc(p0_date)
+        remaining_data = close_prices.iloc[p0_index:]
+        
+        print(f"确定P0: {p0_date.date()}, 开始从此点寻找后续波浪...")
+        
+        # 使用现有的RSI驱动极值检测，但只处理P0之后的数据
+        extremas, trigger_points = find_extremas_with_rsi(
+            remaining_data, 
+            rsi_period=rsi_period,
+            rsi_drop_threshold=rsi_drop_threshold,
+            rsi_rise_ratio=rsi_rise_ratio
+        )
+        
+        # 将P0添加到极值点列表开头（如果不在其中）
+        if not extremas or extremas[0] != p0_date:
+            extremas.insert(0, p0_date)
+            
+        print(f"在P0后发现 {len(extremas)} 个极值点")
+        
+        # 寻找6点波浪
+        wave_patterns_6 = find_downtrend_wave_patterns(close_prices, extremas, length=6)
+        
+        # 寻找8点波浪  
+        wave_patterns_8 = find_downtrend_wave_patterns(close_prices, extremas, length=8)
+        
+        # 合并所有发现的波浪
+        current_waves = wave_patterns_6 + wave_patterns_8
+        
+        if current_waves:
+            print(f"发现 {len(current_waves)} 个波浪结构")
+            all_waves.extend(current_waves)
+            all_trigger_points.extend(trigger_points)
+            
+            # 更新已使用数据的结束位置到最后一个波浪的结束点
+            latest_end = max([close_prices.index.get_loc(close_prices.index[w['indices'][-1]]) for w in current_waves])
+            used_data_end = latest_end + 1
+            
+            print(f"更新已使用数据位置到索引 {used_data_end}")
+        else:
+            print("未发现波浪结构，向前移动搜索窗口")
+            used_data_end = search_start + recent_days // 2  # 移动半个窗口
+    
+    print(f"\n=== 连续波浪检测完成 ===")
+    print(f"总共发现 {len(all_waves)} 个波浪结构")
+    
+    return all_waves, all_trigger_points
