@@ -48,9 +48,9 @@ def calculate_rsi(series, period=14):
     rsi = 100 - (100 / (1 + rs))
     return rsi
 
-def find_downtrend_wave_patterns(close_prices, extremas, length=6):
+def find_downtrend_wave_patterns(close_prices, extremas, length=6, trend_threshold=0.95):
     """
-    Generalized wave finding function for specified length waves
+    Generalized wave finding function for specified length waves with overall trend validation
     """
     waves = []
     # Sort extremas chronologically to ensure proper temporal order
@@ -61,15 +61,38 @@ def find_downtrend_wave_patterns(close_prices, extremas, length=6):
         points_indices = extremas_indices[i:i+length]
         points_prices = close_prices.iloc[points_indices]
         
-        # Use proper downtrend validation functions to ensure only downtrend waves are detected
+        # First check pattern validation
+        pattern_valid = False
+        wave_type = None
+        
         if length == 6:
             if is_downtrend_five_wave_strict(points_prices): 
-                waves.append({'indices': points_indices, 'type': 'strict'})
+                pattern_valid = True
+                wave_type = 'strict'
             elif is_downtrend_five_wave_relaxed(points_prices): 
-                waves.append({'indices': points_indices, 'type': 'relaxed'})
+                pattern_valid = True
+                wave_type = 'relaxed'
         elif length == 8:
             if is_downtrend_seven_wave(points_prices): 
-                waves.append({'indices': points_indices, 'type': 'merged'})
+                pattern_valid = True
+                wave_type = 'merged'
+        
+        # If pattern is valid, check overall trend direction
+        if pattern_valid:
+            is_trend_valid, trend_ratio, trend_info = validate_wave_overall_trend(
+                close_prices, points_indices, trend_threshold
+            )
+            
+            if is_trend_valid:
+                waves.append({
+                    'indices': points_indices, 
+                    'type': wave_type,
+                    'trend_ratio': trend_ratio,
+                    'trend_info': trend_info
+                })
+                print(f"✓ Valid {wave_type} wave: {trend_info['start_date']} to {trend_info['end_date']}, trend ratio: {trend_ratio:.3f}")
+            else:
+                print(f"✗ Rejected {wave_type} wave (uptrend): {trend_info['start_date']} to {trend_info['end_date']}, trend ratio: {trend_ratio:.3f}")
             
     return waves
 
@@ -106,14 +129,8 @@ def handle_overlapping_waves(all_waves, close_prices, all_extremas):
                 # Find all extrema points within this range
                 search_extremas = [e for e in all_extremas if close_prices.index.get_loc(e) >= start_index and close_prices.index.get_loc(e) <= end_index]
                 
-                # Look for an 8-point wave in the new range and extrema points
-                new_wave = find_downtrend_wave_patterns(close_prices, search_extremas, length=8)
-                
-                if new_wave:
-                    merged_waves.append(new_wave[0])
-                    print(f" -> 成功找到新的合并波浪（8点）: 从 {close_prices.index[new_wave[0]['indices'][0]].date()} 到 {close_prices.index[new_wave[0]['indices'][-1]].date()}")
-                else:
-                    print(" -> 未能在重叠区域内找到新的8点波浪，两个波浪均被移除。")
+                # Skip merged wave creation - just remove overlapping waves
+                print(" -> 重叠波浪已移除（合并功能已禁用）。")
 
                 # Remove both overlapping waves and skip next wave
                 i += 2
@@ -126,6 +143,64 @@ def handle_overlapping_waves(all_waves, close_prices, all_extremas):
             i += 1
             
     return final_waves, merged_waves
+
+# =========================================================
+# Overall trend validation helper functions
+# =========================================================
+
+def is_overall_downtrend(close_prices, start_idx, end_idx, trend_threshold=0.95):
+    """
+    Check if overall trend from start to end is downward
+    
+    Parameters:
+        close_prices (pd.Series): Price data
+        start_idx (int): Starting index 
+        end_idx (int): Ending index
+        trend_threshold (float): Ratio threshold - if end_price/start_price < threshold, it's downtrend
+    
+    Returns:
+        bool: True if overall trend is downward
+    """
+    if start_idx >= end_idx:
+        return False
+        
+    start_price = close_prices.iloc[start_idx]
+    end_price = close_prices.iloc[end_idx]
+    price_ratio = end_price / start_price
+    
+    return price_ratio < trend_threshold
+
+def validate_wave_overall_trend(close_prices, wave_indices, trend_threshold=0.95):
+    """
+    Validate that a wave occurs within an overall downtrend
+    
+    Parameters:
+        close_prices (pd.Series): Price data
+        wave_indices (list): Wave point indices
+        trend_threshold (float): Trend validation threshold
+    
+    Returns:
+        tuple: (is_valid, trend_ratio, trend_info)
+    """
+    start_idx = wave_indices[0]  # P1
+    end_idx = wave_indices[-1]   # P6/P8
+    
+    start_price = close_prices.iloc[start_idx]
+    end_price = close_prices.iloc[end_idx]
+    trend_ratio = end_price / start_price
+    
+    is_downtrend = trend_ratio < trend_threshold
+    
+    trend_info = {
+        'start_date': close_prices.index[start_idx].date(),
+        'end_date': close_prices.index[end_idx].date(),
+        'start_price': start_price,
+        'end_price': end_price,
+        'trend_ratio': trend_ratio,
+        'is_downtrend': is_downtrend
+    }
+    
+    return is_downtrend, trend_ratio, trend_info
 
 # =========================================================
 # Price refinement helper functions
@@ -320,7 +395,7 @@ def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, r
 
 def find_continuous_waves_from_recent_highs(close_prices, recent_days=50, rsi_period=14, 
                                           rsi_drop_threshold=10, rsi_rise_ratio=1/3, 
-                                          price_refinement_window=5):
+                                          price_refinement_window=5, trend_threshold=0.95):
     """
     基于最近高RSI点的连续波浪检测新逻辑 - Updated Implementation
     
@@ -553,8 +628,8 @@ def find_continuous_waves_from_recent_highs(close_prices, recent_days=50, rsi_pe
             current_position += advancement_step
             continue
             
-        # Try to find wave patterns from these extremas
-        wave_patterns = find_downtrend_wave_patterns(close_prices, wave_extremas, length=6)
+        # Try to find wave patterns from these extremas with trend validation
+        wave_patterns = find_downtrend_wave_patterns(close_prices, wave_extremas, length=6, trend_threshold=0.95)
         
         if wave_patterns:
             # Found at least one wave pattern
@@ -629,7 +704,7 @@ def get_benchmark_wave_count():
 # =========================================================
 
 def main(file_path='BTC.csv', recent_days=50, rsi_period=14, rsi_drop_threshold=10, 
-         rsi_rise_ratio=1/3, price_refinement_window=5):
+         rsi_rise_ratio=1/3, price_refinement_window=5, trend_threshold=0.95):
     """
     Enhanced wave analysis using RSI-based P0 selection
     
@@ -682,7 +757,8 @@ def main(file_path='BTC.csv', recent_days=50, rsi_period=14, rsi_drop_threshold=
         rsi_period=rsi_period, 
         rsi_drop_threshold=rsi_drop_threshold, 
         rsi_rise_ratio=rsi_rise_ratio,
-        price_refinement_window=price_refinement_window
+        price_refinement_window=price_refinement_window,
+        trend_threshold=trend_threshold
     )
     
     # 处理重叠波浪
@@ -873,7 +949,7 @@ def plot_overview_chart(close_prices, all_waves, start_date_all, end_date_all, r
     plt.tight_layout()
     plt.show()
 
-def run_wave_analysis(file_path='BTC.csv', recent_days=50, rsi_period=14, rsi_drop_threshold=10, rsi_rise_ratio=1/3, price_refinement_window=5):
+def run_wave_analysis(file_path='BTC.csv', recent_days=50, rsi_period=14, rsi_drop_threshold=10, rsi_rise_ratio=1/3, price_refinement_window=5, trend_threshold=0.95):
     """
     Execute complete wave analysis workflow - Enhanced RSI P0 Selection Version
     """
@@ -915,7 +991,8 @@ def run_wave_analysis(file_path='BTC.csv', recent_days=50, rsi_period=14, rsi_dr
         rsi_period=rsi_period, 
         rsi_drop_threshold=rsi_drop_threshold, 
         rsi_rise_ratio=rsi_rise_ratio,
-        price_refinement_window=price_refinement_window
+        price_refinement_window=price_refinement_window,
+        trend_threshold=trend_threshold
     )
     
     # Handle overlapping waves
@@ -1007,5 +1084,6 @@ if __name__ == "__main__":
         rsi_period=14,
         rsi_drop_threshold=10,
         rsi_rise_ratio=1/3,
-        price_refinement_window=5
+        price_refinement_window=5,
+        trend_threshold=0.95
     )
