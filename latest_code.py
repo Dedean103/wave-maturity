@@ -335,7 +335,10 @@ def main(file_path='BTC.csv', rsi_drop_threshold = 15, rsi_rise_ratio = 1/4):
 
     final_waves, merged_waves = handle_overlapping_waves(all_waves, close_prices, extremas)
 
-    plt.style.use('seaborn-v0_8-darkgrid')
+    try:
+        plt.style.use('default')
+    except:
+        pass
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 12), gridspec_kw={'height_ratios': [3, 1]}, sharex=True)
 
     start_date_all = close_prices.index.min().date()

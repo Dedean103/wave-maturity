@@ -351,7 +351,8 @@ def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14,
 # Plotting functions (simplified from latest_code.py)
 # =========================================================
 
-def plot_overview_chart(close_prices, all_waves, rsi_series, all_trigger_points, rsi_drop_threshold, rsi_rise_ratio):
+def plot_overview_chart(close_prices, all_waves, rsi_series, all_trigger_points, rsi_drop_threshold, rsi_rise_ratio, 
+                        lookback_days=50, rsi_period=14, trend_threshold=0.95, price_refinement_window=5):
     """
     Plot overview chart showing all detected waves with RSI subplot
     """
@@ -397,6 +398,18 @@ def plot_overview_chart(close_prices, all_waves, rsi_series, all_trigger_points,
     ax1.set_ylabel('Close Price', fontsize=12)
     ax1.grid(True)
     
+    # Add parameter textbox
+    param_text = f"""Parameters:
+• Lookback Days: {lookback_days}
+• RSI Period: {rsi_period}
+• RSI Drop Threshold: {rsi_drop_threshold}
+• RSI Rise Ratio: {rsi_rise_ratio:.3f}
+• Trend Threshold: {trend_threshold}
+• Price Refinement Window: {price_refinement_window}"""
+    
+    ax1.text(0.02, 0.98, param_text, transform=ax1.transAxes, fontsize=14,
+             verticalalignment='top', bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.8))
+    
     # Subplot 2: RSI Chart
     ax2.plot(rsi_series.index.values, rsi_series.values, color='purple', label='14-Day RSI', linewidth=1.5)
     ax2.axhline(70, linestyle='--', color='lightcoral', alpha=0.7)
@@ -440,7 +453,7 @@ def plot_overview_chart(close_prices, all_waves, rsi_series, all_trigger_points,
     plt.tight_layout()
     plt.show()
 
-def plot_individual_wave(file_path, close_prices, rsi_series, wave_indices, trigger_points, plot_range_days=15, wave_number=1, wave_type="", if_plot_rsi=True):
+def plot_individual_wave(file_path, close_prices, rsi_series, wave_indices, trigger_points, plot_range_days=30, wave_number=1, wave_type="", if_plot_rsi=True):
     """
     Plot individual wave with optional RSI subplot
     """
@@ -568,7 +581,8 @@ def main(file_path='BTC.csv', lookback_days=50, rsi_period=14, rsi_drop_threshol
     # Plot overview chart
     if all_waves:
         print("\nGenerating overview chart...")
-        plot_overview_chart(close_prices, all_waves, rsi_series, all_trigger_points, rsi_drop_threshold, rsi_rise_ratio)
+        plot_overview_chart(close_prices, all_waves, rsi_series, all_trigger_points, rsi_drop_threshold, rsi_rise_ratio,
+                           lookback_days, rsi_period, trend_threshold, price_refinement_window)
         
         # Plot individual waves
         print("Generating individual wave charts...")
@@ -583,7 +597,7 @@ def main(file_path='BTC.csv', lookback_days=50, rsi_period=14, rsi_drop_threshol
                                  if p['date'] >= wave_start_date and p['date'] <= wave_end_date]
             
             plot_individual_wave('BTC.csv', close_prices, rsi_series, wave_indices, wave_trigger_points, 
-                               plot_range_days=15, wave_number=i+1, wave_type=wave_type, if_plot_rsi=True)
+                               plot_range_days=30, wave_number=i+1, wave_type=wave_type, if_plot_rsi=True)
 
 if __name__ == "__main__":
     main()

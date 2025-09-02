@@ -65,9 +65,11 @@ main(file_path='BTC.csv', lookback_days=50, rsi_period=14,
 
 ### Code Testing and Git Workflow
 **IMPORTANT**: After completing any code changes, always:
-1. **Test the code**: Run `python3 current_code.py` to verify functionality
-2. **Commit and push changes**: Run git commit and push to save progress
-3. **Never modify latest_code.py** until instructed
+1. **Update all active files**: When developing, update both `current_code.py` and `main.py` (as well as `core/`), but never change `latest_code.py`
+2. **Test the code**: Run `python3 current_code.py` to verify functionality
+3. **Commit and push changes**: Run git commit and push to save progress after every completed task
+4. **Never modify latest_code.py** until instructed
+5. **Never mention external tools** in git commit messages - use descriptive technical messages only
 
 ## Key Configuration Parameters
 

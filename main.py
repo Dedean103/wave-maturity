@@ -174,7 +174,11 @@ def run_wave_analysis(file_path='BTC.csv', recent_days=50, rsi_period=14, rsi_dr
             start_date_all, 
             end_date_all, 
             rsi_drop_threshold, 
-            rsi_rise_ratio
+            rsi_rise_ratio,
+            recent_days,
+            rsi_period,
+            0.95,  # trend_threshold
+            price_refinement_window
         )
     except Exception as e:
         print(f"绘图出错: {e}")
@@ -191,7 +195,7 @@ def run_wave_analysis(file_path='BTC.csv', recent_days=50, rsi_period=14, rsi_dr
             wave_end_date = close_prices.index[wave_indices[-1]]
             wave_trigger_points = [p for p in all_trigger_points if p['date'] >= wave_start_date and p['date'] <= wave_end_date]
             try:
-                plot_individual_wave(close_prices, rsi_series, wave_indices, wave_trigger_points, plot_range_days=15, wave_number=i+1, wave_type=wave_type)
+                plot_individual_wave(close_prices, rsi_series, wave_indices, wave_trigger_points, plot_range_days=30, wave_number=i+1, wave_type=wave_type)
             except Exception as e:
                 print(f"绘制波浪 {i+1} 时出错: {e}")
                 continue

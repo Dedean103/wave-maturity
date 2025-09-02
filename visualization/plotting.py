@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points, plot_range_days=15, wave_number=1, wave_type=""):
+def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points, plot_range_days=30, wave_number=1, wave_type=""):
     """
     绘制单个波浪的详细图表，包括价格和 RSI
     支持6点和8点波浪的动态显示
@@ -86,7 +86,8 @@ def plot_individual_wave(close_prices, rsi_series, wave_indices, trigger_points,
     plt.tight_layout()
     plt.show()
 
-def plot_overview_chart(close_prices, all_waves, start_date_all, end_date_all, rsi_drop_threshold, rsi_rise_ratio):
+def plot_overview_chart(close_prices, all_waves, start_date_all, end_date_all, rsi_drop_threshold, rsi_rise_ratio, 
+                        lookback_days=50, rsi_period=14, trend_threshold=0.95, price_refinement_window=5):
     """
     绘制概览图表，显示所有识别的波浪（支持新的波浪结构）
     
@@ -153,5 +154,18 @@ def plot_overview_chart(close_prices, all_waves, start_date_all, end_date_all, r
 
     ax.set_xlabel('Date', fontsize=12)
     ax.set_ylabel('Close Price', fontsize=12)
+    
+    # Add parameter textbox
+    param_text = f"""Parameters:
+• Lookback Days: {lookback_days}
+• RSI Period: {rsi_period}
+• RSI Drop Threshold: {rsi_drop_threshold}
+• RSI Rise Ratio: {rsi_rise_ratio:.3f}
+• Trend Threshold: {trend_threshold}
+• Price Refinement Window: {price_refinement_window}"""
+    
+    ax.text(0.02, 0.98, param_text, transform=ax.transAxes, fontsize=9,
+            verticalalignment='top', bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.8))
+    
     plt.tight_layout()
     plt.show()
