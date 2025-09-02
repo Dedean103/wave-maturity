@@ -1,6 +1,35 @@
 import pandas as pd
 import numpy as np
 
+def refine_peak_with_price(close_prices, rsi_peak_date, window_days=5):
+    """
+    Refine RSI-confirmed peak using price data (bidirectional search)
+    Look for higher price within window centered around RSI peak
+    """
+    try:
+        peak_idx = close_prices.index.get_loc(rsi_peak_date)
+        
+        # Define bidirectional search window
+        start_idx = max(0, peak_idx - window_days//2)
+        end_idx = min(len(close_prices), peak_idx + window_days//2 + 1)
+        search_window = close_prices.iloc[start_idx:end_idx]
+        
+        # Find highest price point in window
+        max_price_idx_local = search_window.idxmax()
+        max_price = search_window.max()
+        
+        # Get original RSI peak price for comparison
+        original_price = close_prices.iloc[peak_idx]
+        
+        # If higher price found, adjust peak point
+        if max_price > original_price:
+            print(f"价格微调: P0从 {rsi_peak_date.date()} ({original_price:.2f}) 调整到 {max_price_idx_local.date()} ({max_price:.2f})")
+            return max_price_idx_local
+        else:
+            return rsi_peak_date
+    except:
+        return rsi_peak_date
+
 def is_downtrend_five_wave_strict(prices):
     """
     严格判断是否为下跌五浪结构
@@ -284,7 +313,8 @@ def find_continuous_waves_from_recent_highs(close_prices, recent_days=50, rsi_pe
             remaining_data, 
             rsi_period=rsi_period,
             rsi_drop_threshold=rsi_drop_threshold,
-            rsi_rise_ratio=rsi_rise_ratio
+            rsi_rise_ratio=rsi_rise_ratio,
+            price_refinement_window=price_refinement_window
         )
         
         # 将P0添加到极值点列表开头（如果不在其中）
