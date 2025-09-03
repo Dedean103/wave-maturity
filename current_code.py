@@ -124,8 +124,14 @@ def validate_wave_overall_trend(close_prices, wave_indices, trend_threshold=0.95
 # RSI-driven extrema detection (from latest_code.py)
 # =========================================================
 
-def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, rsi_rise_ratio=1/3, price_refinement_window=5):
-    rsi_series = calculate_rsi(close_prices, period=rsi_period).dropna()
+def find_extremas_with_rsi(close_prices, rsi_series=None, rsi_period=14, rsi_drop_threshold=10, rsi_rise_ratio=1/3, price_refinement_window=5):
+    # Use provided RSI series or calculate if not provided (backward compatibility)
+    if rsi_series is None:
+        rsi_series = calculate_rsi(close_prices, period=rsi_period).dropna()
+    else:
+        # Filter RSI series to match the close_prices date range
+        rsi_series = rsi_series.loc[close_prices.index[0]:close_prices.index[-1]]
+    
     extremas = []
     trigger_points = []
     
@@ -151,11 +157,9 @@ def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, r
             
             rsi_drop_change = peak_rsi - current_rsi
             if rsi_drop_change >= rsi_drop_threshold:
-                # Apply bidirectional price refinement for peak
-                refined_peak_date = refine_peak_with_price(close_prices, peak_date, price_refinement_window)
-                
-                if not extremas or extremas[-1] != refined_peak_date:
-                    extremas.append(refined_peak_date)
+                # Store RSI-detected peak (no price refinement here)
+                if not extremas or extremas[-1] != peak_date:
+                    extremas.append(peak_date)
                 
                 trigger_points.append({
                     'date': current_date, 
@@ -165,7 +169,7 @@ def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, r
                     'valley_rsi': valley_rsi,
                     'change': rsi_drop_change,
                     'threshold': rsi_drop_threshold,
-                    'refined_peak_date': refined_peak_date
+                    'refined_peak_date': peak_date
                 })
                 
                 direction = -1
@@ -183,11 +187,9 @@ def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, r
             rise_threshold = drop_amount_for_threshold * rsi_rise_ratio
             
             if rsi_rise_change >= rise_threshold and drop_amount_for_threshold > 0:
-                # Apply bidirectional price refinement for valley
-                refined_valley_date = refine_valley_with_price(close_prices, valley_date, price_refinement_window)
-                
-                if not extremas or extremas[-1] != refined_valley_date:
-                    extremas.append(refined_valley_date)
+                # Store RSI-detected valley (no price refinement here)
+                if not extremas or extremas[-1] != valley_date:
+                    extremas.append(valley_date)
                 
                 trigger_points.append({
                     'date': current_date, 
@@ -197,7 +199,7 @@ def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, r
                     'valley_rsi': valley_rsi,
                     'change': rsi_rise_change,
                     'threshold': rise_threshold,
-                    'refined_valley_date': refined_valley_date
+                    'refined_valley_date': valley_date
                 })
                 
                 direction = 1
@@ -210,58 +212,261 @@ def find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=10, r
     return extremas, trigger_points
 
 # =========================================================
-# Pattern validation with dual filtering
+# Sequential wave building (NEW APPROACH)
 # =========================================================
 
-def find_valid_wave_patterns(close_prices, extremas, trend_threshold=0.95):
-    """
-    Find downtrend wave patterns with dual filtering (pattern + trend)
-    """
-    valid_waves = []
-    extremas_indices = [close_prices.index.get_loc(idx) for idx in extremas]
+def find_next_valley_after(close_prices, rsi_series, start_date, rsi_drop_threshold, rsi_rise_ratio, price_refinement_window=5):
+    """Find the next RSI-confirmed valley after start_date"""
+    start_idx = close_prices.index.get_loc(start_date)
+    remaining_data = close_prices.iloc[start_idx + 1:]  # Start after current point
+    remaining_rsi = rsi_series.iloc[start_idx + 1:]
     
-    # Try to find 6-point waves
-    for i in range(len(extremas_indices) - 6 + 1):
-        points_indices = extremas_indices[i:i+6]
-        points_prices = close_prices.iloc[points_indices]
+    if len(remaining_rsi) < 10:  # Need sufficient data
+        return None
+    
+    # Track peak to find drop
+    peak_rsi = remaining_rsi.iloc[0]
+    peak_date = remaining_rsi.index[0]
+    
+    for i in range(1, len(remaining_rsi)):
+        current_rsi = remaining_rsi.iloc[i]
+        current_date = remaining_rsi.index[i]
         
-        # Pattern validation
-        wave_type = None
-        if is_downtrend_five_wave_strict(points_prices): 
-            wave_type = 'strict'
-        elif is_downtrend_five_wave_relaxed(points_prices): 
-            wave_type = 'relaxed'
+        # Update peak
+        if current_rsi > peak_rsi:
+            peak_rsi = current_rsi
+            peak_date = current_date
         
-        # If pattern is valid, check trend validation
-        if wave_type:
-            is_trend_valid, trend_ratio, trend_info = validate_wave_overall_trend(
-                close_prices, points_indices, trend_threshold
-            )
+        # Check for RSI drop trigger
+        rsi_drop = peak_rsi - current_rsi
+        if rsi_drop >= rsi_drop_threshold:
+            # Look for subsequent valley
+            valley_rsi = current_rsi
+            valley_date = current_date
             
-            if is_trend_valid:
-                valid_waves.append({
-                    'indices': points_indices, 
-                    'type': wave_type,
-                    'trend_ratio': trend_ratio,
-                    'trend_info': trend_info
-                })
-                print(f"✓ Valid {wave_type} wave: {trend_info['start_date']} to {trend_info['end_date']}, trend ratio: {trend_ratio:.3f}")
-                return valid_waves  # Return first valid wave found
+            # Continue to find the actual valley point
+            for j in range(i + 1, min(i + 20, len(remaining_rsi))):  # Look ahead for valley
+                check_rsi = remaining_rsi.iloc[j]
+                check_date = remaining_rsi.index[j]
+                
+                if check_rsi < valley_rsi:
+                    valley_rsi = check_rsi
+                    valley_date = check_date
+                
+                # Check for rise trigger to confirm valley
+                rise_amount = check_rsi - valley_rsi
+                drop_for_threshold = peak_rsi - valley_rsi
+                rise_threshold = drop_for_threshold * rsi_rise_ratio
+                
+                if rise_amount >= rise_threshold and drop_for_threshold > 0:
+                    # Apply price refinement
+                    refined_valley = refine_valley_with_price(close_prices, valley_date, price_refinement_window)
+                    return refined_valley
+                    
+    return None
+
+def find_next_peak_after(close_prices, rsi_series, start_date, rsi_drop_threshold, rsi_rise_ratio, price_refinement_window=5):
+    """Find the next RSI-confirmed peak after start_date"""
+    start_idx = close_prices.index.get_loc(start_date)
+    remaining_data = close_prices.iloc[start_idx + 1:]  # Start after current point
+    remaining_rsi = rsi_series.iloc[start_idx + 1:]
+    
+    if len(remaining_rsi) < 10:  # Need sufficient data
+        return None
+    
+    # Track valley to find rise
+    valley_rsi = remaining_rsi.iloc[0]
+    valley_date = remaining_rsi.index[0]
+    
+    for i in range(1, len(remaining_rsi)):
+        current_rsi = remaining_rsi.iloc[i]
+        current_date = remaining_rsi.index[i]
+        
+        # Update valley
+        if current_rsi < valley_rsi:
+            valley_rsi = current_rsi
+            valley_date = current_date
+        
+        # Look for rise that could indicate a peak
+        rise_from_valley = current_rsi - valley_rsi
+        if rise_from_valley >= rsi_drop_threshold * rsi_rise_ratio:  # Sufficient rise
+            # Look for subsequent peak
+            peak_rsi = current_rsi
+            peak_date = current_date
             
-    return valid_waves
+            # Continue to find the actual peak point  
+            for j in range(i + 1, min(i + 20, len(remaining_rsi))):  # Look ahead for peak
+                check_rsi = remaining_rsi.iloc[j]
+                check_date = remaining_rsi.index[j]
+                
+                if check_rsi > peak_rsi:
+                    peak_rsi = check_rsi
+                    peak_date = check_date
+                
+                # Check for drop trigger to confirm peak
+                drop_amount = peak_rsi - check_rsi
+                if drop_amount >= rsi_drop_threshold:
+                    # Apply price refinement
+                    refined_peak = refine_peak_with_price(close_prices, peak_date, price_refinement_window)
+                    return refined_peak
+                    
+    return None
+
+def classify_extrema_type(close_prices, date, prev_date=None):
+    """Classify if an extrema point is a peak or valley relative to previous point"""
+    if prev_date is None:
+        # First point - classify by looking ahead
+        date_idx = close_prices.index.get_loc(date)
+        if date_idx < len(close_prices) - 1:
+            next_price = close_prices.iloc[date_idx + 1]
+            current_price = close_prices.loc[date]
+            return 'peak' if current_price > next_price else 'valley'
+        return 'peak'  # Default for last point
+    
+    prev_price = close_prices.loc[prev_date]
+    current_price = close_prices.loc[date]
+    return 'peak' if current_price > prev_price else 'valley'
+
+def build_wave_with_dynamic_correction(close_prices, p0_initial, rsi_series, rsi_drop_threshold, rsi_rise_ratio, trend_threshold=0.95, price_refinement_window=5):
+    """
+    Build 6-point wave with dynamic extrema correction:
+    - Each new extrema either corrects previous point or becomes next point
+    - P0 (peak) can be corrected by higher peaks
+    - P1 (valley) can be corrected by lower valleys, etc.
+    """
+    
+    print(f"   Building wave with dynamic correction from P0: {p0_initial.date()} (${close_prices.loc[p0_initial]:.0f})")
+    
+    # Initialize wave with P0
+    wave_points = [p0_initial]
+    expected_types = ['peak', 'valley', 'peak', 'valley', 'peak', 'valley']  # P0-P5 pattern
+    current_position = 0  # Position in wave (0=P0, 1=P1, etc.)
+    
+    # Get remaining data after P0 for extrema detection
+    p0_idx = close_prices.index.get_loc(p0_initial)
+    remaining_data = close_prices.iloc[p0_idx + 1:]  # Start after P0
+    
+    if len(remaining_data) < 30:
+        print("   Insufficient data after P0")
+        return None
+    
+    # Find extremas in remaining data
+    remaining_rsi = rsi_series.iloc[p0_idx + 1:]
+    extremas, triggers = find_extremas_with_rsi(
+        remaining_data, remaining_rsi, 14, rsi_drop_threshold, rsi_rise_ratio, price_refinement_window
+    )
+    
+    print(f"   Found {len(extremas)} potential extremas after P0")
+    
+    # Process each extrema with dynamic correction logic
+    for extrema_date in extremas:
+        if len(wave_points) >= 6:  # Wave complete
+            break
+            
+        extrema_type = classify_extrema_type(close_prices, extrema_date, wave_points[-1] if len(wave_points) > 0 else None)
+        expected_type = expected_types[current_position + 1] if current_position + 1 < len(expected_types) else None
+        
+        print(f"   Evaluating extrema: {extrema_date.date()} (${close_prices.loc[extrema_date]:.0f}) - type: {extrema_type}, expected: {expected_type}")
+        
+        if extrema_type == expected_type:
+            # This is the next point we're looking for - apply price refinement
+            if extrema_type == 'peak':
+                refined_extrema_date = refine_peak_with_price(close_prices, extrema_date, price_refinement_window)
+            else:
+                refined_extrema_date = refine_valley_with_price(close_prices, extrema_date, price_refinement_window)
+            
+            wave_points.append(refined_extrema_date)
+            current_position += 1
+            print(f"     -> Added as P{current_position}: {refined_extrema_date.date()}")
+            
+        elif current_position > 0 and extrema_type == expected_types[current_position]:
+            # This could correct the current point
+            current_point = wave_points[current_position]
+            should_correct = False
+            
+            if extrema_type == 'peak':
+                # Higher peak corrects current peak
+                should_correct = close_prices.loc[extrema_date] > close_prices.loc[current_point]
+            else:  # valley
+                # Lower valley corrects current valley
+                should_correct = close_prices.loc[extrema_date] < close_prices.loc[current_point]
+            
+            if should_correct:
+                # Apply price refinement to the correction
+                if extrema_type == 'peak':
+                    refined_extrema_date = refine_peak_with_price(close_prices, extrema_date, price_refinement_window)
+                else:
+                    refined_extrema_date = refine_valley_with_price(close_prices, extrema_date, price_refinement_window)
+                
+                print(f"     -> Correcting P{current_position} from {current_point.date()} to {refined_extrema_date.date()}")
+                wave_points[current_position] = refined_extrema_date
+            else:
+                print(f"     -> Not a better {extrema_type}, skipping")
+        else:
+            print(f"     -> Wrong type or position, skipping")
+    
+    # Validate complete wave
+    if len(wave_points) < 6:
+        print(f"   Incomplete wave: only {len(wave_points)} points found")
+        return None
+    
+    # Take first 6 points and validate
+    wave_points = wave_points[:6]
+    wave_indices = [close_prices.index.get_loc(date) for date in wave_points]
+    wave_prices = close_prices.iloc[wave_indices]
+    
+    print(f"   Final wave points: {[f'P{i}={date.date()}(${close_prices.loc[date]:.0f})' for i, date in enumerate(wave_points)]}")
+    
+    # Pattern validation
+    wave_type = None
+    if is_downtrend_five_wave_strict(wave_prices):
+        wave_type = 'strict'
+    elif is_downtrend_five_wave_relaxed(wave_prices):
+        wave_type = 'relaxed'
+    
+    if not wave_type:
+        print(f"   Pattern validation failed - not a valid Elliott Wave")
+        # Debug: Show why pattern failed
+        p0, p1, p2, p3, p4, p5 = wave_prices.values
+        print(f"   Wave prices: P0=${p0:.0f} P1=${p1:.0f} P2=${p2:.0f} P3=${p3:.0f} P4=${p4:.0f} P5=${p5:.0f}")
+        
+        # Check basic alternating pattern
+        basic_pattern = p0 > p1 and p1 < p2 and p2 > p3 and p3 < p4 and p4 > p5
+        print(f"   Basic alternating pattern (P0>P1<P2>P3<P4>P5): {basic_pattern}")
+        return None
+    
+    # Trend validation
+    is_trend_valid, trend_ratio, trend_info = validate_wave_overall_trend(close_prices, wave_indices, trend_threshold)
+    
+    if not is_trend_valid:
+        print(f"   Trend validation failed - ratio: {trend_ratio:.3f} (threshold: {trend_threshold})")
+        return None
+    
+    print(f"   ✓ Valid {wave_type} wave found with dynamic correction! Trend ratio: {trend_ratio:.3f}")
+    
+    return {
+        'indices': wave_indices,
+        'dates': wave_points,
+        'type': wave_type,
+        'trend_ratio': trend_ratio,
+        'trend_info': trend_info
+    }
 
 # =========================================================
-# Sequential RSI P0 + Progressive Wave Detection (Approach 2)
+# Sequential RSI P0 + Dynamic Extrema Correction (Approach 2)
 # =========================================================
 
 def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14, 
                             rsi_drop_threshold=10, rsi_rise_ratio=1/3, 
                             trend_threshold=0.95, recent_days=50, price_refinement_window=5):
     """
-    Sequential P0 selection with progressive wave detection and dual filtering
+    Sequential P0 selection with dynamic extrema correction and dual filtering
     """
-    print(f"=== Sequential RSI P0 + Progressive Wave Detection ===")
+    print(f"=== Sequential RSI P0 + Dynamic Extrema Correction ===")
     print(f"Parameters: lookback_days={lookback_days}, trend_threshold={trend_threshold}, price_refinement_window={price_refinement_window}")
+    
+    # Calculate RSI once for the full dataset (FIX: was calculating on search windows)
+    full_rsi = calculate_rsi(close_prices, period=rsi_period).dropna()
     
     all_waves = []
     all_trigger_points = []
@@ -283,15 +488,15 @@ def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14,
             
         print(f"P0 search window: {search_data.index[0].date()} to {search_data.index[-1].date()} ({len(search_data)} days)")
         
-        # Find highest RSI point in window as P0
-        search_rsi = calculate_rsi(search_data, period=rsi_period)
-        if search_rsi.isna().all():
+        # Find highest RSI point in window as P0 (using full dataset RSI)
+        search_window_rsi = full_rsi.loc[search_data.index[0]:search_data.index[-1]]
+        if search_window_rsi.isna().all():
             print("No valid RSI data. Advancing position.")
             current_position += lookback_days // 2
             continue
             
-        rsi_p0_date = search_rsi.idxmax()
-        p0_rsi = search_rsi.max()
+        rsi_p0_date = search_window_rsi.idxmax()
+        p0_rsi = search_window_rsi.max()
         
         # Apply bidirectional price refinement to P0
         p0_date = refine_peak_with_price(close_prices, rsi_p0_date, price_refinement_window)
@@ -301,45 +506,32 @@ def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14,
         if p0_date != rsi_p0_date:
             print(f"P0 refined to: {p0_date.date()} (${p0_price:.2f})")
         
-        # Progressive wave detection from P0
-        p0_position = close_prices.index.get_loc(p0_date)
-        remaining_data = close_prices.iloc[p0_position:]
-        
-        if len(remaining_data) < 30:
-            print("Insufficient data after P0. Advancing position.")
-            current_position += lookback_days // 2
-            continue
-        
-        # Progressive RSI extrema detection with price refinement
-        print("Starting progressive extrema detection with price refinement...")
-        extremas, triggers = find_extremas_with_rsi(
-            remaining_data, rsi_period, rsi_drop_threshold, rsi_rise_ratio, price_refinement_window
+        # Dynamic wave building with extrema correction
+        wave = build_wave_with_dynamic_correction(
+            close_prices, p0_date, full_rsi, rsi_drop_threshold, rsi_rise_ratio, trend_threshold, price_refinement_window
         )
         
-        # Ensure P0 is first extrema
-        if not extremas or extremas[0] != p0_date:
-            extremas.insert(0, p0_date)
-        
-        print(f"Found {len(extremas)} extrema points (with price refinement)")
-        
-        # Try to find valid waves with dual filtering
-        if len(extremas) >= 6:
-            valid_waves = find_valid_wave_patterns(close_prices, extremas, trend_threshold)
+        if wave:
+            all_waves.append(wave)
             
-            if valid_waves:
-                wave = valid_waves[0]  # Take first valid wave
-                all_waves.append(wave)
-                all_trigger_points.extend(triggers)
-                
-                # Advance past this wave
-                wave_end_idx = wave['indices'][-1]
-                current_position = wave_end_idx + 1  # Start immediately after wave ends
-                print(f"Wave found! Advancing to position {current_position}")
-            else:
-                print("No valid waves found (rejected by dual filtering). Advancing position.")
-                current_position += lookback_days // 2
+            # Get trigger points for this wave period
+            wave_start_date = close_prices.index[wave['indices'][0]]
+            wave_end_date = close_prices.index[wave['indices'][-1]]
+            
+            # Find extremas in this period to get trigger points
+            wave_data = close_prices.loc[wave_start_date:wave_end_date]
+            wave_rsi = full_rsi.loc[wave_start_date:wave_end_date]
+            _, wave_triggers = find_extremas_with_rsi(
+                wave_data, wave_rsi, rsi_period, rsi_drop_threshold, rsi_rise_ratio, price_refinement_window
+            )
+            all_trigger_points.extend(wave_triggers)
+            
+            # Advance past this wave
+            wave_end_idx = wave['indices'][-1]
+            current_position = wave_end_idx + 1
+            print(f"Wave found! Advancing to position {current_position}")
         else:
-            print(f"Only {len(extremas)} extrema points. Need ≥6. Advancing position.")
+            print("No valid wave found with dynamic correction. Advancing position.")
             current_position += lookback_days // 2
     
     print(f"\n=== Sequential Detection Complete ===")
@@ -549,7 +741,7 @@ def plot_individual_wave(file_path, close_prices, rsi_series, wave_indices, trig
 def main(file_path='BTC.csv', lookback_days=50, rsi_period=14, rsi_drop_threshold=10, 
          rsi_rise_ratio=1/3, trend_threshold=0.95, recent_days=50, price_refinement_window=5):
     print("=== BTC Wave Detection System (Approach 2) ===")
-    print("Sequential P0 + Progressive Detection with Dual Filtering")
+    print("Sequential P0 + Dynamic Extrema Correction with Dual Filtering")
     
     # Load data
     try:
