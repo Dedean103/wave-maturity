@@ -1,0 +1,72 @@
+=== WAVE DETECTION COMPARISON ANALYSIS ===
+
+## LATEST_CODE.PY RESULTS (Comprehensive Approach)
+✓ Total waves detected: 8 final waves + 1 merged = 9 total patterns
+✓ Successfully finds BOTH target waves:
+  - Wave 6: 2024-03-11 to 2024-04-17 ← TARGET WAVE ✓
+  - Wave 7: 2024-07-28 to 2024-09-06 ← TARGET WAVE ✓
+
+Complete wave list:
+1. 2022-03-29 to 2022-05-09
+2. 2022-08-13 to 2022-10-11  
+3. 2023-04-18 to 2023-05-13
+4. 2023-05-28 to 2023-06-14
+5. 2023-08-08 to 2023-09-11
+6. 2024-03-11 to 2024-04-17 ← TARGET
+7. 2024-07-28 to 2024-09-06 ← TARGET
+8. 2024-12-17 to 2025-01-09
+Plus: 1 merged wave from overlap handling
+
+## CURRENT_CODE.PY RESULTS (Sequential Approach)
+✗ Total waves detected: 4 waves only
+✗ MISSES BOTH target waves:
+  - 2024-03-11 to 2024-04-17 ← MISSING ✗
+  - 2024-07-28 to 2024-09-06 ← MISSING ✗
+
+Detected waves:
+1. 2022-03-29 to 2022-05-11 (similar to latest_code wave 1)
+2. 2022-08-13 to 2022-10-11 (matches latest_code wave 2)
+3. 2023-05-28 to 2023-06-14 (matches latest_code wave 4)
+4. 2024-12-17 to 2025-01-09 (matches latest_code wave 8)
+
+## ROOT CAUSE ANALYSIS
+
+### Why Comprehensive Approach Succeeds:
+1. **Complete Extrema Pool**: Finds ALL 149 RSI extrema points first
+2. **Exhaustive Pattern Testing**: Tests every possible 6-point combination systematically
+3. **No Sequential Dependencies**: Each pattern is evaluated independently
+4. **Target Wave Detection**: 
+   - Pattern 93: Finds 2024-03-11 to 2024-04-17 (indices [812, 820, 832, 834, 840, 849])
+   - Pattern 109: Finds 2024-07-28 to 2024-09-06 (indices [951, 959, 979, 986, 987, 991])
+
+### Why Sequential Approach Fails:
+1. **Limited P0 Selection**: Only considers highest RSI in each 50-day window
+2. **Missed Windows**: 
+   - Target 2024-03-11: Window 25 selects 2024-02-28 instead (higher RSI)
+   - Target 2024-07-28: Window 32 selects 2024-07-21 instead (higher RSI)
+3. **Progressive Building Fails**: Even when P0 is close, can't build valid 6-point patterns
+4. **Sequential Constraints**: Must find extrema in chronological order, but Elliott Waves don't follow strict RSI trigger sequence
+
+## SOLUTION RECOMMENDATION
+
+**Replace current_code.py's sequential logic with latest_code.py's comprehensive approach:**
+
+```python
+# Current (Limited):
+for window in sliding_windows:
+    p0 = highest_rsi_in_window(window)
+    try_build_wave_progressively(p0)
+
+# Better (Comprehensive):
+all_extrema = find_all_rsi_extrema(full_dataset)  # 149 points
+for combination in all_possible_6_point_combinations(all_extrema):
+    if validate_elliott_wave_pattern(combination):
+        add_wave(combination)
+```
+
+**The comprehensive approach is fundamentally superior because it:**
+- Tests P0=2024-03-11 in Pattern 93 (not constrained by window boundaries)
+- Tests P0=2024-07-28 in Pattern 109 (not limited by sequential progression)
+- Ensures no valid Elliott Wave patterns are missed due to RSI ranking within windows
+
+This explains the 4 vs 9 wave detection difference and why the target waves are missing from current_code.py.

@@ -1,0 +1,1640 @@
+
+--- Starting RSI-driven Extremas Identification ---
+[2021-12-28] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2021-12-21
+   -> RSI dropped from high 100.00 to 82.95, total drop 17.05 points, meeting threshold 10.
+[2022-02-04] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-01-22
+   -> RSI rose from low 30.86 to 59.56, total rise 28.70 points, meeting threshold 23.05.
+[2022-02-12] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-02-09
+   -> RSI dropped from high 67.03 to 56.31, total drop 10.72 points, meeting threshold 10.
+[2022-02-15] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-02-13
+   -> RSI rose from low 55.50 to 64.33, total rise 8.83 points, meeting threshold 3.84.
+[2022-02-17] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-02-15
+   -> RSI dropped from high 64.33 to 46.86, total drop 17.48 points, meeting threshold 10.
+[2022-02-25] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-02-21
+   -> RSI rose from low 36.16 to 46.76, total rise 10.61 points, meeting threshold 9.39.
+[2022-03-04] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-03-01
+   -> RSI dropped from high 61.82 to 45.89, total drop 15.93 points, meeting threshold 10.
+[2022-03-09] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-03-07
+   -> RSI rose from low 43.02 to 54.78, total rise 11.76 points, meeting threshold 6.26.
+[2022-03-13] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-03-09
+   -> RSI dropped from high 54.78 to 43.73, total drop 11.05 points, meeting threshold 10.
+[2022-03-14] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-03-13
+   -> RSI rose from low 43.73 to 49.52, total rise 5.79 points, meeting threshold 3.68.
+[2022-03-31] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-03-29
+   -> RSI dropped from high 70.16 to 60.05, total drop 10.12 points, meeting threshold 10.
+[2022-04-19] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-04-11
+   -> RSI rose from low 35.40 to 47.50, total rise 12.09 points, meeting threshold 11.59.
+[2022-04-26] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-04-19
+   -> RSI dropped from high 47.50 to 36.60, total drop 10.89 points, meeting threshold 10.
+[2022-04-27] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-04-26
+   -> RSI rose from low 36.60 to 42.35, total rise 5.74 points, meeting threshold 3.63.
+[2022-05-05] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-05-04
+   -> RSI dropped from high 48.53 to 38.29, total drop 10.24 points, meeting threshold 10.
+[2022-05-15] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-05-09
+   -> RSI rose from low 24.54 to 36.18, total rise 11.64 points, meeting threshold 8.00.
+[2022-06-11] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-06-06
+   -> RSI dropped from high 51.38 to 39.06, total drop 12.32 points, meeting threshold 10.
+[2022-06-23] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-06-18
+   -> RSI rose from low 20.31 to 34.03, total rise 13.72 points, meeting threshold 10.36.
+[2022-07-12] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-07-07
+   -> RSI dropped from high 47.57 to 34.71, total drop 12.87 points, meeting threshold 10.
+[2022-07-13] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-07-12
+   -> RSI rose from low 34.71 to 41.93, total rise 7.22 points, meeting threshold 4.29.
+[2022-07-25] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-07-19
+   -> RSI dropped from high 61.41 to 46.07, total drop 15.34 points, meeting threshold 10.
+[2022-07-27] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-07-26
+   -> RSI rose from low 45.71 to 56.62, total rise 10.90 points, meeting threshold 5.23.
+[2022-08-17] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-08-13
+   -> RSI dropped from high 61.93 to 50.34, total drop 11.60 points, meeting threshold 10.
+[2022-09-09] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-08-28
+   -> RSI rose from low 29.25 to 54.64, total rise 25.39 points, meeting threshold 10.89.
+[2022-09-13] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-09-12
+   -> RSI dropped from high 61.35 to 45.11, total drop 16.23 points, meeting threshold 10.
+[2022-09-28] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-09-21
+   -> RSI rose from low 36.14 to 46.39, total rise 10.25 points, meeting threshold 8.40.
+[2022-10-10] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-10-04
+   -> RSI dropped from high 55.72 to 43.76, total drop 11.96 points, meeting threshold 10.
+[2022-10-13] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-10-11
+   -> RSI rose from low 43.05 to 47.32, total rise 4.27 points, meeting threshold 4.23.
+[2022-11-02] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-10-26
+   -> RSI dropped from high 65.54 to 53.21, total drop 12.34 points, meeting threshold 10.
+[2022-11-04] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-11-02
+   -> RSI rose from low 53.21 to 64.09, total rise 10.89 points, meeting threshold 4.11.
+[2022-11-07] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-11-05
+   -> RSI dropped from high 65.41 to 54.88, total drop 10.53 points, meeting threshold 10.
+[2022-11-10] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-11-09
+   -> RSI rose from low 24.49 to 38.17, total rise 13.68 points, meeting threshold 13.64.
+[2022-12-16] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2022-12-14
+   -> RSI dropped from high 59.16 to 42.42, total drop 16.74 points, meeting threshold 10.
+[2022-12-20] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2022-12-19
+   -> RSI rose from low 40.51 to 47.52, total rise 7.01 points, meeting threshold 6.22.
+[2023-01-18] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-01-14
+   -> RSI dropped from high 89.40 to 78.08, total drop 11.31 points, meeting threshold 10.
+[2023-01-20] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-01-18
+   -> RSI rose from low 78.08 to 85.71, total rise 7.63 points, meeting threshold 3.77.
+[2023-01-30] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-01-21
+   -> RSI dropped from high 86.02 to 68.55, total drop 17.47 points, meeting threshold 10.
+[2023-02-15] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-02-10
+   -> RSI rose from low 45.67 to 68.13, total rise 22.46 points, meeting threshold 13.45.
+[2023-02-23] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-02-15
+   -> RSI dropped from high 68.13 to 56.98, total drop 11.16 points, meeting threshold 10.
+[2023-03-12] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-03-10
+   -> RSI rose from low 28.24 to 47.34, total rise 19.10 points, meeting threshold 13.30.
+[2023-03-27] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-03-17
+   -> RSI dropped from high 72.16 to 59.14, total drop 13.02 points, meeting threshold 10.
+[2023-03-29] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-03-27
+   -> RSI rose from low 59.14 to 64.44, total rise 5.31 points, meeting threshold 4.34.
+[2023-04-17] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-04-11
+   -> RSI dropped from high 71.40 to 58.87, total drop 12.53 points, meeting threshold 10.
+[2023-04-18] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-04-17
+   -> RSI rose from low 58.87 to 64.82, total rise 5.96 points, meeting threshold 4.18.
+[2023-04-19] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-04-18
+   -> RSI dropped from high 64.82 to 51.45, total drop 13.37 points, meeting threshold 10.
+[2023-04-25] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-04-21
+   -> RSI rose from low 41.97 to 49.97, total rise 8.00 points, meeting threshold 7.62.
+[2023-05-01] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-04-27
+   -> RSI dropped from high 57.57 to 46.47, total drop 11.11 points, meeting threshold 10.
+[2023-05-02] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-05-01
+   -> RSI rose from low 46.47 to 50.97, total rise 4.50 points, meeting threshold 3.70.
+[2023-05-08] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-05-05
+   -> RSI dropped from high 56.62 to 43.17, total drop 13.45 points, meeting threshold 10.
+[2023-05-17] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-05-13
+   -> RSI rose from low 37.34 to 45.03, total rise 7.68 points, meeting threshold 6.43.
+[2023-06-01] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-05-28
+   -> RSI dropped from high 56.87 to 44.54, total drop 12.32 points, meeting threshold 10.
+[2023-06-02] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-06-01
+   -> RSI rose from low 44.54 to 48.97, total rise 4.43 points, meeting threshold 4.11.
+[2023-06-05] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-06-02
+   -> RSI dropped from high 48.97 to 36.45, total drop 12.52 points, meeting threshold 10.
+[2023-06-06] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-06-05
+   -> RSI rose from low 36.45 to 50.24, total rise 13.79 points, meeting threshold 4.17.
+[2023-06-14] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-06-06
+   -> RSI dropped from high 50.24 to 36.13, total drop 14.11 points, meeting threshold 10.
+[2023-06-15] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-06-14
+   -> RSI rose from low 36.13 to 41.21, total rise 5.07 points, meeting threshold 4.70.
+[2023-07-05] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-06-23
+   -> RSI dropped from high 72.68 to 62.18, total drop 10.50 points, meeting threshold 10.
+[2023-07-13] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-07-06
+   -> RSI rose from low 55.53 to 66.02, total rise 10.50 points, meeting threshold 5.72.
+[2023-07-14] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-07-13
+   -> RSI dropped from high 66.02 to 53.95, total drop 12.08 points, meeting threshold 10.
+[2023-08-01] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-07-24
+   -> RSI rose from low 42.17 to 51.11, total rise 8.94 points, meeting threshold 7.95.
+[2023-08-16] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-08-08
+   -> RSI dropped from high 54.89 to 37.61, total drop 17.29 points, meeting threshold 10.
+[2023-08-29] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-08-18
+   -> RSI rose from low 18.64 to 52.52, total rise 33.88 points, meeting threshold 12.09.
+[2023-08-31] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-08-29
+   -> RSI dropped from high 52.52 to 36.43, total drop 16.08 points, meeting threshold 10.
+[2023-09-07] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-09-01
+   -> RSI rose from low 35.52 to 43.35, total rise 7.83 points, meeting threshold 5.66.
+[2023-09-11] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-09-07
+   -> RSI dropped from high 43.35 to 32.82, total drop 10.53 points, meeting threshold 10.
+[2023-09-12] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-09-11
+   -> RSI rose from low 32.82 to 42.78, total rise 9.96 points, meeting threshold 3.51.
+[2023-09-24] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-09-19
+   -> RSI dropped from high 59.13 to 45.38, total drop 13.76 points, meeting threshold 10.
+[2023-09-28] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-09-26
+   -> RSI rose from low 45.09 to 57.23, total rise 12.13 points, meeting threshold 4.68.
+[2023-10-05] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-10-01
+   -> RSI dropped from high 67.29 to 56.49, total drop 10.80 points, meeting threshold 10.
+[2023-10-06] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-10-05
+   -> RSI rose from low 56.49 to 61.66, total rise 5.17 points, meeting threshold 3.60.
+[2023-10-11] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-10-07
+   -> RSI dropped from high 61.90 to 46.43, total drop 15.48 points, meeting threshold 10.
+[2023-10-15] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-10-12
+   -> RSI rose from low 45.04 to 51.04, total rise 6.00 points, meeting threshold 5.62.
+[2023-11-03] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-10-25
+   -> RSI dropped from high 87.94 to 75.42, total drop 12.52 points, meeting threshold 10.
+[2023-11-09] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-11-03
+   -> RSI rose from low 75.42 to 82.71, total rise 7.29 points, meeting threshold 4.17.
+[2023-11-13] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-11-10
+   -> RSI dropped from high 84.42 to 72.33, total drop 12.09 points, meeting threshold 10.
+[2023-11-15] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-11-14
+   -> RSI rose from low 61.64 to 72.66, total rise 11.02 points, meeting threshold 7.60.
+[2023-11-16] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-11-15
+   -> RSI dropped from high 72.66 to 59.20, total drop 13.45 points, meeting threshold 10.
+[2023-11-19] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-11-16
+   -> RSI rose from low 59.20 to 64.54, total rise 5.34 points, meeting threshold 4.48.
+[2023-11-21] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-11-20
+   -> RSI dropped from high 64.93 to 52.83, total drop 12.10 points, meeting threshold 10.
+[2023-11-22] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-11-21
+   -> RSI rose from low 52.83 to 60.56, total rise 7.73 points, meeting threshold 4.03.
+[2023-12-11] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-12-05
+   -> RSI dropped from high 81.62 to 57.14, total drop 24.48 points, meeting threshold 10.
+[2023-12-22] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-12-17
+   -> RSI rose from low 53.80 to 63.39, total rise 9.58 points, meeting threshold 9.27.
+[2023-12-26] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2023-12-22
+   -> RSI dropped from high 63.39 to 53.28, total drop 10.11 points, meeting threshold 10.
+[2023-12-27] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2023-12-26
+   -> RSI rose from low 53.28 to 57.53, total rise 4.25 points, meeting threshold 3.37.
+[2024-01-03] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-01-02
+   -> RSI dropped from high 63.38 to 51.84, total drop 11.54 points, meeting threshold 10.
+[2024-01-04] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-01-03
+   -> RSI rose from low 51.84 to 57.07, total rise 5.23 points, meeting threshold 3.85.
+[2024-01-12] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-01-08
+   -> RSI dropped from high 66.83 to 46.40, total drop 20.44 points, meeting threshold 10.
+[2024-01-26] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-01-22
+   -> RSI rose from low 35.98 to 48.60, total rise 12.61 points, meeting threshold 10.28.
+[2024-02-22] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-02-16
+   -> RSI dropped from high 81.66 to 68.96, total drop 12.70 points, meeting threshold 10.
+[2024-02-26] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-02-23
+   -> RSI rose from low 64.71 to 76.63, total rise 11.92 points, meeting threshold 5.65.
+[2024-03-05] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-02-28
+   -> RSI dropped from high 87.33 to 69.44, total drop 17.89 points, meeting threshold 10.
+[2024-03-10] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-03-05
+   -> RSI rose from low 69.44 to 75.87, total rise 6.43 points, meeting threshold 5.96.
+[2024-03-15] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-03-11
+   -> RSI dropped from high 79.29 to 66.20, total drop 13.09 points, meeting threshold 10.
+[2024-03-25] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-03-19
+   -> RSI rose from low 46.75 to 58.94, total rise 12.20 points, meeting threshold 10.85.
+[2024-04-02] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-03-31
+   -> RSI dropped from high 60.23 to 47.36, total drop 12.86 points, meeting threshold 10.
+[2024-04-04] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-04-02
+   -> RSI rose from low 47.36 to 53.41, total rise 6.05 points, meeting threshold 4.29.
+[2024-04-12] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-04-08
+   -> RSI dropped from high 59.38 to 48.15, total drop 11.23 points, meeting threshold 10.
+[2024-04-20] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-04-17
+   -> RSI rose from low 38.71 to 47.39, total rise 8.68 points, meeting threshold 6.89.
+[2024-04-30] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-04-22
+   -> RSI dropped from high 51.84 to 37.91, total drop 13.93 points, meeting threshold 10.
+[2024-05-03] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-05-01
+   -> RSI rose from low 33.52 to 47.24, total rise 13.71 points, meeting threshold 6.11.
+[2024-05-28] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-05-20
+   -> RSI dropped from high 66.28 to 55.56, total drop 10.71 points, meeting threshold 10.
+[2024-06-04] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-05-31
+   -> RSI rose from low 52.48 to 61.35, total rise 8.87 points, meeting threshold 4.60.
+[2024-06-11] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-06-05
+   -> RSI dropped from high 62.83 to 46.63, total drop 16.20 points, meeting threshold 10.
+[2024-06-30] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-06-24
+   -> RSI rose from low 25.60 to 43.78, total rise 18.18 points, meeting threshold 12.41.
+[2024-07-04] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-07-01
+   -> RSI dropped from high 44.33 to 28.86, total drop 15.48 points, meeting threshold 10.
+[2024-07-06] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-07-05
+   -> RSI rose from low 28.06 to 35.34, total rise 7.27 points, meeting threshold 5.42.
+[2024-07-24] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-07-21
+   -> RSI dropped from high 67.73 to 56.65, total drop 11.09 points, meeting threshold 10.
+[2024-07-26] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-07-24
+   -> RSI rose from low 56.65 to 63.37, total rise 6.72 points, meeting threshold 3.70.
+[2024-07-31] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-07-28
+   -> RSI dropped from high 64.23 to 49.58, total drop 14.65 points, meeting threshold 10.
+[2024-08-08] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-08-05
+   -> RSI rose from low 26.66 to 49.21, total rise 22.55 points, meeting threshold 12.52.
+[2024-08-27] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-08-25
+   -> RSI dropped from high 58.76 to 45.50, total drop 13.26 points, meeting threshold 10.
+[2024-09-02] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-09-01
+   -> RSI rose from low 40.17 to 46.40, total rise 6.23 points, meeting threshold 6.20.
+[2024-09-06] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-09-02
+   -> RSI dropped from high 46.40 to 34.68, total drop 11.72 points, meeting threshold 10.
+[2024-09-09] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-09-06
+   -> RSI rose from low 34.68 to 45.60, total rise 10.92 points, meeting threshold 3.91.
+[2024-09-30] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-09-28
+   -> RSI dropped from high 66.74 to 54.72, total drop 12.02 points, meeting threshold 10.
+[2024-10-06] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-10-02
+   -> RSI rose from low 45.31 to 53.73, total rise 8.41 points, meeting threshold 7.14.
+[2024-10-10] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-10-06
+   -> RSI dropped from high 53.73 to 43.44, total drop 10.29 points, meeting threshold 10.
+[2024-10-11] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-10-10
+   -> RSI rose from low 43.44 to 52.95, total rise 9.51 points, meeting threshold 3.43.
+[2024-10-23] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-10-20
+   -> RSI dropped from high 70.63 to 57.88, total drop 12.75 points, meeting threshold 10.
+[2024-10-24] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-10-23
+   -> RSI rose from low 57.88 to 62.97, total rise 5.09 points, meeting threshold 4.25.
+[2024-10-31] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-10-29
+   -> RSI dropped from high 72.01 to 61.01, total drop 10.99 points, meeting threshold 10.
+[2024-11-06] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-11-04
+   -> RSI rose from low 51.32 to 70.15, total rise 18.84 points, meeting threshold 6.90.
+[2024-11-14] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-11-11
+   -> RSI dropped from high 84.51 to 74.32, total drop 10.19 points, meeting threshold 10.
+[2024-11-20] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-11-17
+   -> RSI rose from low 74.20 to 78.57, total rise 4.37 points, meeting threshold 3.43.
+[2024-11-25] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-11-22
+   -> RSI dropped from high 82.16 to 64.09, total drop 18.07 points, meeting threshold 10.
+[2024-11-29] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-11-26
+   -> RSI rose from low 61.50 to 68.65, total rise 7.14 points, meeting threshold 6.88.
+[2024-12-09] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-12-08
+   -> RSI dropped from high 68.98 to 58.27, total drop 10.71 points, meeting threshold 10.
+[2024-12-11] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-12-10
+   -> RSI rose from low 56.58 to 64.02, total rise 7.44 points, meeting threshold 4.13.
+[2024-12-18] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-12-17
+   -> RSI dropped from high 70.06 to 54.82, total drop 15.24 points, meeting threshold 10.
+[2024-12-25] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-12-23
+   -> RSI rose from low 44.43 to 54.01, total rise 9.57 points, meeting threshold 8.54.
+[2024-12-27] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2024-12-25
+   -> RSI dropped from high 54.01 to 44.00, total drop 10.01 points, meeting threshold 10.
+[2025-01-01] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2024-12-30
+   -> RSI rose from low 41.65 to 46.13, total rise 4.48 points, meeting threshold 4.12.
+[2025-01-07] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2025-01-06
+   -> RSI dropped from high 62.39 to 49.78, total drop 12.61 points, meeting threshold 10.
+[2025-01-14] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2025-01-09
+   -> RSI rose from low 41.85 to 51.05, total rise 9.20 points, meeting threshold 6.85.
+[2025-01-26] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2025-01-18
+   -> RSI dropped from high 65.01 to 54.95, total drop 10.06 points, meeting threshold 10.
+[2025-01-29] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2025-01-28
+   -> RSI rose from low 51.80 to 56.92, total rise 5.12 points, meeting threshold 4.41.
+[2025-02-01] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2025-01-30
+   -> RSI dropped from high 58.86 to 48.75, total drop 10.11 points, meeting threshold 10.
+[2025-02-03] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2025-02-02
+   -> RSI rose from low 42.83 to 50.79, total rise 7.96 points, meeting threshold 5.34.
+[2025-02-24] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2025-02-20
+   -> RSI dropped from high 51.05 to 34.34, total drop 16.71 points, meeting threshold 10.
+[2025-03-02] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2025-02-26
+   -> RSI rose from low 24.13 to 51.19, total rise 27.05 points, meeting threshold 8.97.
+[2025-03-03] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2025-03-02
+   -> RSI dropped from high 51.19 to 39.16, total drop 12.03 points, meeting threshold 10.
+[2025-03-05] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2025-03-03
+   -> RSI rose from low 39.16 to 46.91, total rise 7.75 points, meeting threshold 4.01.
+[2025-03-09] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2025-03-05
+   -> RSI dropped from high 46.91 to 34.29, total drop 12.62 points, meeting threshold 10.
+[2025-03-11] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2025-03-10
+   -> RSI rose from low 32.14 to 40.31, total rise 8.17 points, meeting threshold 4.92.
+[2025-03-30] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2025-03-24
+   -> RSI dropped from high 52.11 to 41.86, total drop 10.26 points, meeting threshold 10.
+[2025-04-01] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2025-03-30
+   -> RSI rose from low 41.86 to 48.96, total rise 7.10 points, meeting threshold 3.42.
+[2025-04-06] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2025-04-01
+   -> RSI dropped from high 48.96 to 36.36, total drop 12.60 points, meeting threshold 10.
+[2025-04-09] Triggered RSI Rise Trigger!
+   -> Confirmed Valley at: 2025-04-08
+   -> RSI rose from low 33.89 to 48.30, total rise 14.41 points, meeting threshold 5.02.
+[2025-05-23] Triggered RSI Drop Trigger!
+   -> Confirmed Peak at: 2025-05-22
+   -> RSI dropped from high 78.13 to 63.31, total drop 14.82 points, meeting threshold 10.
+
+--- RSI-driven Extremas Identification Finished ---
+正在从 RSI 驱动的峰谷点中寻找波浪结构...
+Total extremas found: 149
+Extrema dates: [datetime.date(2021, 12, 21), datetime.date(2022, 1, 22), datetime.date(2022, 2, 9), datetime.date(2022, 2, 13), datetime.date(2022, 2, 15), datetime.date(2022, 2, 21), datetime.date(2022, 3, 1), datetime.date(2022, 3, 7), datetime.date(2022, 3, 9), datetime.date(2022, 3, 13), datetime.date(2022, 3, 29), datetime.date(2022, 4, 11), datetime.date(2022, 4, 19), datetime.date(2022, 4, 26), datetime.date(2022, 5, 4), datetime.date(2022, 5, 9), datetime.date(2022, 6, 6), datetime.date(2022, 6, 18), datetime.date(2022, 7, 7), datetime.date(2022, 7, 12), datetime.date(2022, 7, 19), datetime.date(2022, 7, 26), datetime.date(2022, 8, 13), datetime.date(2022, 8, 28), datetime.date(2022, 9, 12), datetime.date(2022, 9, 21), datetime.date(2022, 10, 4), datetime.date(2022, 10, 11), datetime.date(2022, 10, 26), datetime.date(2022, 11, 2), datetime.date(2022, 11, 5), datetime.date(2022, 11, 9), datetime.date(2022, 12, 14), datetime.date(2022, 12, 19), datetime.date(2023, 1, 14), datetime.date(2023, 1, 18), datetime.date(2023, 1, 21), datetime.date(2023, 2, 10), datetime.date(2023, 2, 15), datetime.date(2023, 3, 10), datetime.date(2023, 3, 17), datetime.date(2023, 3, 27), datetime.date(2023, 4, 11), datetime.date(2023, 4, 17), datetime.date(2023, 4, 18), datetime.date(2023, 4, 21), datetime.date(2023, 4, 27), datetime.date(2023, 5, 1), datetime.date(2023, 5, 5), datetime.date(2023, 5, 13), datetime.date(2023, 5, 28), datetime.date(2023, 6, 1), datetime.date(2023, 6, 2), datetime.date(2023, 6, 5), datetime.date(2023, 6, 6), datetime.date(2023, 6, 14), datetime.date(2023, 6, 23), datetime.date(2023, 7, 6), datetime.date(2023, 7, 13), datetime.date(2023, 7, 24), datetime.date(2023, 8, 8), datetime.date(2023, 8, 18), datetime.date(2023, 8, 29), datetime.date(2023, 9, 1), datetime.date(2023, 9, 7), datetime.date(2023, 9, 11), datetime.date(2023, 9, 19), datetime.date(2023, 9, 26), datetime.date(2023, 10, 1), datetime.date(2023, 10, 5), datetime.date(2023, 10, 7), datetime.date(2023, 10, 12), datetime.date(2023, 10, 25), datetime.date(2023, 11, 3), datetime.date(2023, 11, 10), datetime.date(2023, 11, 14), datetime.date(2023, 11, 15), datetime.date(2023, 11, 16), datetime.date(2023, 11, 20), datetime.date(2023, 11, 21), datetime.date(2023, 12, 5), datetime.date(2023, 12, 17), datetime.date(2023, 12, 22), datetime.date(2023, 12, 26), datetime.date(2024, 1, 2), datetime.date(2024, 1, 3), datetime.date(2024, 1, 8), datetime.date(2024, 1, 22), datetime.date(2024, 2, 16), datetime.date(2024, 2, 23), datetime.date(2024, 2, 28), datetime.date(2024, 3, 5), datetime.date(2024, 3, 11), datetime.date(2024, 3, 19), datetime.date(2024, 3, 31), datetime.date(2024, 4, 2), datetime.date(2024, 4, 8), datetime.date(2024, 4, 17), datetime.date(2024, 4, 22), datetime.date(2024, 5, 1), datetime.date(2024, 5, 20), datetime.date(2024, 5, 31), datetime.date(2024, 6, 5), datetime.date(2024, 6, 24), datetime.date(2024, 7, 1), datetime.date(2024, 7, 5), datetime.date(2024, 7, 21), datetime.date(2024, 7, 24), datetime.date(2024, 7, 28), datetime.date(2024, 8, 5), datetime.date(2024, 8, 25), datetime.date(2024, 9, 1), datetime.date(2024, 9, 2), datetime.date(2024, 9, 6), datetime.date(2024, 9, 28), datetime.date(2024, 10, 2), datetime.date(2024, 10, 6), datetime.date(2024, 10, 10), datetime.date(2024, 10, 20), datetime.date(2024, 10, 23), datetime.date(2024, 10, 29), datetime.date(2024, 11, 4), datetime.date(2024, 11, 11), datetime.date(2024, 11, 17), datetime.date(2024, 11, 22), datetime.date(2024, 11, 26), datetime.date(2024, 12, 8), datetime.date(2024, 12, 10), datetime.date(2024, 12, 17), datetime.date(2024, 12, 23), datetime.date(2024, 12, 25), datetime.date(2024, 12, 30), datetime.date(2025, 1, 6), datetime.date(2025, 1, 9), datetime.date(2025, 1, 18), datetime.date(2025, 1, 28), datetime.date(2025, 1, 30), datetime.date(2025, 2, 2), datetime.date(2025, 2, 20), datetime.date(2025, 2, 26), datetime.date(2025, 3, 2), datetime.date(2025, 3, 3), datetime.date(2025, 3, 5), datetime.date(2025, 3, 10), datetime.date(2025, 3, 24), datetime.date(2025, 3, 30), datetime.date(2025, 4, 1), datetime.date(2025, 4, 8), datetime.date(2025, 5, 22)]
+
+=== Searching for 6-point wave patterns ===
+Available extrema points: 149
+  0: 2021-12-21 - $48889.88
+  1: 2022-01-22 - $35071.42
+  2: 2022-02-09 - $44372.72
+  3: 2022-02-13 - $42053.66
+  4: 2022-02-15 - $44544.86
+  5: 2022-02-21 - $37008.16
+  6: 2022-03-01 - $44421.20
+  7: 2022-03-07 - $37988.00
+  8: 2022-03-09 - $41941.71
+  9: 2022-03-13 - $37777.34
+  10: 2022-03-29 - $47434.80
+  11: 2022-04-11 - $39530.45
+  12: 2022-04-19 - $41493.18
+  13: 2022-04-26 - $38112.65
+  14: 2022-05-04 - $39690.00
+  15: 2022-05-09 - $30076.31
+  16: 2022-06-06 - $31373.10
+  17: 2022-06-18 - $18970.79
+  18: 2022-07-07 - $21624.98
+  19: 2022-07-12 - $19328.75
+  20: 2022-07-19 - $23396.62
+  21: 2022-07-26 - $21254.67
+  22: 2022-08-13 - $24441.38
+  23: 2022-08-28 - $19555.61
+  24: 2022-09-12 - $22395.74
+  25: 2022-09-21 - $18461.36
+  26: 2022-10-04 - $20337.82
+  27: 2022-10-11 - $19060.00
+  28: 2022-10-26 - $20771.59
+  29: 2022-11-02 - $20151.84
+  30: 2022-11-05 - $21299.37
+  31: 2022-11-09 - $15922.81
+  32: 2022-12-14 - $17803.15
+  33: 2022-12-19 - $16438.88
+  34: 2023-01-14 - $20954.92
+  35: 2023-01-18 - $20677.47
+  36: 2023-01-21 - $22783.55
+  37: 2023-02-10 - $21625.19
+  38: 2023-02-15 - $24324.05
+  39: 2023-03-10 - $20150.69
+  40: 2023-03-17 - $27395.13
+  41: 2023-03-27 - $27124.91
+  42: 2023-04-11 - $30200.42
+  43: 2023-04-17 - $29430.27
+  44: 2023-04-18 - $30380.01
+  45: 2023-04-21 - $27262.84
+  46: 2023-04-27 - $29472.77
+  47: 2023-05-01 - $28068.26
+  48: 2023-05-05 - $29505.61
+  49: 2023-05-13 - $26775.28
+  50: 2023-05-28 - $28065.00
+  51: 2023-06-01 - $26817.93
+  52: 2023-06-02 - $27242.59
+  53: 2023-06-05 - $25728.20
+  54: 2023-06-06 - $27230.08
+  55: 2023-06-14 - $25128.60
+  56: 2023-06-23 - $30688.50
+  57: 2023-07-06 - $29895.43
+  58: 2023-07-13 - $31454.23
+  59: 2023-07-24 - $29176.50
+  60: 2023-08-08 - $29770.42
+  61: 2023-08-18 - $26054.00
+  62: 2023-08-29 - $27716.34
+  63: 2023-09-01 - $25805.05
+  64: 2023-09-07 - $26255.00
+  65: 2023-09-11 - $25162.52
+  66: 2023-09-19 - $27210.26
+  67: 2023-09-26 - $26221.67
+  68: 2023-10-01 - $27992.57
+  69: 2023-10-05 - $27410.39
+  70: 2023-10-07 - $27956.67
+  71: 2023-10-12 - $26759.63
+  72: 2023-10-25 - $34496.05
+  73: 2023-11-03 - $34716.78
+  74: 2023-11-10 - $37301.63
+  75: 2023-11-14 - $35551.19
+  76: 2023-11-15 - $37858.20
+  77: 2023-11-16 - $36163.51
+  78: 2023-11-20 - $37448.78
+  79: 2023-11-21 - $35741.65
+  80: 2023-12-05 - $44073.32
+  81: 2023-12-17 - $41374.65
+  82: 2023-12-22 - $43969.04
+  83: 2023-12-26 - $42508.93
+  84: 2024-01-02 - $44946.91
+  85: 2024-01-03 - $42845.23
+  86: 2024-01-08 - $46951.04
+  87: 2024-01-22 - $39568.02
+  88: 2024-02-16 - $52124.11
+  89: 2024-02-23 - $50744.15
+  90: 2024-02-28 - $62432.10
+  91: 2024-03-05 - $63724.01
+  92: 2024-03-11 - $72078.10
+  93: 2024-03-19 - $61937.40
+  94: 2024-03-31 - $71280.01
+  95: 2024-04-02 - $65463.99
+  96: 2024-04-08 - $71620.00
+  97: 2024-04-17 - $61277.37
+  98: 2024-04-22 - $66819.32
+  99: 2024-05-01 - $58364.97
+  100: 2024-05-20 - $71446.62
+  101: 2024-05-31 - $67540.01
+  102: 2024-06-05 - $71108.00
+  103: 2024-06-24 - $60293.30
+  104: 2024-07-01 - $62899.99
+  105: 2024-07-05 - $56628.79
+  106: 2024-07-21 - $68165.34
+  107: 2024-07-24 - $65376.00
+  108: 2024-07-28 - $68249.88
+  109: 2024-08-05 - $54018.81
+  110: 2024-08-25 - $64220.00
+  111: 2024-09-01 - $57301.86
+  112: 2024-09-02 - $59132.13
+  113: 2024-09-06 - $53962.97
+  114: 2024-09-28 - $65858.00
+  115: 2024-10-02 - $60649.28
+  116: 2024-10-06 - $62819.91
+  117: 2024-10-10 - $60326.39
+  118: 2024-10-20 - $69031.99
+  119: 2024-10-23 - $66668.65
+  120: 2024-10-29 - $72736.42
+  121: 2024-11-04 - $67850.01
+  122: 2024-11-11 - $88647.99
+  123: 2024-11-17 - $89855.99
+  124: 2024-11-22 - $98892.00
+  125: 2024-11-26 - $91965.16
+  126: 2024-12-08 - $101109.59
+  127: 2024-12-10 - $96593.00
+  128: 2024-12-17 - $106133.74
+  129: 2024-12-23 - $94881.47
+  130: 2024-12-25 - $99429.60
+  131: 2024-12-30 - $92792.05
+  132: 2025-01-06 - $102235.60
+  133: 2025-01-09 - $92552.49
+  134: 2025-01-18 - $104556.23
+  135: 2025-01-28 - $101335.52
+  136: 2025-01-30 - $104722.94
+  137: 2025-02-02 - $97700.59
+  138: 2025-02-20 - $98305.00
+  139: 2025-02-26 - $84250.09
+  140: 2025-03-02 - $94270.00
+  141: 2025-03-03 - $86220.61
+  142: 2025-03-05 - $90606.01
+  143: 2025-03-10 - $78595.86
+  144: 2025-03-24 - $87498.16
+  145: 2025-03-30 - $82389.99
+  146: 2025-04-01 - $85158.34
+  147: 2025-04-08 - $76322.42
+  148: 2025-05-22 - $111696.21
+
+Testing pattern 1: indices [1, 33, 51, 55, 57, 63]
+  Dates: 2021-12-21 -> 2022-01-22 -> 2022-02-09 -> 2022-02-13 -> 2022-02-15 -> 2022-02-21
+  Prices: $48890 -> $35071 -> $44373 -> $42054 -> $44545 -> $37008
+  RSI: RSI:98.8 -> RSI:36.1 -> RSI:62.4 -> RSI:57.4 -> RSI:60.8 -> RSI:41.5
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 2: indices [33, 51, 55, 57, 63, 71]
+  Dates: 2022-01-22 -> 2022-02-09 -> 2022-02-13 -> 2022-02-15 -> 2022-02-21 -> 2022-03-01
+  Prices: $35071 -> $44373 -> $42054 -> $44545 -> $37008 -> $44421
+  RSI: RSI:36.1 -> RSI:62.4 -> RSI:57.4 -> RSI:60.8 -> RSI:41.5 -> RSI:60.0
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 3: indices [51, 55, 57, 63, 71, 77]
+  Dates: 2022-02-09 -> 2022-02-13 -> 2022-02-15 -> 2022-02-21 -> 2022-03-01 -> 2022-03-07
+  Prices: $44373 -> $42054 -> $44545 -> $37008 -> $44421 -> $37988
+  RSI: RSI:62.4 -> RSI:57.4 -> RSI:60.8 -> RSI:41.5 -> RSI:60.0 -> RSI:45.5
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 4: indices [55, 57, 63, 71, 77, 79]
+  Dates: 2022-02-13 -> 2022-02-15 -> 2022-02-21 -> 2022-03-01 -> 2022-03-07 -> 2022-03-09
+  Prices: $42054 -> $44545 -> $37008 -> $44421 -> $37988 -> $41942
+  RSI: RSI:57.4 -> RSI:60.8 -> RSI:41.5 -> RSI:60.0 -> RSI:45.5 -> RSI:47.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 5: indices [57, 63, 71, 77, 79, 83]
+  Dates: 2022-02-15 -> 2022-02-21 -> 2022-03-01 -> 2022-03-07 -> 2022-03-09 -> 2022-03-13
+  Prices: $44545 -> $37008 -> $44421 -> $37988 -> $41942 -> $37777
+  RSI: RSI:60.8 -> RSI:41.5 -> RSI:60.0 -> RSI:45.5 -> RSI:47.9 -> RSI:49.5
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 6: indices [63, 71, 77, 79, 83, 99]
+  Dates: 2022-02-21 -> 2022-03-01 -> 2022-03-07 -> 2022-03-09 -> 2022-03-13 -> 2022-03-29
+  Prices: $37008 -> $44421 -> $37988 -> $41942 -> $37777 -> $47435
+  RSI: RSI:41.5 -> RSI:60.0 -> RSI:45.5 -> RSI:47.9 -> RSI:49.5 -> RSI:68.1
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 7: indices [71, 77, 79, 83, 99, 112]
+  Dates: 2022-03-01 -> 2022-03-07 -> 2022-03-09 -> 2022-03-13 -> 2022-03-29 -> 2022-04-11
+  Prices: $44421 -> $37988 -> $41942 -> $37777 -> $47435 -> $39530
+  RSI: RSI:60.0 -> RSI:45.5 -> RSI:47.9 -> RSI:49.5 -> RSI:68.1 -> RSI:38.0
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 8: indices [77, 79, 83, 99, 112, 120]
+  Dates: 2022-03-07 -> 2022-03-09 -> 2022-03-13 -> 2022-03-29 -> 2022-04-11 -> 2022-04-19
+  Prices: $37988 -> $41942 -> $37777 -> $47435 -> $39530 -> $41493
+  RSI: RSI:45.5 -> RSI:47.9 -> RSI:49.5 -> RSI:68.1 -> RSI:38.0 -> RSI:46.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 9: indices [79, 83, 99, 112, 120, 127]
+  Dates: 2022-03-09 -> 2022-03-13 -> 2022-03-29 -> 2022-04-11 -> 2022-04-19 -> 2022-04-26
+  Prices: $41942 -> $37777 -> $47435 -> $39530 -> $41493 -> $38113
+  RSI: RSI:47.9 -> RSI:49.5 -> RSI:68.1 -> RSI:38.0 -> RSI:46.9 -> RSI:42.3
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 10: indices [83, 99, 112, 120, 127, 135]
+  Dates: 2022-03-13 -> 2022-03-29 -> 2022-04-11 -> 2022-04-19 -> 2022-04-26 -> 2022-05-04
+  Prices: $37777 -> $47435 -> $39530 -> $41493 -> $38113 -> $39690
+  RSI: RSI:49.5 -> RSI:68.1 -> RSI:38.0 -> RSI:46.9 -> RSI:42.3 -> RSI:38.3
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 11: indices [99, 112, 120, 127, 135, 140]
+  Dates: 2022-03-29 -> 2022-04-11 -> 2022-04-19 -> 2022-04-26 -> 2022-05-04 -> 2022-05-09
+  Prices: $47435 -> $39530 -> $41493 -> $38113 -> $39690 -> $30076
+  RSI: RSI:68.1 -> RSI:38.0 -> RSI:46.9 -> RSI:42.3 -> RSI:38.3 -> RSI:28.7
+    ✓ Alternating pattern confirmed
+    ✓ STRICT 5-wave pattern validated!
+
+Testing pattern 12: indices [112, 120, 127, 135, 140, 168]
+  Dates: 2022-04-11 -> 2022-04-19 -> 2022-04-26 -> 2022-05-04 -> 2022-05-09 -> 2022-06-06
+  Prices: $39530 -> $41493 -> $38113 -> $39690 -> $30076 -> $31373
+  RSI: RSI:38.0 -> RSI:46.9 -> RSI:42.3 -> RSI:38.3 -> RSI:28.7 -> RSI:50.3
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 13: indices [120, 127, 135, 140, 168, 180]
+  Dates: 2022-04-19 -> 2022-04-26 -> 2022-05-04 -> 2022-05-09 -> 2022-06-06 -> 2022-06-18
+  Prices: $41493 -> $38113 -> $39690 -> $30076 -> $31373 -> $18971
+  RSI: RSI:46.9 -> RSI:42.3 -> RSI:38.3 -> RSI:28.7 -> RSI:50.3 -> RSI:28.8
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 14: indices [127, 135, 140, 168, 180, 199]
+  Dates: 2022-04-26 -> 2022-05-04 -> 2022-05-09 -> 2022-06-06 -> 2022-06-18 -> 2022-07-07
+  Prices: $38113 -> $39690 -> $30076 -> $31373 -> $18971 -> $21625
+  RSI: RSI:42.3 -> RSI:38.3 -> RSI:28.7 -> RSI:50.3 -> RSI:28.8 -> RSI:47.4
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 15: indices [135, 140, 168, 180, 199, 204]
+  Dates: 2022-05-04 -> 2022-05-09 -> 2022-06-06 -> 2022-06-18 -> 2022-07-07 -> 2022-07-12
+  Prices: $39690 -> $30076 -> $31373 -> $18971 -> $21625 -> $19329
+  RSI: RSI:38.3 -> RSI:28.7 -> RSI:50.3 -> RSI:28.8 -> RSI:47.4 -> RSI:41.9
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 16: indices [140, 168, 180, 199, 204, 211]
+  Dates: 2022-05-09 -> 2022-06-06 -> 2022-06-18 -> 2022-07-07 -> 2022-07-12 -> 2022-07-19
+  Prices: $30076 -> $31373 -> $18971 -> $21625 -> $19329 -> $23397
+  RSI: RSI:28.7 -> RSI:50.3 -> RSI:28.8 -> RSI:47.4 -> RSI:41.9 -> RSI:60.1
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 17: indices [168, 180, 199, 204, 211, 218]
+  Dates: 2022-06-06 -> 2022-06-18 -> 2022-07-07 -> 2022-07-12 -> 2022-07-19 -> 2022-07-26
+  Prices: $31373 -> $18971 -> $21625 -> $19329 -> $23397 -> $21255
+  RSI: RSI:50.3 -> RSI:28.8 -> RSI:47.4 -> RSI:41.9 -> RSI:60.1 -> RSI:56.6
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 18: indices [180, 199, 204, 211, 218, 236]
+  Dates: 2022-06-18 -> 2022-07-07 -> 2022-07-12 -> 2022-07-19 -> 2022-07-26 -> 2022-08-13
+  Prices: $18971 -> $21625 -> $19329 -> $23397 -> $21255 -> $24441
+  RSI: RSI:28.8 -> RSI:47.4 -> RSI:41.9 -> RSI:60.1 -> RSI:56.6 -> RSI:60.5
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 19: indices [199, 204, 211, 218, 236, 251]
+  Dates: 2022-07-07 -> 2022-07-12 -> 2022-07-19 -> 2022-07-26 -> 2022-08-13 -> 2022-08-28
+  Prices: $21625 -> $19329 -> $23397 -> $21255 -> $24441 -> $19556
+  RSI: RSI:47.4 -> RSI:41.9 -> RSI:60.1 -> RSI:56.6 -> RSI:60.5 -> RSI:37.1
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 20: indices [204, 211, 218, 236, 251, 266]
+  Dates: 2022-07-12 -> 2022-07-19 -> 2022-07-26 -> 2022-08-13 -> 2022-08-28 -> 2022-09-12
+  Prices: $19329 -> $23397 -> $21255 -> $24441 -> $19556 -> $22396
+  RSI: RSI:41.9 -> RSI:60.1 -> RSI:56.6 -> RSI:60.5 -> RSI:37.1 -> RSI:45.1
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 21: indices [211, 218, 236, 251, 266, 275]
+  Dates: 2022-07-19 -> 2022-07-26 -> 2022-08-13 -> 2022-08-28 -> 2022-09-12 -> 2022-09-21
+  Prices: $23397 -> $21255 -> $24441 -> $19556 -> $22396 -> $18461
+  RSI: RSI:60.1 -> RSI:56.6 -> RSI:60.5 -> RSI:37.1 -> RSI:45.1 -> RSI:44.2
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 22: indices [218, 236, 251, 266, 275, 288]
+  Dates: 2022-07-26 -> 2022-08-13 -> 2022-08-28 -> 2022-09-12 -> 2022-09-21 -> 2022-10-04
+  Prices: $21255 -> $24441 -> $19556 -> $22396 -> $18461 -> $20338
+  RSI: RSI:56.6 -> RSI:60.5 -> RSI:37.1 -> RSI:45.1 -> RSI:44.2 -> RSI:53.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 23: indices [236, 251, 266, 275, 288, 295]
+  Dates: 2022-08-13 -> 2022-08-28 -> 2022-09-12 -> 2022-09-21 -> 2022-10-04 -> 2022-10-11
+  Prices: $24441 -> $19556 -> $22396 -> $18461 -> $20338 -> $19060
+  RSI: RSI:60.5 -> RSI:37.1 -> RSI:45.1 -> RSI:44.2 -> RSI:53.9 -> RSI:44.3
+    ✓ Alternating pattern confirmed
+    ✓ RELAXED 5-wave pattern validated!
+
+Testing pattern 24: indices [251, 266, 275, 288, 295, 310]
+  Dates: 2022-08-28 -> 2022-09-12 -> 2022-09-21 -> 2022-10-04 -> 2022-10-11 -> 2022-10-26
+  Prices: $19556 -> $22396 -> $18461 -> $20338 -> $19060 -> $20772
+  RSI: RSI:37.1 -> RSI:45.1 -> RSI:44.2 -> RSI:53.9 -> RSI:44.3 -> RSI:58.5
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 25: indices [266, 275, 288, 295, 310, 317]
+  Dates: 2022-09-12 -> 2022-09-21 -> 2022-10-04 -> 2022-10-11 -> 2022-10-26 -> 2022-11-02
+  Prices: $22396 -> $18461 -> $20338 -> $19060 -> $20772 -> $20152
+  RSI: RSI:45.1 -> RSI:44.2 -> RSI:53.9 -> RSI:44.3 -> RSI:58.5 -> RSI:53.9
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 26: indices [275, 288, 295, 310, 317, 320]
+  Dates: 2022-09-21 -> 2022-10-04 -> 2022-10-11 -> 2022-10-26 -> 2022-11-02 -> 2022-11-05
+  Prices: $18461 -> $20338 -> $19060 -> $20772 -> $20152 -> $21299
+  RSI: RSI:44.2 -> RSI:53.9 -> RSI:44.3 -> RSI:58.5 -> RSI:53.9 -> RSI:59.3
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 27: indices [288, 295, 310, 317, 320, 324]
+  Dates: 2022-10-04 -> 2022-10-11 -> 2022-10-26 -> 2022-11-02 -> 2022-11-05 -> 2022-11-09
+  Prices: $20338 -> $19060 -> $20772 -> $20152 -> $21299 -> $15923
+  RSI: RSI:53.9 -> RSI:44.3 -> RSI:58.5 -> RSI:53.9 -> RSI:59.3 -> RSI:38.2
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 28: indices [295, 310, 317, 320, 324, 359]
+  Dates: 2022-10-11 -> 2022-10-26 -> 2022-11-02 -> 2022-11-05 -> 2022-11-09 -> 2022-12-14
+  Prices: $19060 -> $20772 -> $20152 -> $21299 -> $15923 -> $17803
+  RSI: RSI:44.3 -> RSI:58.5 -> RSI:53.9 -> RSI:59.3 -> RSI:38.2 -> RSI:51.7
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 29: indices [310, 317, 320, 324, 359, 364]
+  Dates: 2022-10-26 -> 2022-11-02 -> 2022-11-05 -> 2022-11-09 -> 2022-12-14 -> 2022-12-19
+  Prices: $20772 -> $20152 -> $21299 -> $15923 -> $17803 -> $16439
+  RSI: RSI:58.5 -> RSI:53.9 -> RSI:59.3 -> RSI:38.2 -> RSI:51.7 -> RSI:47.5
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 30: indices [317, 320, 324, 359, 364, 390]
+  Dates: 2022-11-02 -> 2022-11-05 -> 2022-11-09 -> 2022-12-14 -> 2022-12-19 -> 2023-01-14
+  Prices: $20152 -> $21299 -> $15923 -> $17803 -> $16439 -> $20955
+  RSI: RSI:53.9 -> RSI:59.3 -> RSI:38.2 -> RSI:51.7 -> RSI:47.5 -> RSI:87.7
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 31: indices [320, 324, 359, 364, 390, 394]
+  Dates: 2022-11-05 -> 2022-11-09 -> 2022-12-14 -> 2022-12-19 -> 2023-01-14 -> 2023-01-18
+  Prices: $21299 -> $15923 -> $17803 -> $16439 -> $20955 -> $20677
+  RSI: RSI:59.3 -> RSI:38.2 -> RSI:51.7 -> RSI:47.5 -> RSI:87.7 -> RSI:80.1
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 32: indices [324, 359, 364, 390, 394, 397]
+  Dates: 2022-11-09 -> 2022-12-14 -> 2022-12-19 -> 2023-01-14 -> 2023-01-18 -> 2023-01-21
+  Prices: $15923 -> $17803 -> $16439 -> $20955 -> $20677 -> $22784
+  RSI: RSI:38.2 -> RSI:51.7 -> RSI:47.5 -> RSI:87.7 -> RSI:80.1 -> RSI:84.7
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 33: indices [359, 364, 390, 394, 397, 417]
+  Dates: 2022-12-14 -> 2022-12-19 -> 2023-01-14 -> 2023-01-18 -> 2023-01-21 -> 2023-02-10
+  Prices: $17803 -> $16439 -> $20955 -> $20677 -> $22784 -> $21625
+  RSI: RSI:51.7 -> RSI:47.5 -> RSI:87.7 -> RSI:80.1 -> RSI:84.7 -> RSI:48.2
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 34: indices [364, 390, 394, 397, 417, 422]
+  Dates: 2022-12-19 -> 2023-01-14 -> 2023-01-18 -> 2023-01-21 -> 2023-02-10 -> 2023-02-15
+  Prices: $16439 -> $20955 -> $20677 -> $22784 -> $21625 -> $24324
+  RSI: RSI:47.5 -> RSI:87.7 -> RSI:80.1 -> RSI:84.7 -> RSI:48.2 -> RSI:60.0
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 35: indices [390, 394, 397, 417, 422, 445]
+  Dates: 2023-01-14 -> 2023-01-18 -> 2023-01-21 -> 2023-02-10 -> 2023-02-15 -> 2023-03-10
+  Prices: $20955 -> $20677 -> $22784 -> $21625 -> $24324 -> $20151
+  RSI: RSI:87.7 -> RSI:80.1 -> RSI:84.7 -> RSI:48.2 -> RSI:60.0 -> RSI:32.1
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 36: indices [394, 397, 417, 422, 445, 452]
+  Dates: 2023-01-18 -> 2023-01-21 -> 2023-02-10 -> 2023-02-15 -> 2023-03-10 -> 2023-03-17
+  Prices: $20677 -> $22784 -> $21625 -> $24324 -> $20151 -> $27395
+  RSI: RSI:80.1 -> RSI:84.7 -> RSI:48.2 -> RSI:60.0 -> RSI:32.1 -> RSI:68.6
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 37: indices [397, 417, 422, 445, 452, 462]
+  Dates: 2023-01-21 -> 2023-02-10 -> 2023-02-15 -> 2023-03-10 -> 2023-03-17 -> 2023-03-27
+  Prices: $22784 -> $21625 -> $24324 -> $20151 -> $27395 -> $27125
+  RSI: RSI:84.7 -> RSI:48.2 -> RSI:60.0 -> RSI:32.1 -> RSI:68.6 -> RSI:59.8
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 38: indices [417, 422, 445, 452, 462, 477]
+  Dates: 2023-02-10 -> 2023-02-15 -> 2023-03-10 -> 2023-03-17 -> 2023-03-27 -> 2023-04-11
+  Prices: $21625 -> $24324 -> $20151 -> $27395 -> $27125 -> $30200
+  RSI: RSI:48.2 -> RSI:60.0 -> RSI:32.1 -> RSI:68.6 -> RSI:59.8 -> RSI:68.0
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 39: indices [422, 445, 452, 462, 477, 483]
+  Dates: 2023-02-15 -> 2023-03-10 -> 2023-03-17 -> 2023-03-27 -> 2023-04-11 -> 2023-04-17
+  Prices: $24324 -> $20151 -> $27395 -> $27125 -> $30200 -> $29430
+  RSI: RSI:60.0 -> RSI:32.1 -> RSI:68.6 -> RSI:59.8 -> RSI:68.0 -> RSI:64.8
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 40: indices [445, 452, 462, 477, 483, 484]
+  Dates: 2023-03-10 -> 2023-03-17 -> 2023-03-27 -> 2023-04-11 -> 2023-04-17 -> 2023-04-18
+  Prices: $20151 -> $27395 -> $27125 -> $30200 -> $29430 -> $30380
+  RSI: RSI:32.1 -> RSI:68.6 -> RSI:59.8 -> RSI:68.0 -> RSI:64.8 -> RSI:51.5
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 41: indices [452, 462, 477, 483, 484, 487]
+  Dates: 2023-03-17 -> 2023-03-27 -> 2023-04-11 -> 2023-04-17 -> 2023-04-18 -> 2023-04-21
+  Prices: $27395 -> $27125 -> $30200 -> $29430 -> $30380 -> $27263
+  RSI: RSI:68.6 -> RSI:59.8 -> RSI:68.0 -> RSI:64.8 -> RSI:51.5 -> RSI:45.9
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 42: indices [462, 477, 483, 484, 487, 493]
+  Dates: 2023-03-27 -> 2023-04-11 -> 2023-04-17 -> 2023-04-18 -> 2023-04-21 -> 2023-04-27
+  Prices: $27125 -> $30200 -> $29430 -> $30380 -> $27263 -> $29473
+  RSI: RSI:59.8 -> RSI:68.0 -> RSI:64.8 -> RSI:51.5 -> RSI:45.9 -> RSI:56.3
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 43: indices [477, 483, 484, 487, 493, 497]
+  Dates: 2023-04-11 -> 2023-04-17 -> 2023-04-18 -> 2023-04-21 -> 2023-04-27 -> 2023-05-01
+  Prices: $30200 -> $29430 -> $30380 -> $27263 -> $29473 -> $28068
+  RSI: RSI:68.0 -> RSI:64.8 -> RSI:51.5 -> RSI:45.9 -> RSI:56.3 -> RSI:51.0
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 44: indices [483, 484, 487, 493, 497, 501]
+  Dates: 2023-04-17 -> 2023-04-18 -> 2023-04-21 -> 2023-04-27 -> 2023-05-01 -> 2023-05-05
+  Prices: $29430 -> $30380 -> $27263 -> $29473 -> $28068 -> $29506
+  RSI: RSI:64.8 -> RSI:51.5 -> RSI:45.9 -> RSI:56.3 -> RSI:51.0 -> RSI:51.3
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 45: indices [484, 487, 493, 497, 501, 509]
+  Dates: 2023-04-18 -> 2023-04-21 -> 2023-04-27 -> 2023-05-01 -> 2023-05-05 -> 2023-05-13
+  Prices: $30380 -> $27263 -> $29473 -> $28068 -> $29506 -> $26775
+  RSI: RSI:51.5 -> RSI:45.9 -> RSI:56.3 -> RSI:51.0 -> RSI:51.3 -> RSI:39.0
+    ✓ Alternating pattern confirmed
+    ✓ RELAXED 5-wave pattern validated!
+
+Testing pattern 46: indices [487, 493, 497, 501, 509, 524]
+  Dates: 2023-04-21 -> 2023-04-27 -> 2023-05-01 -> 2023-05-05 -> 2023-05-13 -> 2023-05-28
+  Prices: $27263 -> $29473 -> $28068 -> $29506 -> $26775 -> $28065
+  RSI: RSI:45.9 -> RSI:56.3 -> RSI:51.0 -> RSI:51.3 -> RSI:39.0 -> RSI:53.5
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 47: indices [493, 497, 501, 509, 524, 528]
+  Dates: 2023-04-27 -> 2023-05-01 -> 2023-05-05 -> 2023-05-13 -> 2023-05-28 -> 2023-06-01
+  Prices: $29473 -> $28068 -> $29506 -> $26775 -> $28065 -> $26818
+  RSI: RSI:56.3 -> RSI:51.0 -> RSI:51.3 -> RSI:39.0 -> RSI:53.5 -> RSI:49.0
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 48: indices [497, 501, 509, 524, 528, 529]
+  Dates: 2023-05-01 -> 2023-05-05 -> 2023-05-13 -> 2023-05-28 -> 2023-06-01 -> 2023-06-02
+  Prices: $28068 -> $29506 -> $26775 -> $28065 -> $26818 -> $27243
+  RSI: RSI:51.0 -> RSI:51.3 -> RSI:39.0 -> RSI:53.5 -> RSI:49.0 -> RSI:47.3
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 49: indices [501, 509, 524, 528, 529, 532]
+  Dates: 2023-05-05 -> 2023-05-13 -> 2023-05-28 -> 2023-06-01 -> 2023-06-02 -> 2023-06-05
+  Prices: $29506 -> $26775 -> $28065 -> $26818 -> $27243 -> $25728
+  RSI: RSI:51.3 -> RSI:39.0 -> RSI:53.5 -> RSI:49.0 -> RSI:47.3 -> RSI:50.2
+    ✓ Alternating pattern confirmed
+    ✓ RELAXED 5-wave pattern validated!
+
+Testing pattern 50: indices [509, 524, 528, 529, 532, 533]
+  Dates: 2023-05-13 -> 2023-05-28 -> 2023-06-01 -> 2023-06-02 -> 2023-06-05 -> 2023-06-06
+  Prices: $26775 -> $28065 -> $26818 -> $27243 -> $25728 -> $27230
+  RSI: RSI:39.0 -> RSI:53.5 -> RSI:49.0 -> RSI:47.3 -> RSI:50.2 -> RSI:44.1
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 51: indices [524, 528, 529, 532, 533, 541]
+  Dates: 2023-05-28 -> 2023-06-01 -> 2023-06-02 -> 2023-06-05 -> 2023-06-06 -> 2023-06-14
+  Prices: $28065 -> $26818 -> $27243 -> $25728 -> $27230 -> $25129
+  RSI: RSI:53.5 -> RSI:49.0 -> RSI:47.3 -> RSI:50.2 -> RSI:44.1 -> RSI:41.2
+    ✓ Alternating pattern confirmed
+    ✓ STRICT 5-wave pattern validated!
+
+Testing pattern 52: indices [528, 529, 532, 533, 541, 550]
+  Dates: 2023-06-01 -> 2023-06-02 -> 2023-06-05 -> 2023-06-06 -> 2023-06-14 -> 2023-06-23
+  Prices: $26818 -> $27243 -> $25728 -> $27230 -> $25129 -> $30688
+  RSI: RSI:49.0 -> RSI:47.3 -> RSI:50.2 -> RSI:44.1 -> RSI:41.2 -> RSI:71.1
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 53: indices [529, 532, 533, 541, 550, 563]
+  Dates: 2023-06-02 -> 2023-06-05 -> 2023-06-06 -> 2023-06-14 -> 2023-06-23 -> 2023-07-06
+  Prices: $27243 -> $25728 -> $27230 -> $25129 -> $30688 -> $29895
+  RSI: RSI:47.3 -> RSI:50.2 -> RSI:44.1 -> RSI:41.2 -> RSI:71.1 -> RSI:59.0
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 54: indices [532, 533, 541, 550, 563, 570]
+  Dates: 2023-06-05 -> 2023-06-06 -> 2023-06-14 -> 2023-06-23 -> 2023-07-06 -> 2023-07-13
+  Prices: $25728 -> $27230 -> $25129 -> $30688 -> $29895 -> $31454
+  RSI: RSI:50.2 -> RSI:44.1 -> RSI:41.2 -> RSI:71.1 -> RSI:59.0 -> RSI:53.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 55: indices [533, 541, 550, 563, 570, 581]
+  Dates: 2023-06-06 -> 2023-06-14 -> 2023-06-23 -> 2023-07-06 -> 2023-07-13 -> 2023-07-24
+  Prices: $27230 -> $25129 -> $30688 -> $29895 -> $31454 -> $29176
+  RSI: RSI:44.1 -> RSI:41.2 -> RSI:71.1 -> RSI:59.0 -> RSI:53.9 -> RSI:42.9
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 56: indices [541, 550, 563, 570, 581, 596]
+  Dates: 2023-06-14 -> 2023-06-23 -> 2023-07-06 -> 2023-07-13 -> 2023-07-24 -> 2023-08-08
+  Prices: $25129 -> $30688 -> $29895 -> $31454 -> $29176 -> $29770
+  RSI: RSI:41.2 -> RSI:71.1 -> RSI:59.0 -> RSI:53.9 -> RSI:42.9 -> RSI:51.6
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 57: indices [550, 563, 570, 581, 596, 606]
+  Dates: 2023-06-23 -> 2023-07-06 -> 2023-07-13 -> 2023-07-24 -> 2023-08-08 -> 2023-08-18
+  Prices: $30688 -> $29895 -> $31454 -> $29176 -> $29770 -> $26054
+  RSI: RSI:71.1 -> RSI:59.0 -> RSI:53.9 -> RSI:42.9 -> RSI:51.6 -> RSI:19.4
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 58: indices [563, 570, 581, 596, 606, 617]
+  Dates: 2023-07-06 -> 2023-07-13 -> 2023-07-24 -> 2023-08-08 -> 2023-08-18 -> 2023-08-29
+  Prices: $29895 -> $31454 -> $29176 -> $29770 -> $26054 -> $27716
+  RSI: RSI:59.0 -> RSI:53.9 -> RSI:42.9 -> RSI:51.6 -> RSI:19.4 -> RSI:47.8
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 59: indices [570, 581, 596, 606, 617, 620]
+  Dates: 2023-07-13 -> 2023-07-24 -> 2023-08-08 -> 2023-08-18 -> 2023-08-29 -> 2023-09-01
+  Prices: $31454 -> $29176 -> $29770 -> $26054 -> $27716 -> $25805
+  RSI: RSI:53.9 -> RSI:42.9 -> RSI:51.6 -> RSI:19.4 -> RSI:47.8 -> RSI:36.3
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 60: indices [581, 596, 606, 617, 620, 626]
+  Dates: 2023-07-24 -> 2023-08-08 -> 2023-08-18 -> 2023-08-29 -> 2023-09-01 -> 2023-09-07
+  Prices: $29176 -> $29770 -> $26054 -> $27716 -> $25805 -> $26255
+  RSI: RSI:42.9 -> RSI:51.6 -> RSI:19.4 -> RSI:47.8 -> RSI:36.3 -> RSI:39.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 61: indices [596, 606, 617, 620, 626, 630]
+  Dates: 2023-08-08 -> 2023-08-18 -> 2023-08-29 -> 2023-09-01 -> 2023-09-07 -> 2023-09-11
+  Prices: $29770 -> $26054 -> $27716 -> $25805 -> $26255 -> $25163
+  RSI: RSI:51.6 -> RSI:19.4 -> RSI:47.8 -> RSI:36.3 -> RSI:39.9 -> RSI:42.8
+    ✓ Alternating pattern confirmed
+    ✓ STRICT 5-wave pattern validated!
+
+Testing pattern 62: indices [606, 617, 620, 626, 630, 638]
+  Dates: 2023-08-18 -> 2023-08-29 -> 2023-09-01 -> 2023-09-07 -> 2023-09-11 -> 2023-09-19
+  Prices: $26054 -> $27716 -> $25805 -> $26255 -> $25163 -> $27210
+  RSI: RSI:19.4 -> RSI:47.8 -> RSI:36.3 -> RSI:39.9 -> RSI:42.8 -> RSI:57.8
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 63: indices [617, 620, 626, 630, 638, 645]
+  Dates: 2023-08-29 -> 2023-09-01 -> 2023-09-07 -> 2023-09-11 -> 2023-09-19 -> 2023-09-26
+  Prices: $27716 -> $25805 -> $26255 -> $25163 -> $27210 -> $26222
+  RSI: RSI:47.8 -> RSI:36.3 -> RSI:39.9 -> RSI:42.8 -> RSI:57.8 -> RSI:47.7
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 64: indices [620, 626, 630, 638, 645, 650]
+  Dates: 2023-09-01 -> 2023-09-07 -> 2023-09-11 -> 2023-09-19 -> 2023-09-26 -> 2023-10-01
+  Prices: $25805 -> $26255 -> $25163 -> $27210 -> $26222 -> $27993
+  RSI: RSI:36.3 -> RSI:39.9 -> RSI:42.8 -> RSI:57.8 -> RSI:47.7 -> RSI:59.4
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 65: indices [626, 630, 638, 645, 650, 654]
+  Dates: 2023-09-07 -> 2023-09-11 -> 2023-09-19 -> 2023-09-26 -> 2023-10-01 -> 2023-10-05
+  Prices: $26255 -> $25163 -> $27210 -> $26222 -> $27993 -> $27410
+  RSI: RSI:39.9 -> RSI:42.8 -> RSI:57.8 -> RSI:47.7 -> RSI:59.4 -> RSI:61.7
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 66: indices [630, 638, 645, 650, 654, 656]
+  Dates: 2023-09-11 -> 2023-09-19 -> 2023-09-26 -> 2023-10-01 -> 2023-10-05 -> 2023-10-07
+  Prices: $25163 -> $27210 -> $26222 -> $27993 -> $27410 -> $27957
+  RSI: RSI:42.8 -> RSI:57.8 -> RSI:47.7 -> RSI:59.4 -> RSI:61.7 -> RSI:61.3
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 67: indices [638, 645, 650, 654, 656, 661]
+  Dates: 2023-09-19 -> 2023-09-26 -> 2023-10-01 -> 2023-10-05 -> 2023-10-07 -> 2023-10-12
+  Prices: $27210 -> $26222 -> $27993 -> $27410 -> $27957 -> $26760
+  RSI: RSI:57.8 -> RSI:47.7 -> RSI:59.4 -> RSI:61.7 -> RSI:61.3 -> RSI:46.6
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 68: indices [645, 650, 654, 656, 661, 674]
+  Dates: 2023-09-26 -> 2023-10-01 -> 2023-10-05 -> 2023-10-07 -> 2023-10-12 -> 2023-10-25
+  Prices: $26222 -> $27993 -> $27410 -> $27957 -> $26760 -> $34496
+  RSI: RSI:47.7 -> RSI:59.4 -> RSI:61.7 -> RSI:61.3 -> RSI:46.6 -> RSI:83.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 69: indices [650, 654, 656, 661, 674, 683]
+  Dates: 2023-10-01 -> 2023-10-05 -> 2023-10-07 -> 2023-10-12 -> 2023-10-25 -> 2023-11-03
+  Prices: $27993 -> $27410 -> $27957 -> $26760 -> $34496 -> $34717
+  RSI: RSI:59.4 -> RSI:61.7 -> RSI:61.3 -> RSI:46.6 -> RSI:83.9 -> RSI:76.8
+    ❌ Alternating pattern failed at position 4->5
+    ❌ Not alternating pattern
+
+Testing pattern 70: indices [654, 656, 661, 674, 683, 690]
+  Dates: 2023-10-05 -> 2023-10-07 -> 2023-10-12 -> 2023-10-25 -> 2023-11-03 -> 2023-11-10
+  Prices: $27410 -> $27957 -> $26760 -> $34496 -> $34717 -> $37302
+  RSI: RSI:61.7 -> RSI:61.3 -> RSI:46.6 -> RSI:83.9 -> RSI:76.8 -> RSI:81.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 71: indices [656, 661, 674, 683, 690, 694]
+  Dates: 2023-10-07 -> 2023-10-12 -> 2023-10-25 -> 2023-11-03 -> 2023-11-10 -> 2023-11-14
+  Prices: $27957 -> $26760 -> $34496 -> $34717 -> $37302 -> $35551
+  RSI: RSI:61.3 -> RSI:46.6 -> RSI:83.9 -> RSI:76.8 -> RSI:81.9 -> RSI:72.7
+    ❌ Alternating pattern failed at position 2->3
+    ❌ Not alternating pattern
+
+Testing pattern 72: indices [661, 674, 683, 690, 694, 695]
+  Dates: 2023-10-12 -> 2023-10-25 -> 2023-11-03 -> 2023-11-10 -> 2023-11-14 -> 2023-11-15
+  Prices: $26760 -> $34496 -> $34717 -> $37302 -> $35551 -> $37858
+  RSI: RSI:46.6 -> RSI:83.9 -> RSI:76.8 -> RSI:81.9 -> RSI:72.7 -> RSI:59.2
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 73: indices [674, 683, 690, 694, 695, 696]
+  Dates: 2023-10-25 -> 2023-11-03 -> 2023-11-10 -> 2023-11-14 -> 2023-11-15 -> 2023-11-16
+  Prices: $34496 -> $34717 -> $37302 -> $35551 -> $37858 -> $36164
+  RSI: RSI:83.9 -> RSI:76.8 -> RSI:81.9 -> RSI:72.7 -> RSI:59.2 -> RSI:61.3
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 74: indices [683, 690, 694, 695, 696, 700]
+  Dates: 2023-11-03 -> 2023-11-10 -> 2023-11-14 -> 2023-11-15 -> 2023-11-16 -> 2023-11-20
+  Prices: $34717 -> $37302 -> $35551 -> $37858 -> $36164 -> $37449
+  RSI: RSI:76.8 -> RSI:81.9 -> RSI:72.7 -> RSI:59.2 -> RSI:61.3 -> RSI:52.8
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 75: indices [690, 694, 695, 696, 700, 701]
+  Dates: 2023-11-10 -> 2023-11-14 -> 2023-11-15 -> 2023-11-16 -> 2023-11-20 -> 2023-11-21
+  Prices: $37302 -> $35551 -> $37858 -> $36164 -> $37449 -> $35742
+  RSI: RSI:81.9 -> RSI:72.7 -> RSI:59.2 -> RSI:61.3 -> RSI:52.8 -> RSI:60.6
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 76: indices [694, 695, 696, 700, 701, 715]
+  Dates: 2023-11-14 -> 2023-11-15 -> 2023-11-16 -> 2023-11-20 -> 2023-11-21 -> 2023-12-05
+  Prices: $35551 -> $37858 -> $36164 -> $37449 -> $35742 -> $44073
+  RSI: RSI:72.7 -> RSI:59.2 -> RSI:61.3 -> RSI:52.8 -> RSI:60.6 -> RSI:79.1
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 77: indices [695, 696, 700, 701, 715, 727]
+  Dates: 2023-11-15 -> 2023-11-16 -> 2023-11-20 -> 2023-11-21 -> 2023-12-05 -> 2023-12-17
+  Prices: $37858 -> $36164 -> $37449 -> $35742 -> $44073 -> $41375
+  RSI: RSI:59.2 -> RSI:61.3 -> RSI:52.8 -> RSI:60.6 -> RSI:79.1 -> RSI:59.1
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 78: indices [696, 700, 701, 715, 727, 732]
+  Dates: 2023-11-16 -> 2023-11-20 -> 2023-11-21 -> 2023-12-05 -> 2023-12-17 -> 2023-12-22
+  Prices: $36164 -> $37449 -> $35742 -> $44073 -> $41375 -> $43969
+  RSI: RSI:61.3 -> RSI:52.8 -> RSI:60.6 -> RSI:79.1 -> RSI:59.1 -> RSI:61.6
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 79: indices [700, 701, 715, 727, 732, 736]
+  Dates: 2023-11-20 -> 2023-11-21 -> 2023-12-05 -> 2023-12-17 -> 2023-12-22 -> 2023-12-26
+  Prices: $37449 -> $35742 -> $44073 -> $41375 -> $43969 -> $42509
+  RSI: RSI:52.8 -> RSI:60.6 -> RSI:79.1 -> RSI:59.1 -> RSI:61.6 -> RSI:57.5
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 80: indices [701, 715, 727, 732, 736, 743]
+  Dates: 2023-11-21 -> 2023-12-05 -> 2023-12-17 -> 2023-12-22 -> 2023-12-26 -> 2024-01-02
+  Prices: $35742 -> $44073 -> $41375 -> $43969 -> $42509 -> $44947
+  RSI: RSI:60.6 -> RSI:79.1 -> RSI:59.1 -> RSI:61.6 -> RSI:57.5 -> RSI:51.8
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 81: indices [715, 727, 732, 736, 743, 744]
+  Dates: 2023-12-05 -> 2023-12-17 -> 2023-12-22 -> 2023-12-26 -> 2024-01-02 -> 2024-01-03
+  Prices: $44073 -> $41375 -> $43969 -> $42509 -> $44947 -> $42845
+  RSI: RSI:79.1 -> RSI:59.1 -> RSI:61.6 -> RSI:57.5 -> RSI:51.8 -> RSI:57.1
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 82: indices [727, 732, 736, 743, 744, 749]
+  Dates: 2023-12-17 -> 2023-12-22 -> 2023-12-26 -> 2024-01-02 -> 2024-01-03 -> 2024-01-08
+  Prices: $41375 -> $43969 -> $42509 -> $44947 -> $42845 -> $46951
+  RSI: RSI:59.1 -> RSI:61.6 -> RSI:57.5 -> RSI:51.8 -> RSI:57.1 -> RSI:62.2
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 83: indices [732, 736, 743, 744, 749, 763]
+  Dates: 2023-12-22 -> 2023-12-26 -> 2024-01-02 -> 2024-01-03 -> 2024-01-08 -> 2024-01-22
+  Prices: $43969 -> $42509 -> $44947 -> $42845 -> $46951 -> $39568
+  RSI: RSI:61.6 -> RSI:57.5 -> RSI:51.8 -> RSI:57.1 -> RSI:62.2 -> RSI:37.8
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 84: indices [736, 743, 744, 749, 763, 788]
+  Dates: 2023-12-26 -> 2024-01-02 -> 2024-01-03 -> 2024-01-08 -> 2024-01-22 -> 2024-02-16
+  Prices: $42509 -> $44947 -> $42845 -> $46951 -> $39568 -> $52124
+  RSI: RSI:57.5 -> RSI:51.8 -> RSI:57.1 -> RSI:62.2 -> RSI:37.8 -> RSI:77.7
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 85: indices [743, 744, 749, 763, 788, 795]
+  Dates: 2024-01-02 -> 2024-01-03 -> 2024-01-08 -> 2024-01-22 -> 2024-02-16 -> 2024-02-23
+  Prices: $44947 -> $42845 -> $46951 -> $39568 -> $52124 -> $50744
+  RSI: RSI:51.8 -> RSI:57.1 -> RSI:62.2 -> RSI:37.8 -> RSI:77.7 -> RSI:67.9
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 86: indices [744, 749, 763, 788, 795, 800]
+  Dates: 2024-01-03 -> 2024-01-08 -> 2024-01-22 -> 2024-02-16 -> 2024-02-23 -> 2024-02-28
+  Prices: $42845 -> $46951 -> $39568 -> $52124 -> $50744 -> $62432
+  RSI: RSI:57.1 -> RSI:62.2 -> RSI:37.8 -> RSI:77.7 -> RSI:67.9 -> RSI:80.7
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 87: indices [749, 763, 788, 795, 800, 806]
+  Dates: 2024-01-08 -> 2024-01-22 -> 2024-02-16 -> 2024-02-23 -> 2024-02-28 -> 2024-03-05
+  Prices: $46951 -> $39568 -> $52124 -> $50744 -> $62432 -> $63724
+  RSI: RSI:62.2 -> RSI:37.8 -> RSI:77.7 -> RSI:67.9 -> RSI:80.7 -> RSI:72.4
+    ❌ Alternating pattern failed at position 4->5
+    ❌ Not alternating pattern
+
+Testing pattern 88: indices [763, 788, 795, 800, 806, 812]
+  Dates: 2024-01-22 -> 2024-02-16 -> 2024-02-23 -> 2024-02-28 -> 2024-03-05 -> 2024-03-11
+  Prices: $39568 -> $52124 -> $50744 -> $62432 -> $63724 -> $72078
+  RSI: RSI:37.8 -> RSI:77.7 -> RSI:67.9 -> RSI:80.7 -> RSI:72.4 -> RSI:76.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 89: indices [788, 795, 800, 806, 812, 820]
+  Dates: 2024-02-16 -> 2024-02-23 -> 2024-02-28 -> 2024-03-05 -> 2024-03-11 -> 2024-03-19
+  Prices: $52124 -> $50744 -> $62432 -> $63724 -> $72078 -> $61937
+  RSI: RSI:77.7 -> RSI:67.9 -> RSI:80.7 -> RSI:72.4 -> RSI:76.9 -> RSI:56.4
+    ❌ Alternating pattern failed at position 2->3
+    ❌ Not alternating pattern
+
+Testing pattern 90: indices [795, 800, 806, 812, 820, 832]
+  Dates: 2024-02-23 -> 2024-02-28 -> 2024-03-05 -> 2024-03-11 -> 2024-03-19 -> 2024-03-31
+  Prices: $50744 -> $62432 -> $63724 -> $72078 -> $61937 -> $71280
+  RSI: RSI:67.9 -> RSI:80.7 -> RSI:72.4 -> RSI:76.9 -> RSI:56.4 -> RSI:56.2
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 91: indices [800, 806, 812, 820, 832, 834]
+  Dates: 2024-02-28 -> 2024-03-05 -> 2024-03-11 -> 2024-03-19 -> 2024-03-31 -> 2024-04-02
+  Prices: $62432 -> $63724 -> $72078 -> $61937 -> $71280 -> $65464
+  RSI: RSI:80.7 -> RSI:72.4 -> RSI:76.9 -> RSI:56.4 -> RSI:56.2 -> RSI:48.4
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 92: indices [806, 812, 820, 832, 834, 840]
+  Dates: 2024-03-05 -> 2024-03-11 -> 2024-03-19 -> 2024-03-31 -> 2024-04-02 -> 2024-04-08
+  Prices: $63724 -> $72078 -> $61937 -> $71280 -> $65464 -> $71620
+  RSI: RSI:72.4 -> RSI:76.9 -> RSI:56.4 -> RSI:56.2 -> RSI:48.4 -> RSI:53.3
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 93: indices [812, 820, 832, 834, 840, 849]
+  Dates: 2024-03-11 -> 2024-03-19 -> 2024-03-31 -> 2024-04-02 -> 2024-04-08 -> 2024-04-17
+  Prices: $72078 -> $61937 -> $71280 -> $65464 -> $71620 -> $61277
+  RSI: RSI:76.9 -> RSI:56.4 -> RSI:56.2 -> RSI:48.4 -> RSI:53.3 -> RSI:44.0
+    ✓ Alternating pattern confirmed
+    ✓ RELAXED 5-wave pattern validated!
+
+Testing pattern 94: indices [820, 832, 834, 840, 849, 854]
+  Dates: 2024-03-19 -> 2024-03-31 -> 2024-04-02 -> 2024-04-08 -> 2024-04-17 -> 2024-04-22
+  Prices: $61937 -> $71280 -> $65464 -> $71620 -> $61277 -> $66819
+  RSI: RSI:56.4 -> RSI:56.2 -> RSI:48.4 -> RSI:53.3 -> RSI:44.0 -> RSI:50.8
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 95: indices [832, 834, 840, 849, 854, 863]
+  Dates: 2024-03-31 -> 2024-04-02 -> 2024-04-08 -> 2024-04-17 -> 2024-04-22 -> 2024-05-01
+  Prices: $71280 -> $65464 -> $71620 -> $61277 -> $66819 -> $58365
+  RSI: RSI:56.2 -> RSI:48.4 -> RSI:53.3 -> RSI:44.0 -> RSI:50.8 -> RSI:35.9
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 96: indices [834, 840, 849, 854, 863, 882]
+  Dates: 2024-04-02 -> 2024-04-08 -> 2024-04-17 -> 2024-04-22 -> 2024-05-01 -> 2024-05-20
+  Prices: $65464 -> $71620 -> $61277 -> $66819 -> $58365 -> $71447
+  RSI: RSI:48.4 -> RSI:53.3 -> RSI:44.0 -> RSI:50.8 -> RSI:35.9 -> RSI:62.5
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 97: indices [840, 849, 854, 863, 882, 893]
+  Dates: 2024-04-08 -> 2024-04-17 -> 2024-04-22 -> 2024-05-01 -> 2024-05-20 -> 2024-05-31
+  Prices: $71620 -> $61277 -> $66819 -> $58365 -> $71447 -> $67540
+  RSI: RSI:53.3 -> RSI:44.0 -> RSI:50.8 -> RSI:35.9 -> RSI:62.5 -> RSI:53.2
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 98: indices [849, 854, 863, 882, 893, 898]
+  Dates: 2024-04-17 -> 2024-04-22 -> 2024-05-01 -> 2024-05-20 -> 2024-05-31 -> 2024-06-05
+  Prices: $61277 -> $66819 -> $58365 -> $71447 -> $67540 -> $71108
+  RSI: RSI:44.0 -> RSI:50.8 -> RSI:35.9 -> RSI:62.5 -> RSI:53.2 -> RSI:61.5
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 99: indices [854, 863, 882, 893, 898, 917]
+  Dates: 2024-04-22 -> 2024-05-01 -> 2024-05-20 -> 2024-05-31 -> 2024-06-05 -> 2024-06-24
+  Prices: $66819 -> $58365 -> $71447 -> $67540 -> $71108 -> $60293
+  RSI: RSI:50.8 -> RSI:35.9 -> RSI:62.5 -> RSI:53.2 -> RSI:61.5 -> RSI:34.1
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 100: indices [863, 882, 893, 898, 917, 924]
+  Dates: 2024-05-01 -> 2024-05-20 -> 2024-05-31 -> 2024-06-05 -> 2024-06-24 -> 2024-07-01
+  Prices: $58365 -> $71447 -> $67540 -> $71108 -> $60293 -> $62900
+  RSI: RSI:35.9 -> RSI:62.5 -> RSI:53.2 -> RSI:61.5 -> RSI:34.1 -> RSI:41.7
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 101: indices [882, 893, 898, 917, 924, 928]
+  Dates: 2024-05-20 -> 2024-05-31 -> 2024-06-05 -> 2024-06-24 -> 2024-07-01 -> 2024-07-05
+  Prices: $71447 -> $67540 -> $71108 -> $60293 -> $62900 -> $56629
+  RSI: RSI:62.5 -> RSI:53.2 -> RSI:61.5 -> RSI:34.1 -> RSI:41.7 -> RSI:35.3
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 102: indices [893, 898, 917, 924, 928, 944]
+  Dates: 2024-05-31 -> 2024-06-05 -> 2024-06-24 -> 2024-07-01 -> 2024-07-05 -> 2024-07-21
+  Prices: $67540 -> $71108 -> $60293 -> $62900 -> $56629 -> $68165
+  RSI: RSI:53.2 -> RSI:61.5 -> RSI:34.1 -> RSI:41.7 -> RSI:35.3 -> RSI:65.0
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 103: indices [898, 917, 924, 928, 944, 947]
+  Dates: 2024-06-05 -> 2024-06-24 -> 2024-07-01 -> 2024-07-05 -> 2024-07-21 -> 2024-07-24
+  Prices: $71108 -> $60293 -> $62900 -> $56629 -> $68165 -> $65376
+  RSI: RSI:61.5 -> RSI:34.1 -> RSI:41.7 -> RSI:35.3 -> RSI:65.0 -> RSI:57.9
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 104: indices [917, 924, 928, 944, 947, 951]
+  Dates: 2024-06-24 -> 2024-07-01 -> 2024-07-05 -> 2024-07-21 -> 2024-07-24 -> 2024-07-28
+  Prices: $60293 -> $62900 -> $56629 -> $68165 -> $65376 -> $68250
+  RSI: RSI:34.1 -> RSI:41.7 -> RSI:35.3 -> RSI:65.0 -> RSI:57.9 -> RSI:57.8
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 105: indices [924, 928, 944, 947, 951, 959]
+  Dates: 2024-07-01 -> 2024-07-05 -> 2024-07-21 -> 2024-07-24 -> 2024-07-28 -> 2024-08-05
+  Prices: $62900 -> $56629 -> $68165 -> $65376 -> $68250 -> $54019
+  RSI: RSI:41.7 -> RSI:35.3 -> RSI:65.0 -> RSI:57.9 -> RSI:57.8 -> RSI:33.5
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 106: indices [928, 944, 947, 951, 959, 979]
+  Dates: 2024-07-05 -> 2024-07-21 -> 2024-07-24 -> 2024-07-28 -> 2024-08-05 -> 2024-08-25
+  Prices: $56629 -> $68165 -> $65376 -> $68250 -> $54019 -> $64220
+  RSI: RSI:35.3 -> RSI:65.0 -> RSI:57.9 -> RSI:57.8 -> RSI:33.5 -> RSI:54.4
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 107: indices [944, 947, 951, 959, 979, 986]
+  Dates: 2024-07-21 -> 2024-07-24 -> 2024-07-28 -> 2024-08-05 -> 2024-08-25 -> 2024-09-01
+  Prices: $68165 -> $65376 -> $68250 -> $54019 -> $64220 -> $57302
+  RSI: RSI:65.0 -> RSI:57.9 -> RSI:57.8 -> RSI:33.5 -> RSI:54.4 -> RSI:46.4
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 108: indices [947, 951, 959, 979, 986, 987]
+  Dates: 2024-07-24 -> 2024-07-28 -> 2024-08-05 -> 2024-08-25 -> 2024-09-01 -> 2024-09-02
+  Prices: $65376 -> $68250 -> $54019 -> $64220 -> $57302 -> $59132
+  RSI: RSI:57.9 -> RSI:57.8 -> RSI:33.5 -> RSI:54.4 -> RSI:46.4 -> RSI:42.2
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 109: indices [951, 959, 979, 986, 987, 991]
+  Dates: 2024-07-28 -> 2024-08-05 -> 2024-08-25 -> 2024-09-01 -> 2024-09-02 -> 2024-09-06
+  Prices: $68250 -> $54019 -> $64220 -> $57302 -> $59132 -> $53963
+  RSI: RSI:57.8 -> RSI:33.5 -> RSI:54.4 -> RSI:46.4 -> RSI:42.2 -> RSI:35.4
+    ✓ Alternating pattern confirmed
+    ✓ RELAXED 5-wave pattern validated!
+
+Testing pattern 110: indices [959, 979, 986, 987, 991, 1013]
+  Dates: 2024-08-05 -> 2024-08-25 -> 2024-09-01 -> 2024-09-02 -> 2024-09-06 -> 2024-09-28
+  Prices: $54019 -> $64220 -> $57302 -> $59132 -> $53963 -> $65858
+  RSI: RSI:33.5 -> RSI:54.4 -> RSI:46.4 -> RSI:42.2 -> RSI:35.4 -> RSI:65.4
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 111: indices [979, 986, 987, 991, 1013, 1017]
+  Dates: 2024-08-25 -> 2024-09-01 -> 2024-09-02 -> 2024-09-06 -> 2024-09-28 -> 2024-10-02
+  Prices: $64220 -> $57302 -> $59132 -> $53963 -> $65858 -> $60649
+  RSI: RSI:54.4 -> RSI:46.4 -> RSI:42.2 -> RSI:35.4 -> RSI:65.4 -> RSI:45.7
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 112: indices [986, 987, 991, 1013, 1017, 1021]
+  Dates: 2024-09-01 -> 2024-09-02 -> 2024-09-06 -> 2024-09-28 -> 2024-10-02 -> 2024-10-06
+  Prices: $57302 -> $59132 -> $53963 -> $65858 -> $60649 -> $62820
+  RSI: RSI:46.4 -> RSI:42.2 -> RSI:35.4 -> RSI:65.4 -> RSI:45.7 -> RSI:51.2
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 113: indices [987, 991, 1013, 1017, 1021, 1025]
+  Dates: 2024-09-02 -> 2024-09-06 -> 2024-09-28 -> 2024-10-02 -> 2024-10-06 -> 2024-10-10
+  Prices: $59132 -> $53963 -> $65858 -> $60649 -> $62820 -> $60326
+  RSI: RSI:42.2 -> RSI:35.4 -> RSI:65.4 -> RSI:45.7 -> RSI:51.2 -> RSI:53.0
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 114: indices [991, 1013, 1017, 1021, 1025, 1035]
+  Dates: 2024-09-06 -> 2024-09-28 -> 2024-10-02 -> 2024-10-06 -> 2024-10-10 -> 2024-10-20
+  Prices: $53963 -> $65858 -> $60649 -> $62820 -> $60326 -> $69032
+  RSI: RSI:35.4 -> RSI:65.4 -> RSI:45.7 -> RSI:51.2 -> RSI:53.0 -> RSI:61.6
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 115: indices [1013, 1017, 1021, 1025, 1035, 1038]
+  Dates: 2024-09-28 -> 2024-10-02 -> 2024-10-06 -> 2024-10-10 -> 2024-10-20 -> 2024-10-23
+  Prices: $65858 -> $60649 -> $62820 -> $60326 -> $69032 -> $66669
+  RSI: RSI:65.4 -> RSI:45.7 -> RSI:51.2 -> RSI:53.0 -> RSI:61.6 -> RSI:63.0
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 116: indices [1017, 1021, 1025, 1035, 1038, 1044]
+  Dates: 2024-10-02 -> 2024-10-06 -> 2024-10-10 -> 2024-10-20 -> 2024-10-23 -> 2024-10-29
+  Prices: $60649 -> $62820 -> $60326 -> $69032 -> $66669 -> $72736
+  RSI: RSI:45.7 -> RSI:51.2 -> RSI:53.0 -> RSI:61.6 -> RSI:63.0 -> RSI:70.1
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 117: indices [1021, 1025, 1035, 1038, 1044, 1050]
+  Dates: 2024-10-06 -> 2024-10-10 -> 2024-10-20 -> 2024-10-23 -> 2024-10-29 -> 2024-11-04
+  Prices: $62820 -> $60326 -> $69032 -> $66669 -> $72736 -> $67850
+  RSI: RSI:51.2 -> RSI:53.0 -> RSI:61.6 -> RSI:63.0 -> RSI:70.1 -> RSI:56.4
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 118: indices [1025, 1035, 1038, 1044, 1050, 1057]
+  Dates: 2024-10-10 -> 2024-10-20 -> 2024-10-23 -> 2024-10-29 -> 2024-11-04 -> 2024-11-11
+  Prices: $60326 -> $69032 -> $66669 -> $72736 -> $67850 -> $88648
+  RSI: RSI:53.0 -> RSI:61.6 -> RSI:63.0 -> RSI:70.1 -> RSI:56.4 -> RSI:82.2
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 119: indices [1035, 1038, 1044, 1050, 1057, 1063]
+  Dates: 2024-10-20 -> 2024-10-23 -> 2024-10-29 -> 2024-11-04 -> 2024-11-11 -> 2024-11-17
+  Prices: $69032 -> $66669 -> $72736 -> $67850 -> $88648 -> $89856
+  RSI: RSI:61.6 -> RSI:63.0 -> RSI:70.1 -> RSI:56.4 -> RSI:82.2 -> RSI:74.8
+    ❌ Alternating pattern failed at position 4->5
+    ❌ Not alternating pattern
+
+Testing pattern 120: indices [1038, 1044, 1050, 1057, 1063, 1068]
+  Dates: 2024-10-23 -> 2024-10-29 -> 2024-11-04 -> 2024-11-11 -> 2024-11-17 -> 2024-11-22
+  Prices: $66669 -> $72736 -> $67850 -> $88648 -> $89856 -> $98892
+  RSI: RSI:63.0 -> RSI:70.1 -> RSI:56.4 -> RSI:82.2 -> RSI:74.8 -> RSI:78.2
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 121: indices [1044, 1050, 1057, 1063, 1068, 1072]
+  Dates: 2024-10-29 -> 2024-11-04 -> 2024-11-11 -> 2024-11-17 -> 2024-11-22 -> 2024-11-26
+  Prices: $72736 -> $67850 -> $88648 -> $89856 -> $98892 -> $91965
+  RSI: RSI:70.1 -> RSI:56.4 -> RSI:82.2 -> RSI:74.8 -> RSI:78.2 -> RSI:66.9
+    ❌ Alternating pattern failed at position 2->3
+    ❌ Not alternating pattern
+
+Testing pattern 122: indices [1050, 1057, 1063, 1068, 1072, 1084]
+  Dates: 2024-11-04 -> 2024-11-11 -> 2024-11-17 -> 2024-11-22 -> 2024-11-26 -> 2024-12-08
+  Prices: $67850 -> $88648 -> $89856 -> $98892 -> $91965 -> $101110
+  RSI: RSI:56.4 -> RSI:82.2 -> RSI:74.8 -> RSI:78.2 -> RSI:66.9 -> RSI:58.3
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 123: indices [1057, 1063, 1068, 1072, 1084, 1086]
+  Dates: 2024-11-11 -> 2024-11-17 -> 2024-11-22 -> 2024-11-26 -> 2024-12-08 -> 2024-12-10
+  Prices: $88648 -> $89856 -> $98892 -> $91965 -> $101110 -> $96593
+  RSI: RSI:82.2 -> RSI:74.8 -> RSI:78.2 -> RSI:66.9 -> RSI:58.3 -> RSI:64.0
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 124: indices [1063, 1068, 1072, 1084, 1086, 1093]
+  Dates: 2024-11-17 -> 2024-11-22 -> 2024-11-26 -> 2024-12-08 -> 2024-12-10 -> 2024-12-17
+  Prices: $89856 -> $98892 -> $91965 -> $101110 -> $96593 -> $106134
+  RSI: RSI:74.8 -> RSI:78.2 -> RSI:66.9 -> RSI:58.3 -> RSI:64.0 -> RSI:54.8
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 125: indices [1068, 1072, 1084, 1086, 1093, 1099]
+  Dates: 2024-11-22 -> 2024-11-26 -> 2024-12-08 -> 2024-12-10 -> 2024-12-17 -> 2024-12-23
+  Prices: $98892 -> $91965 -> $101110 -> $96593 -> $106134 -> $94881
+  RSI: RSI:78.2 -> RSI:66.9 -> RSI:58.3 -> RSI:64.0 -> RSI:54.8 -> RSI:52.5
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 126: indices [1072, 1084, 1086, 1093, 1099, 1101]
+  Dates: 2024-11-26 -> 2024-12-08 -> 2024-12-10 -> 2024-12-17 -> 2024-12-23 -> 2024-12-25
+  Prices: $91965 -> $101110 -> $96593 -> $106134 -> $94881 -> $99430
+  RSI: RSI:66.9 -> RSI:58.3 -> RSI:64.0 -> RSI:54.8 -> RSI:52.5 -> RSI:46.6
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 127: indices [1084, 1086, 1093, 1099, 1101, 1106]
+  Dates: 2024-12-08 -> 2024-12-10 -> 2024-12-17 -> 2024-12-23 -> 2024-12-25 -> 2024-12-30
+  Prices: $101110 -> $96593 -> $106134 -> $94881 -> $99430 -> $92792
+  RSI: RSI:58.3 -> RSI:64.0 -> RSI:54.8 -> RSI:52.5 -> RSI:46.6 -> RSI:43.6
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 128: indices [1086, 1093, 1099, 1101, 1106, 1113]
+  Dates: 2024-12-10 -> 2024-12-17 -> 2024-12-23 -> 2024-12-25 -> 2024-12-30 -> 2025-01-06
+  Prices: $96593 -> $106134 -> $94881 -> $99430 -> $92792 -> $102236
+  RSI: RSI:64.0 -> RSI:54.8 -> RSI:52.5 -> RSI:46.6 -> RSI:43.6 -> RSI:49.8
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 129: indices [1093, 1099, 1101, 1106, 1113, 1116]
+  Dates: 2024-12-17 -> 2024-12-23 -> 2024-12-25 -> 2024-12-30 -> 2025-01-06 -> 2025-01-09
+  Prices: $106134 -> $94881 -> $99430 -> $92792 -> $102236 -> $92552
+  RSI: RSI:54.8 -> RSI:52.5 -> RSI:46.6 -> RSI:43.6 -> RSI:49.8 -> RSI:46.5
+    ✓ Alternating pattern confirmed
+    ✓ RELAXED 5-wave pattern validated!
+
+Testing pattern 130: indices [1099, 1101, 1106, 1113, 1116, 1125]
+  Dates: 2024-12-23 -> 2024-12-25 -> 2024-12-30 -> 2025-01-06 -> 2025-01-09 -> 2025-01-18
+  Prices: $94881 -> $99430 -> $92792 -> $102236 -> $92552 -> $104556
+  RSI: RSI:52.5 -> RSI:46.6 -> RSI:43.6 -> RSI:49.8 -> RSI:46.5 -> RSI:56.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 131: indices [1101, 1106, 1113, 1116, 1125, 1135]
+  Dates: 2024-12-25 -> 2024-12-30 -> 2025-01-06 -> 2025-01-09 -> 2025-01-18 -> 2025-01-28
+  Prices: $99430 -> $92792 -> $102236 -> $92552 -> $104556 -> $101336
+  RSI: RSI:46.6 -> RSI:43.6 -> RSI:49.8 -> RSI:46.5 -> RSI:56.9 -> RSI:56.9
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 132: indices [1106, 1113, 1116, 1125, 1135, 1137]
+  Dates: 2024-12-30 -> 2025-01-06 -> 2025-01-09 -> 2025-01-18 -> 2025-01-28 -> 2025-01-30
+  Prices: $92792 -> $102236 -> $92552 -> $104556 -> $101336 -> $104723
+  RSI: RSI:43.6 -> RSI:49.8 -> RSI:46.5 -> RSI:56.9 -> RSI:56.9 -> RSI:52.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 133: indices [1113, 1116, 1125, 1135, 1137, 1140]
+  Dates: 2025-01-06 -> 2025-01-09 -> 2025-01-18 -> 2025-01-28 -> 2025-01-30 -> 2025-02-02
+  Prices: $102236 -> $92552 -> $104556 -> $101336 -> $104723 -> $97701
+  RSI: RSI:49.8 -> RSI:46.5 -> RSI:56.9 -> RSI:56.9 -> RSI:52.9 -> RSI:50.8
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 134: indices [1116, 1125, 1135, 1137, 1140, 1158]
+  Dates: 2025-01-09 -> 2025-01-18 -> 2025-01-28 -> 2025-01-30 -> 2025-02-02 -> 2025-02-20
+  Prices: $92552 -> $104556 -> $101336 -> $104723 -> $97701 -> $98305
+  RSI: RSI:46.5 -> RSI:56.9 -> RSI:56.9 -> RSI:52.9 -> RSI:50.8 -> RSI:44.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 135: indices [1125, 1135, 1137, 1140, 1158, 1164]
+  Dates: 2025-01-18 -> 2025-01-28 -> 2025-01-30 -> 2025-02-02 -> 2025-02-20 -> 2025-02-26
+  Prices: $104556 -> $101336 -> $104723 -> $97701 -> $98305 -> $84250
+  RSI: RSI:56.9 -> RSI:56.9 -> RSI:52.9 -> RSI:50.8 -> RSI:44.9 -> RSI:25.7
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 136: indices [1135, 1137, 1140, 1158, 1164, 1168]
+  Dates: 2025-01-28 -> 2025-01-30 -> 2025-02-02 -> 2025-02-20 -> 2025-02-26 -> 2025-03-02
+  Prices: $101336 -> $104723 -> $97701 -> $98305 -> $84250 -> $94270
+  RSI: RSI:56.9 -> RSI:52.9 -> RSI:50.8 -> RSI:44.9 -> RSI:25.7 -> RSI:39.2
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 137: indices [1137, 1140, 1158, 1164, 1168, 1169]
+  Dates: 2025-01-30 -> 2025-02-02 -> 2025-02-20 -> 2025-02-26 -> 2025-03-02 -> 2025-03-03
+  Prices: $104723 -> $97701 -> $98305 -> $84250 -> $94270 -> $86221
+  RSI: RSI:52.9 -> RSI:50.8 -> RSI:44.9 -> RSI:25.7 -> RSI:39.2 -> RSI:41.1
+    ✓ Alternating pattern confirmed
+    ❌ Failed 5-wave validation rules
+
+Testing pattern 138: indices [1140, 1158, 1164, 1168, 1169, 1171]
+  Dates: 2025-02-02 -> 2025-02-20 -> 2025-02-26 -> 2025-03-02 -> 2025-03-03 -> 2025-03-05
+  Prices: $97701 -> $98305 -> $84250 -> $94270 -> $86221 -> $90606
+  RSI: RSI:50.8 -> RSI:44.9 -> RSI:25.7 -> RSI:39.2 -> RSI:41.1 -> RSI:45.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 139: indices [1158, 1164, 1168, 1169, 1171, 1176]
+  Dates: 2025-02-20 -> 2025-02-26 -> 2025-03-02 -> 2025-03-03 -> 2025-03-05 -> 2025-03-10
+  Prices: $98305 -> $84250 -> $94270 -> $86221 -> $90606 -> $78596
+  RSI: RSI:44.9 -> RSI:25.7 -> RSI:39.2 -> RSI:41.1 -> RSI:45.9 -> RSI:40.3
+    ✓ Alternating pattern confirmed
+    ✓ RELAXED 5-wave pattern validated!
+
+Testing pattern 140: indices [1164, 1168, 1169, 1171, 1176, 1190]
+  Dates: 2025-02-26 -> 2025-03-02 -> 2025-03-03 -> 2025-03-05 -> 2025-03-10 -> 2025-03-24
+  Prices: $84250 -> $94270 -> $86221 -> $90606 -> $78596 -> $87498
+  RSI: RSI:25.7 -> RSI:39.2 -> RSI:41.1 -> RSI:45.9 -> RSI:40.3 -> RSI:51.9
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 141: indices [1168, 1169, 1171, 1176, 1190, 1196]
+  Dates: 2025-03-02 -> 2025-03-03 -> 2025-03-05 -> 2025-03-10 -> 2025-03-24 -> 2025-03-30
+  Prices: $94270 -> $86221 -> $90606 -> $78596 -> $87498 -> $82390
+  RSI: RSI:39.2 -> RSI:41.1 -> RSI:45.9 -> RSI:40.3 -> RSI:51.9 -> RSI:42.3
+    ✓ Alternating pattern confirmed
+    ✓ RELAXED 5-wave pattern validated!
+
+Testing pattern 142: indices [1169, 1171, 1176, 1190, 1196, 1198]
+  Dates: 2025-03-03 -> 2025-03-05 -> 2025-03-10 -> 2025-03-24 -> 2025-03-30 -> 2025-04-01
+  Prices: $86221 -> $90606 -> $78596 -> $87498 -> $82390 -> $85158
+  RSI: RSI:41.1 -> RSI:45.9 -> RSI:40.3 -> RSI:51.9 -> RSI:42.3 -> RSI:43.5
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+Testing pattern 143: indices [1171, 1176, 1190, 1196, 1198, 1205]
+  Dates: 2025-03-05 -> 2025-03-10 -> 2025-03-24 -> 2025-03-30 -> 2025-04-01 -> 2025-04-08
+  Prices: $90606 -> $78596 -> $87498 -> $82390 -> $85158 -> $76322
+  RSI: RSI:45.9 -> RSI:40.3 -> RSI:51.9 -> RSI:42.3 -> RSI:43.5 -> RSI:48.3
+    ✓ Alternating pattern confirmed
+    ✓ RELAXED 5-wave pattern validated!
+
+Testing pattern 144: indices [1176, 1190, 1196, 1198, 1205, 1249]
+  Dates: 2025-03-10 -> 2025-03-24 -> 2025-03-30 -> 2025-04-01 -> 2025-04-08 -> 2025-05-22
+  Prices: $78596 -> $87498 -> $82390 -> $85158 -> $76322 -> $111696
+  RSI: RSI:40.3 -> RSI:51.9 -> RSI:42.3 -> RSI:43.5 -> RSI:48.3 -> RSI:63.3
+    ❌ Alternating pattern failed at position 0->1
+    ❌ Not alternating pattern
+
+=== Wave pattern search complete: found 12 valid waves ===
+
+=== Processing 12 detected waves for overlaps ===
+
+Processing wave 1: strict wave
+  Period: 2022-03-29 to 2022-05-09
+  ✓ No overlap detected, adding wave to final list
+
+Processing wave 2: relaxed wave
+  Period: 2022-08-13 to 2022-10-11
+  ✓ No overlap detected, adding wave to final list
+
+Processing wave 3: relaxed wave
+  Period: 2023-04-18 to 2023-05-13
+检测到波浪重叠：波浪 A (2023-04-18 - 2023-05-13) 与 波浪 B (2023-05-05 - 2023-06-05)
+  Searching for 8-point wave in expanded range: 2023-04-18 to 2023-06-05
+  Available extremas in range: 10
+Traceback (most recent call last):
+  File "latest_code.py", line 521, in <module>
+    main(file_path='BTC.csv', rsi_drop_threshold = 10, rsi_rise_ratio = 1/3)
+  File "latest_code.py", line 392, in main
+    final_waves, merged_waves = handle_overlapping_waves(all_waves, close_prices, extremas)
+  File "latest_code.py", line 157, in handle_overlapping_waves
+    new_wave = find_downtrend_wave_patterns(close_prices, search_extremas, rsi_series, length=8)
+NameError: name 'rsi_series' is not defined

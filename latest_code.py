@@ -48,47 +48,87 @@ def calculate_rsi(series, period=14):
 
 # === MODIFIED FUNCTION: find_downtrend_wave_patterns ===
 # 泛化波浪寻找函数，可以寻找指定长度的波浪
-def find_downtrend_wave_patterns(close_prices, extremas, length=6):
+def find_downtrend_wave_patterns(close_prices, extremas, rsi_series=None, length=6):
     waves = []
     extremas_indices = [close_prices.index.get_loc(idx) for idx in extremas]
+    
+    print(f"\n=== Searching for {length}-point wave patterns ===")
+    print(f"Available extrema points: {len(extremas)}")
+    for i, extrema_date in enumerate(extremas):
+        extrema_price = close_prices.loc[extrema_date]
+        print(f"  {i}: {extrema_date.date()} - ${extrema_price:.2f}")
     
     for i in range(len(extremas_indices) - length + 1):
         points_indices = extremas_indices[i:i+length]
         points_prices = close_prices.iloc[points_indices]
         
+        print(f"\nTesting pattern {i+1}: indices {points_indices}")
+        wave_dates = [close_prices.index[idx].date() for idx in points_indices]
+        wave_prices = [f"${close_prices.iloc[idx]:.0f}" for idx in points_indices]
+        wave_rsi_values = []
+        if rsi_series is not None:
+            for idx in points_indices:
+                if idx < len(rsi_series):
+                    wave_rsi_values.append(f"RSI:{rsi_series.iloc[idx]:.1f}")
+                else:
+                    wave_rsi_values.append("RSI:N/A")
+        
+        print(f"  Dates: {' -> '.join([str(d) for d in wave_dates])}")
+        print(f"  Prices: {' -> '.join(wave_prices)}")
+        if wave_rsi_values:
+            print(f"  RSI: {' -> '.join(wave_rsi_values)}")
+        
         # 检查是否为交替的峰谷
         is_alternating = True
         for j in range(len(points_prices) - 1):
-            if j % 2 == 0 and points_prices.iloc[j] <= points_prices.iloc[j+1]:
+            current_higher = points_prices.iloc[j] > points_prices.iloc[j+1]
+            expected_higher = (j % 2 == 0)  # Even positions should be higher (peaks)
+            if current_higher != expected_higher:
                 is_alternating = False
-                break
-            elif j % 2 != 0 and points_prices.iloc[j] >= points_prices.iloc[j+1]:
-                is_alternating = False
+                print(f"    ❌ Alternating pattern failed at position {j}->{j+1}")
                 break
         
         if is_alternating:
+            print(f"    ✓ Alternating pattern confirmed")
             if length == 6:
                 if is_downtrend_five_wave_strict(points_prices): 
+                    print(f"    ✓ STRICT 5-wave pattern validated!")
                     waves.append({'indices': points_indices, 'type': 'strict'})
                 elif is_downtrend_five_wave_relaxed(points_prices): 
+                    print(f"    ✓ RELAXED 5-wave pattern validated!")
                     waves.append({'indices': points_indices, 'type': 'relaxed'})
+                else:
+                    print(f"    ❌ Failed 5-wave validation rules")
             elif length == 8:
                 if is_downtrend_seven_wave(points_prices): 
+                    print(f"    ✓ 7-wave pattern validated!")
                     waves.append({'indices': points_indices, 'type': 'merged'})
+                else:
+                    print(f"    ❌ Failed 7-wave validation rules")
+        else:
+            print(f"    ❌ Not alternating pattern")
             
+    print(f"\n=== Wave pattern search complete: found {len(waves)} valid waves ===")
     return waves
 
 # === NEW MASTER FUNCTION: handle_overlapping_waves ===
-def handle_overlapping_waves(all_waves, close_prices, all_extremas):
+def handle_overlapping_waves(all_waves, close_prices, all_extremas, rsi_series=None):
     if not all_waves:
         return [], []
 
+    print(f"\n=== Processing {len(all_waves)} detected waves for overlaps ===")
+    
     waves_to_process = all_waves[:]
     final_waves = []
     merged_waves = []
     i = 0
     while i < len(waves_to_process):
         current_wave = waves_to_process[i]
+        
+        print(f"\nProcessing wave {i+1}: {current_wave['type']} wave")
+        current_start = close_prices.index[current_wave['indices'][0]].date()
+        current_end = close_prices.index[current_wave['indices'][-1]].date()
+        print(f"  Period: {current_start} to {current_end}")
         
         overlap_found = False
         j = i + 1
@@ -98,7 +138,10 @@ def handle_overlapping_waves(all_waves, close_prices, all_extremas):
             # Check for overlap
             if next_wave['indices'][0] <= current_wave['indices'][-1]:
                 overlap_found = True
-                print(f"检测到波浪重叠：波浪 A ({close_prices.index[current_wave['indices'][0]].date()} - {close_prices.index[current_wave['indices'][-1]].date()}) 与 波浪 B ({close_prices.index[next_wave['indices'][0]].date()} - {close_prices.index[next_wave['indices'][-1]].date()})")
+                next_start = close_prices.index[next_wave['indices'][0]].date()
+                next_end = close_prices.index[next_wave['indices'][-1]].date()
+                
+                print(f"检测到波浪重叠：波浪 A ({current_start} - {current_end}) 与 波浪 B ({next_start} - {next_end})")
                 
                 # 定义新的搜索范围
                 start_index = current_wave['indices'][0]
@@ -107,12 +150,17 @@ def handle_overlapping_waves(all_waves, close_prices, all_extremas):
                 # 寻找该范围内的所有极值点
                 search_extremas = [e for e in all_extremas if close_prices.index.get_loc(e) >= start_index and close_prices.index.get_loc(e) <= end_index]
                 
+                print(f"  Searching for 8-point wave in expanded range: {close_prices.index[start_index].date()} to {close_prices.index[end_index].date()}")
+                print(f"  Available extremas in range: {len(search_extremas)}")
+                
                 # 在新的范围和极值点中寻找一个8点的波浪
-                new_wave = find_downtrend_wave_patterns(close_prices, search_extremas, length=8)
+                new_wave = find_downtrend_wave_patterns(close_prices, search_extremas, rsi_series, length=8)
                 
                 if new_wave:
                     merged_waves.append(new_wave[0])
-                    print(f" -> 成功找到新的合并波浪（8点）: 从 {close_prices.index[new_wave[0]['indices'][0]].date()} 到 {close_prices.index[new_wave[0]['indices'][-1]].date()}")
+                    merge_start = close_prices.index[new_wave[0]['indices'][0]].date()
+                    merge_end = close_prices.index[new_wave[0]['indices'][-1]].date()
+                    print(f" -> 成功找到新的合并波浪（8点）: 从 {merge_start} 到 {merge_end}")
                 else:
                     print(" -> 未能在重叠区域内找到新的8点波浪，两个波浪均被移除。")
 
@@ -123,9 +171,14 @@ def handle_overlapping_waves(all_waves, close_prices, all_extremas):
                 j += 1
         
         if not overlap_found:
+            print(f"  ✓ No overlap detected, adding wave to final list")
             final_waves.append(current_wave)
             i += 1
-            
+    
+    print(f"\n=== Overlap processing complete ===")
+    print(f"Final non-overlapping waves: {len(final_waves)}")
+    print(f"Merged waves from overlaps: {len(merged_waves)}")
+    
     return final_waves, merged_waves
 
 
@@ -144,16 +197,16 @@ def plot_individual_wave(file_path, close_prices, rsi_series, wave_indices, trig
     # Conditionally create subplots
     if if_plot_rsi:
         fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 12), gridspec_kw={'height_ratios': [3, 1]}, sharex=True)
-        ax1.plot(plot_prices.index, plot_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
+        ax1.plot(plot_prices.index.to_numpy(), plot_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
     else:
         fig, ax1 = plt.subplots(1, 1, figsize=(15, 8))
         ax2 = None # Set ax2 to None so it can be checked later
-        ax1.plot(plot_prices.index, plot_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
+        ax1.plot(plot_prices.index.to_numpy(), plot_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
     
     wave_points_dates = close_prices.index[wave_indices]
     wave_points_prices = close_prices.iloc[wave_indices].values
     color = 'red' if wave_type == 'strict' else 'green' if wave_type == 'relaxed' else 'magenta'
-    ax1.plot(wave_points_dates, wave_points_prices, 'o-', color=color, label=f'{wave_type.capitalize()} Wave', markersize=6)
+    ax1.plot(wave_points_dates.to_numpy(), wave_points_prices, 'o-', color=color, label=f'{wave_type.capitalize()} Wave', markersize=6)
     
     # Dynamic point annotations remain the same
     for j in range(len(wave_indices)):
@@ -177,9 +230,9 @@ def plot_individual_wave(file_path, close_prices, rsi_series, wave_indices, trig
     # Only plot the RSI subplot if if_plot_rsi is True
     if if_plot_rsi:
         plot_rsi = rsi_series.loc[start_date:end_date]
-        ax2.plot(plot_rsi.index, plot_rsi.values, color='purple', label='14-Day RSI', linewidth=1.5)
+        ax2.plot(plot_rsi.index.to_numpy(), plot_rsi.values, color='purple', label='14-Day RSI', linewidth=1.5)
         wave_points_rsi = rsi_series.loc[wave_points_dates].values
-        ax2.plot(wave_points_dates, wave_points_rsi, 'o', color=color, markersize=6)
+        ax2.plot(wave_points_dates.to_numpy(), wave_points_rsi, 'o', color=color, markersize=6)
         for j in range(len(wave_indices)):
             ax2.annotate(f'P{j+1} ({wave_points_rsi[j]:.2f})', (wave_points_dates[j], wave_points_rsi[j]), xytext=(5, 5), textcoords='offset points', fontsize=8, color=color, fontweight='bold')
         
@@ -331,9 +384,12 @@ def main(file_path='BTC.csv', rsi_drop_threshold = 15, rsi_rise_ratio = 1/4):
     extremas, all_trigger_points = find_extremas_with_rsi(close_prices, rsi_period=14, rsi_drop_threshold=rsi_drop_threshold, rsi_rise_ratio=rsi_rise_ratio)
 
     print("正在从 RSI 驱动的峰谷点中寻找波浪结构...")
-    all_waves = find_downtrend_wave_patterns(close_prices, extremas, length=6)
+    print(f"Total extremas found: {len(extremas)}")
+    print(f"Extrema dates: {[e.date() for e in extremas]}")
+    
+    all_waves = find_downtrend_wave_patterns(close_prices, extremas, rsi_series, length=6)
 
-    final_waves, merged_waves = handle_overlapping_waves(all_waves, close_prices, extremas)
+    final_waves, merged_waves = handle_overlapping_waves(all_waves, close_prices, extremas, rsi_series)
 
     try:
         plt.style.use('default')
@@ -345,7 +401,7 @@ def main(file_path='BTC.csv', rsi_drop_threshold = 15, rsi_rise_ratio = 1/4):
     end_date_all = close_prices.index.max().date()
 
     # Subplot 1: Price Chart
-    ax1.plot(close_prices.index, close_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
+    ax1.plot(close_prices.index.values, close_prices.values, label='Close Price', color='blue', linewidth=1.5, alpha=0.7)
 
     plotted_merged_label = False
     plotted_strict_label = False
@@ -357,7 +413,7 @@ def main(file_path='BTC.csv', rsi_drop_threshold = 15, rsi_rise_ratio = 1/4):
             wave_indices = wave['indices']
             wave_points_dates = close_prices.index[wave_indices]
             label = 'Merged Wave' if not plotted_merged_label else None
-            ax1.plot(wave_points_dates, close_prices.iloc[wave_indices].values, 'ms-', markersize=6, label=label)
+            ax1.plot(wave_points_dates.to_numpy(), close_prices.iloc[wave_indices].values, 'ms-', markersize=6, label=label)
             plotted_merged_label = True
             print(f"   - 合并波浪 {i+1}: 从 {wave_points_dates[0].date()} 到 {wave_points_dates[-1].date()}。")
             ax1.annotate(f'Merged Wave {i+1}', (wave_points_dates[0], close_prices.iloc[wave_indices[0]]), xytext=(5, 10), textcoords='offset points', fontsize=10, color='magenta', fontweight='bold')
@@ -379,7 +435,7 @@ def main(file_path='BTC.csv', rsi_drop_threshold = 15, rsi_rise_ratio = 1/4):
             else:
                 label = None
 
-            ax1.plot(wave_points_dates, close_prices.iloc[wave_indices].values, f'{color[0]}o-', markersize=6, label=label)
+            ax1.plot(wave_points_dates.to_numpy(), close_prices.iloc[wave_indices].values, f'{color[0]}o-', markersize=6, label=label)
             
             print(f"   - {wave_type.capitalize()} 波浪 {i+1}: 从 {wave_points_dates[0].date()} 到 {wave_points_dates[-1].date()}。")
             ax1.annotate(f'{wave_type.capitalize()} Wave {i+1}', (wave_points_dates[0], close_prices.iloc[wave_indices[0]]), xytext=(5, 10), textcoords='offset points', fontsize=10, color=color, fontweight='bold')
@@ -392,7 +448,7 @@ def main(file_path='BTC.csv', rsi_drop_threshold = 15, rsi_rise_ratio = 1/4):
     ax1.grid(True)
 
     # Subplot 2: RSI Chart
-    ax2.plot(rsi_series.index, rsi_series.values, color='purple', label='14-Day RSI', linewidth=1.5)
+    ax2.plot(rsi_series.index.to_numpy(), rsi_series.values, color='purple', label='14-Day RSI', linewidth=1.5)
     ax2.axhline(70, linestyle='--', color='lightcoral', alpha=0.7)
     ax2.axhline(30, linestyle='--', color='lightgreen', alpha=0.7)
 

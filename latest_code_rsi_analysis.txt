@@ -1,0 +1,50 @@
+=== LATEST_CODE.PY RESULTS WITH RSI VALUES ===
+
+✓ TARGET WAVE 1 FOUND:
+Pattern 93: 2024-03-11 to 2024-04-17 
+  Dates: 2024-03-11 -> 2024-03-19 -> 2024-03-31 -> 2024-04-02 -> 2024-04-08 -> 2024-04-17
+  Prices: $72078 -> $61937 -> $71280 -> $65464 -> $71620 -> $61277
+  RSI: RSI:76.9 -> RSI:56.4 -> RSI:56.2 -> RSI:48.4 -> RSI:53.3 -> RSI:44.0
+  ✓ RELAXED 5-wave pattern validated!
+
+✓ TARGET WAVE 2 FOUND:
+Pattern 109: 2024-07-28 to 2024-09-06
+  Dates: 2024-07-28 -> 2024-08-05 -> 2024-08-25 -> 2024-09-01 -> 2024-09-02 -> 2024-09-06  
+  Prices: $68250 -> $54019 -> $64220 -> $57302 -> $59132 -> $53963
+  RSI: RSI:57.8 -> RSI:33.5 -> RSI:54.4 -> RSI:46.4 -> RSI:42.2 -> RSI:35.4
+  ✓ RELAXED 5-wave pattern validated!
+
+COMPLETE WAVE LIST (All 12 valid patterns found):
+
+1. Pattern 1: 2022-03-29 to 2022-05-09 (STRICT) 
+2. Pattern 12: 2022-04-11 to 2022-06-06 (RELAXED)
+3. Pattern 24: 2022-08-28 to 2022-10-26 (RELAXED) 
+4. Pattern 46: 2023-04-21 to 2023-05-28 (RELAXED)
+5. Pattern 50: 2023-05-13 to 2023-06-06 (STRICT)
+6. Pattern 52: 2023-06-01 to 2023-06-23 (STRICT)
+7. Pattern 62: 2023-08-18 to 2023-09-19 (RELAXED)
+8. Pattern 93: 2024-03-11 to 2024-04-17 (RELAXED) ← TARGET ✓
+9. Pattern 94: 2024-03-19 to 2024-04-22 (RELAXED)
+10. Pattern 109: 2024-07-28 to 2024-09-06 (RELAXED) ← TARGET ✓  
+11. Pattern 110: 2024-08-05 to 2024-09-28 (RELAXED)
+12. Pattern 130: 2024-12-23 to 2025-01-18 (RELAXED)
+Plus additional patterns that get merged/filtered for overlaps.
+
+## KEY RSI INSIGHTS:
+
+**Target Wave 1 (2024-03-11 to 2024-04-17):**
+- P0: 2024-03-11 has RSI 76.9 (strong but not extreme)
+- Shows clear RSI decline through wave: 76.9→56.4→56.2→48.4→53.3→44.0
+- P0 RSI is high enough to be detected by comprehensive search
+
+**Target Wave 2 (2024-07-28 to 2024-09-06):**  
+- P0: 2024-07-28 has RSI 57.8 (moderate level)
+- Shows RSI pattern: 57.8→33.5→54.4→46.4→42.2→35.4
+- P0 RSI is moderate, likely not highest in 50-day window
+
+## Why Current_Code.py Misses These:
+1. **2024-03-11 (RSI 76.9)**: Not the highest RSI in its 50-day window
+2. **2024-07-28 (RSI 57.8)**: Moderate RSI, definitely not window maximum
+3. **Sequential limitation**: Can't test these as P0 candidates due to window-based selection
+
+The comprehensive approach succeeds because it tests EVERY possible 6-point combination, regardless of RSI ranking within arbitrary time windows.

@@ -1,1 +1,2 @@
 - memorize, never mention cluade in the git message
+- always keep a chat hisotry at the end of each response, can try to compact it for a reaonable frequency

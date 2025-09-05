@@ -1,0 +1,45 @@
+=== CURRENT_CODE.PY RESULTS WITH RSI VALUES ===
+
+Based on current_code_output.txt and manual RSI lookup:
+
+✗ MISSING TARGET WAVES:
+- 2024-03-11 to 2024-04-17 ← NOT FOUND
+- 2024-07-28 to 2024-09-06 ← NOT FOUND
+
+✓ DETECTED WAVES (4 total):
+
+Wave 1: 2022-03-29 to 2022-05-11 (STRICT, Trend ratio: 0.614)
+  P0: 2022-03-29 Price=$47435 RSI=70.2 (High RSI, selected as P0)
+  P5: 2022-05-11 Price=$29104 RSI=24.5 (Low RSI valley)
+  
+Wave 2: 2022-08-13 to 2022-10-11 (RELAXED, Trend ratio: 0.780)  
+  P0: 2022-08-13 Price=$25205 RSI=61.9 (Moderate-high RSI)
+  P5: 2022-10-11 Price=$19516 RSI=43.1 (Mid-level RSI)
+  
+Wave 3: 2023-05-28 to 2023-06-14 (STRICT, Trend ratio: 0.895)
+  P0: 2023-05-28 Price=$26923 RSI=56.9 (Moderate RSI)
+  P5: 2023-06-14 Price=$25168 RSI=36.1 (Lower RSI)
+  
+Wave 4: 2024-12-17 to 2025-01-09 (RELAXED, Trend ratio: 0.872)
+  P0: 2024-12-17 Price=$106439 RSI=70.1 (High RSI) 
+  P5: 2025-01-09 Price=$92410 RSI=41.9 (Lower RSI)
+
+=== KEY INSIGHTS FROM RSI ANALYSIS ===
+
+**Sequential P0 Selection Pattern:**
+- All detected P0s have relatively high RSI (56.9 - 70.2)
+- Current_code.py successfully finds waves when P0 is highest RSI in 50-day window
+- Pattern: High RSI P0 → declining RSI through wave structure
+
+**Why Targets Are Missing:**
+
+1. **2024-03-11 (Target P0 RSI 76.9)**: 
+   - Window 25 (2024-02-20 to 2024-04-09) selected 2024-02-28 (RSI 87.3) instead
+   - Target RSI 76.9 was high but not the window maximum
+
+2. **2024-07-28 (Target P0 RSI 57.8)**: 
+   - Window 32 (2024-07-19 to 2024-09-06) selected 2024-07-21 (RSI 67.7) instead  
+   - Target RSI 57.8 was only moderate, clearly not window maximum
+
+**Conclusion:**
+Sequential approach only captures waves starting from window-maximum RSI peaks, missing valid patterns that start from non-maximum (but still significant) RSI levels. The comprehensive approach tests all RSI extrema regardless of their ranking within arbitrary time windows.

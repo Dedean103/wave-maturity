@@ -417,17 +417,6 @@ def build_wave_with_dynamic_correction(close_prices, p0_initial, rsi_series, rsi
     
     print(f"   Final wave points: {[f'P{i}={date.date()}(${close_prices.loc[date]:.0f})' for i, date in enumerate(wave_points)]}")
     
-    # Add RSI values for each wave point
-    wave_rsi_values = []
-    for date in wave_points:
-        idx = close_prices.index.get_loc(date)
-        if idx < len(rsi_series):
-            rsi_val = rsi_series.iloc[idx]
-            wave_rsi_values.append(f"RSI:{rsi_val:.1f}")
-        else:
-            wave_rsi_values.append("RSI:N/A")
-    print(f"   Wave RSI values: {' -> '.join(wave_rsi_values)}")
-    
     # Pattern validation
     wave_type = None
     if is_downtrend_five_wave_strict(wave_prices):
@@ -464,108 +453,6 @@ def build_wave_with_dynamic_correction(close_prices, p0_initial, rsi_series, rsi
     }
 
 # =========================================================
-# Improved wave detection functions (from latest_code.py approach)
-# =========================================================
-
-def find_downtrend_wave_patterns_in_window(close_prices, extremas, length=6):
-    """
-    Find wave patterns within a given set of extremas (similar to latest_code.py)
-    """
-    waves = []
-    if len(extremas) < length:
-        return waves
-        
-    extremas_indices = [close_prices.index.get_loc(idx) for idx in extremas]
-    
-    for i in range(len(extremas_indices) - length + 1):
-        points_indices = extremas_indices[i:i+length]
-        points_prices = close_prices.iloc[points_indices]
-        
-        # Check if it's alternating peak-valley pattern
-        is_alternating = True
-        for j in range(len(points_prices) - 1):
-            if j % 2 == 0 and points_prices.iloc[j] <= points_prices.iloc[j+1]:
-                is_alternating = False
-                break
-            elif j % 2 != 0 and points_prices.iloc[j] >= points_prices.iloc[j+1]:
-                is_alternating = False
-                break
-        
-        if is_alternating:
-            if is_downtrend_five_wave_strict(points_prices): 
-                waves.append({'indices': points_indices, 'type': 'strict'})
-            elif is_downtrend_five_wave_relaxed(points_prices): 
-                waves.append({'indices': points_indices, 'type': 'relaxed'})
-            
-    return waves
-
-def find_comprehensive_extremas_in_window(close_prices, rsi_series, start_date, end_date, 
-                                        rsi_drop_threshold, rsi_rise_ratio, price_refinement_window=5):
-    """
-    Find all RSI extrema within a specific window (comprehensive search like latest_code.py)
-    """
-    # Get data subset for this window
-    window_data = close_prices.loc[start_date:end_date]
-    window_rsi = rsi_series.loc[start_date:end_date]
-    
-    if len(window_rsi) < 10:
-        return []
-    
-    extremas = []
-    
-    peak_rsi = window_rsi.iloc[0]
-    valley_rsi = window_rsi.iloc[0]
-    peak_date = window_rsi.index[0]
-    valley_date = window_rsi.index[0]
-    
-    last_wave_peak_rsi = peak_rsi
-    direction = 0  # 0 = neutral, 1 = looking for drop, -1 = looking for rise
-    
-    for i in range(1, len(window_rsi)):
-        current_rsi = window_rsi.iloc[i]
-        current_date = window_rsi.index[i]
-        
-        # Track peaks for drop detection
-        if direction >= 0:
-            if current_rsi > peak_rsi:
-                peak_rsi = current_rsi
-                peak_date = current_date
-            
-            rsi_drop_change = peak_rsi - current_rsi
-            if rsi_drop_change >= rsi_drop_threshold:
-                # Confirm peak and apply price refinement
-                if not extremas or extremas[-1] != peak_date:
-                    refined_peak = refine_peak_with_price(close_prices, peak_date, price_refinement_window)
-                    extremas.append(refined_peak)
-                
-                direction = -1
-                last_wave_peak_rsi = peak_rsi
-                valley_rsi = current_rsi
-                valley_date = current_date
-        
-        # Track valleys for rise detection  
-        if direction <= 0:
-            if current_rsi < valley_rsi:
-                valley_rsi = current_rsi
-                valley_date = current_date
-            
-            rsi_rise_change = current_rsi - valley_rsi
-            drop_amount_for_threshold = last_wave_peak_rsi - valley_rsi
-            rise_threshold = drop_amount_for_threshold * rsi_rise_ratio
-            
-            if rsi_rise_change >= rise_threshold and drop_amount_for_threshold > 0:
-                # Confirm valley and apply price refinement
-                if not extremas or extremas[-1] != valley_date:
-                    refined_valley = refine_valley_with_price(close_prices, valley_date, price_refinement_window)
-                    extremas.append(refined_valley)
-                
-                direction = 1
-                peak_rsi = current_rsi
-                peak_date = current_date
-    
-    return extremas
-
-# =========================================================
 # Sequential RSI P0 + Dynamic Extrema Correction (Approach 2)
 # =========================================================
 
@@ -573,20 +460,19 @@ def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14,
                             rsi_drop_threshold=10, rsi_rise_ratio=1/3, 
                             trend_threshold=0.95, recent_days=50, price_refinement_window=5):
     """
-    Enhanced Sequential P0 selection with comprehensive extrema search
-    Combines sequential P0 approach with comprehensive wave detection like latest_code.py
+    Sequential P0 selection with dynamic extrema correction and dual filtering
     """
-    print(f"=== Enhanced Sequential P0 + Comprehensive Wave Search ===")
+    print(f"=== Sequential RSI P0 + Dynamic Extrema Correction ===")
     print(f"Parameters: lookback_days={lookback_days}, trend_threshold={trend_threshold}, price_refinement_window={price_refinement_window}")
     
-    # Calculate RSI once for the full dataset
+    # Calculate RSI once for the full dataset (FIX: was calculating on search windows)
     full_rsi = calculate_rsi(close_prices, period=rsi_period).dropna()
     
     all_waves = []
     all_trigger_points = []
     current_position = 0
     wave_count = 0
-    max_iterations = 50
+    max_iterations = 20
     
     while current_position < len(close_prices) - lookback_days and wave_count < max_iterations:
         wave_count += 1
@@ -620,73 +506,19 @@ def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14,
         if p0_date != rsi_p0_date:
             print(f"P0 refined to: {p0_date.date()} (${p0_price:.2f})")
         
-        # ENHANCED APPROACH: Find all extrema in extended window from P0
-        # Use comprehensive search like latest_code.py but starting from P0
-        extended_end_position = min(current_position + lookback_days * 3, len(close_prices))  # Extended search window
-        extended_search_data = close_prices.iloc[close_prices.index.get_loc(p0_date):extended_end_position]
-        
-        if len(extended_search_data) < 50:  # Need enough data for wave detection
-            print("Insufficient data for comprehensive search. Advancing position.")
-            current_position += lookback_days // 2
-            continue
-        
-        print(f"Comprehensive search window: {extended_search_data.index[0].date()} to {extended_search_data.index[-1].date()}")
-        
-        # Find all extrema in extended window using comprehensive approach
-        window_extremas = find_comprehensive_extremas_in_window(
-            close_prices, full_rsi, 
-            extended_search_data.index[0], extended_search_data.index[-1],
-            rsi_drop_threshold, rsi_rise_ratio, price_refinement_window
+        # Dynamic wave building with extrema correction
+        wave = build_wave_with_dynamic_correction(
+            close_prices, p0_date, full_rsi, rsi_drop_threshold, rsi_rise_ratio, trend_threshold, price_refinement_window
         )
         
-        # Ensure P0 is included in extrema list (as first element)
-        if window_extremas and window_extremas[0] != p0_date:
-            window_extremas.insert(0, p0_date)
-        elif not window_extremas:
-            window_extremas = [p0_date]
-        
-        print(f"Found {len(window_extremas)} extrema points in comprehensive search")
-        
-        # Test all possible wave combinations starting from P0 (like latest_code.py)
-        window_waves = find_downtrend_wave_patterns_in_window(close_prices, window_extremas, length=6)
-        
-        # Filter waves that actually start with our P0
-        p0_idx_in_data = close_prices.index.get_loc(p0_date)
-        valid_waves = []
-        for wave_candidate in window_waves:
-            if wave_candidate['indices'][0] == p0_idx_in_data:  # Must start with our P0
-                # Additional trend validation
-                wave_start_price = close_prices.iloc[wave_candidate['indices'][0]]
-                wave_end_price = close_prices.iloc[wave_candidate['indices'][-1]]
-                wave_trend_ratio = wave_end_price / wave_start_price
-                
-                if wave_trend_ratio <= trend_threshold:  # Must be downtrend
-                    valid_waves.append(wave_candidate)
-                    print(f"✓ Valid {wave_candidate['type']} wave found! Trend ratio: {wave_trend_ratio:.3f}")
-        
-        if valid_waves:
-            # Take the first valid wave found
-            selected_wave = valid_waves[0]
-            
-            # Convert to our wave format
-            wave_indices = selected_wave['indices']
-            wave_type = selected_wave['type']
-            wave_start_date = close_prices.index[wave_indices[0]]
-            wave_end_date = close_prices.index[wave_indices[-1]]
-            wave_points = [close_prices.index[idx] for idx in wave_indices]
-            trend_ratio = close_prices.iloc[wave_indices[-1]] / close_prices.iloc[wave_indices[0]]
-            
-            wave = {
-                'indices': wave_indices,
-                'dates': wave_points,
-                'type': wave_type,
-                'trend_ratio': trend_ratio,
-                'trend_info': f"P0=${close_prices.iloc[wave_indices[0]]:.0f} P5=${close_prices.iloc[wave_indices[-1]]:.0f}"
-            }
-            
+        if wave:
             all_waves.append(wave)
             
-            # Get trigger points for this wave period  
+            # Get trigger points for this wave period
+            wave_start_date = close_prices.index[wave['indices'][0]]
+            wave_end_date = close_prices.index[wave['indices'][-1]]
+            
+            # Find extremas in this period to get trigger points
             wave_data = close_prices.loc[wave_start_date:wave_end_date]
             wave_rsi = full_rsi.loc[wave_start_date:wave_end_date]
             _, wave_triggers = find_extremas_with_rsi(
@@ -695,10 +527,11 @@ def sequential_wave_detection(close_prices, lookback_days=50, rsi_period=14,
             all_trigger_points.extend(wave_triggers)
             
             # Advance past this wave
-            current_position = wave_indices[-1] + 1
+            wave_end_idx = wave['indices'][-1]
+            current_position = wave_end_idx + 1
             print(f"Wave found! Advancing to position {current_position}")
         else:
-            print("No valid wave found in comprehensive search. Advancing position.")
+            print("No valid wave found with dynamic correction. Advancing position.")
             current_position += lookback_days // 2
     
     print(f"\n=== Sequential Detection Complete ===")
@@ -934,9 +767,8 @@ def main(file_path='BTC.csv', lookback_days=50, rsi_period=14, rsi_drop_threshol
     print(f"\n=== Results ===")
     print(f"Total waves detected: {len(all_waves)}")
     for i, wave in enumerate(all_waves):
-        wave_start_date = close_prices.index[wave['indices'][0]].date()
-        wave_end_date = close_prices.index[wave['indices'][-1]].date()
-        print(f"Wave {i+1}: {wave['type']} - {wave_start_date} to {wave_end_date}")
+        trend_info = wave['trend_info']
+        print(f"Wave {i+1}: {wave['type']} - {trend_info['start_date']} to {trend_info['end_date']}")
     
     # Plot overview chart
     if all_waves:
