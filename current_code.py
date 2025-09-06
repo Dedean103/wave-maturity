@@ -589,7 +589,7 @@ def find_next_rsi_peak(rsi_series, start_idx, lookback_days=50):
 
 def find_next_5_extremas_from_p0(close_prices, rsi_series, p0_date, rsi_drop_threshold, rsi_rise_ratio):
     """
-    Find the next 5 extremas after P0 using the SAME algorithm as latest_code
+    Find the next 5 extremas after P0 using RSI triggers (no price refinement yet)
     """
     p0_idx = close_prices.index.get_loc(p0_date)
     remaining_data = close_prices.iloc[p0_idx + 1:]
@@ -598,61 +598,56 @@ def find_next_5_extremas_from_p0(close_prices, rsi_series, p0_date, rsi_drop_thr
     if len(remaining_data) < 30:
         return []
     
-    # Use the EXACT same algorithm as latest_code find_extremas_with_rsi
     extremas = []
     
-    if len(remaining_rsi) < 2: 
-        return extremas
+    # Track RSI state for extrema detection
+    peak_rsi = remaining_rsi.iloc[0] if len(remaining_rsi) > 0 else 0
+    valley_rsi = remaining_rsi.iloc[0] if len(remaining_rsi) > 0 else 0
+    peak_date = remaining_rsi.index[0] if len(remaining_rsi) > 0 else None
+    valley_date = remaining_rsi.index[0] if len(remaining_rsi) > 0 else None
     
-    peak_rsi = remaining_rsi.iloc[0]
-    valley_rsi = remaining_rsi.iloc[0]
-    peak_date = remaining_rsi.index[0]
-    valley_date = remaining_rsi.index[0]
+    last_wave_peak_rsi = peak_rsi
+    direction = -1  # Start looking for valley after P0 (peak)
     
-    # CRITICAL: Use P0's RSI as the baseline for consistent thresholding
-    last_wave_peak_rsi = rsi_series.loc[p0_date]  # Use P0's RSI as baseline
-    
-    direction = 0  # Start neutral like latest_code
-    
-    for i in range(1, min(len(remaining_rsi), 200)):
+    for i in range(1, min(len(remaining_rsi), 200)):  # Limit search to prevent infinite loops
         if len(extremas) >= 5:  # Found enough extremas
             break
             
         current_rsi = remaining_rsi.iloc[i]
         current_date = remaining_rsi.index[i]
         
-        if direction >= 0:
-            if current_rsi > peak_rsi:
-                peak_rsi = current_rsi
-                peak_date = current_date
-            
-            rsi_drop_change = peak_rsi - current_rsi
-            if rsi_drop_change >= rsi_drop_threshold:
-                if not extremas or extremas[-1] != peak_date:
-                    extremas.append(peak_date)
-                
-                direction = -1
-                # CRITICAL: Don't update last_wave_peak_rsi here
-                valley_rsi = current_rsi
-                valley_date = current_date
-        
+        # Looking for valley (drop from peak)
         if direction <= 0:
             if current_rsi < valley_rsi:
                 valley_rsi = current_rsi
                 valley_date = current_date
             
+            # Check for rise trigger to confirm valley
             rsi_rise_change = current_rsi - valley_rsi
             drop_amount_for_threshold = last_wave_peak_rsi - valley_rsi
             rise_threshold = drop_amount_for_threshold * rsi_rise_ratio
             
             if rsi_rise_change >= rise_threshold and drop_amount_for_threshold > 0:
-                if not extremas or extremas[-1] != valley_date:
-                    extremas.append(valley_date)
-                
-                direction = 1
+                extremas.append(valley_date)
+                direction = 1  # Now look for peak
                 peak_rsi = current_rsi
                 peak_date = current_date
-                # CRITICAL: Keep last_wave_peak_rsi as P0's RSI for consistency
+                last_wave_peak_rsi = peak_rsi
+                
+        # Looking for peak (rise from valley)
+        elif direction >= 0:
+            if current_rsi > peak_rsi:
+                peak_rsi = current_rsi
+                peak_date = current_date
+            
+            # Check for drop trigger to confirm peak
+            rsi_drop_change = peak_rsi - current_rsi
+            if rsi_drop_change >= rsi_drop_threshold:
+                extremas.append(peak_date)
+                direction = -1  # Now look for valley
+                valley_rsi = current_rsi
+                valley_date = current_date
+                last_wave_peak_rsi = peak_rsi
     
     return extremas
 
@@ -1013,17 +1008,6 @@ def plot_individual_wave(file_path, close_prices, rsi_series, wave_indices, trig
 
 def main(file_path='BTC.csv', lookback_days=50, rsi_period=14, rsi_drop_threshold=10, 
          rsi_rise_ratio=1/3, trend_threshold=0.95, recent_days=50, price_refinement_window=5):
-    """
-    Main wave detection function
-    
-    Parameters:
-    - lookback_days: RSI peak search window for P0 candidates (default: 50)
-    - rsi_period: RSI calculation period (default: 14)
-    - rsi_drop_threshold: RSI drop threshold for peak detection (default: 10)
-    - rsi_rise_ratio: RSI rise ratio for valley detection (default: 1/3)
-    - trend_threshold: Trend validation threshold (default: 0.95)
-    - price_refinement_window: Bidirectional price search window (default: 5)
-    """
     print("=== BTC Wave Detection System (Approach 2) ===")
     print("Sequential P0 + Dynamic Extrema Correction with Dual Filtering")
     
@@ -1077,15 +1061,4 @@ def main(file_path='BTC.csv', lookback_days=50, rsi_period=14, rsi_drop_threshol
                                plot_range_days=30, wave_number=i+1, wave_type=wave_type, if_plot_rsi=True)
 
 if __name__ == "__main__":
-    # You can easily change the P0 search window here
-    # lookback_days controls the RSI peak search window for P0 candidates
-    main(
-        file_path='BTC.csv',
-        lookback_days=50,        # ← Change this to adjust P0 search window (e.g., 30, 100, etc.)
-        rsi_period=14,
-        rsi_drop_threshold=10,
-        rsi_rise_ratio=1/3,
-        trend_threshold=0.95,
-        recent_days=50,
-        price_refinement_window=5
-    )
+    main()
