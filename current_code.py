@@ -587,9 +587,10 @@ def find_next_rsi_peak(rsi_series, start_idx, lookback_days=50):
     print(f"   Found RSI peak: {max_rsi_idx_local.date()} (RSI: {search_window.max():.2f})")
     return max_rsi_idx_local
 
-def find_next_5_extremas_from_p0(close_prices, rsi_series, p0_date, rsi_drop_threshold, rsi_rise_ratio):
+def find_next_5_extremas_from_p0(close_prices, rsi_series, p0_date, rsi_drop_threshold, rsi_rise_ratio, price_refinement_window=5):
     """
-    Find the next 5 extremas after P0 using RSI triggers (no price refinement yet)
+    Find the next 5 extremas after P0 using RSI triggers WITH immediate price refinement
+    This integrates price refinement into the sequential detection phase
     """
     p0_idx = close_prices.index.get_loc(p0_date)
     remaining_data = close_prices.iloc[p0_idx + 1:]
@@ -628,7 +629,11 @@ def find_next_5_extremas_from_p0(close_prices, rsi_series, p0_date, rsi_drop_thr
             rise_threshold = drop_amount_for_threshold * rsi_rise_ratio
             
             if rsi_rise_change >= rise_threshold and drop_amount_for_threshold > 0:
-                extremas.append(valley_date)
+                # IMMEDIATE PRICE REFINEMENT: Find the actual lowest price around RSI valley
+                refined_valley_date = refine_valley_with_price(close_prices, valley_date, price_refinement_window)
+                extremas.append(refined_valley_date)
+                print(f"    RSI Valley at {valley_date.date()} -> Price-refined Valley at {refined_valley_date.date()}")
+                
                 direction = 1  # Now look for peak
                 peak_rsi = current_rsi
                 peak_date = current_date
@@ -643,7 +648,11 @@ def find_next_5_extremas_from_p0(close_prices, rsi_series, p0_date, rsi_drop_thr
             # Check for drop trigger to confirm peak
             rsi_drop_change = peak_rsi - current_rsi
             if rsi_drop_change >= rsi_drop_threshold:
-                extremas.append(peak_date)
+                # IMMEDIATE PRICE REFINEMENT: Find the actual highest price around RSI peak
+                refined_peak_date = refine_peak_with_price(close_prices, peak_date, price_refinement_window)
+                extremas.append(refined_peak_date)
+                print(f"    RSI Peak at {peak_date.date()} -> Price-refined Peak at {refined_peak_date.date()}")
+                
                 direction = -1  # Now look for valley
                 valley_rsi = current_rsi
                 valley_date = current_date
@@ -716,7 +725,7 @@ def progressive_wave_detection_with_refinement(close_prices, lookback_days=50, r
         
         # Step 2: Find next 5 extremas from P0 (no price refinement yet)
         next_5_extremas = find_next_5_extremas_from_p0(
-            close_prices, full_rsi, p0_rsi_date, rsi_drop_threshold, rsi_rise_ratio
+            close_prices, full_rsi, p0_rsi_date, rsi_drop_threshold, rsi_rise_ratio, price_refinement_window
         )
         
         if len(next_5_extremas) < 5:
@@ -758,13 +767,15 @@ def progressive_wave_detection_with_refinement(close_prices, lookback_days=50, r
             
         print(f"✓ Valid {wave_type} wave pattern found! Trend ratio: {trend_ratio:.3f}")
         
-        # Step 4: ONLY NOW apply price refinement to optimize entry/exit points
-        print(f"Applying price refinement to optimize wave points...")
-        refined_wave_points = apply_price_refinement_to_wave(
-            close_prices, wave_points, price_refinement_window
-        )
+        # Step 4: Apply price refinement ONLY to P0 (since other points already refined during detection)
+        print(f"Applying price refinement to P0...")
+        refined_p0_date = refine_peak_with_price(close_prices, p0_rsi_date, price_refinement_window)
+        refined_wave_points = [refined_p0_date] + next_5_extremas[:5]
         
-        # Create final wave with refined points
+        print(f"Price refinement results:")
+        print(f"  P0: {p0_rsi_date.date()} -> {refined_p0_date.date()}")
+        
+        # Create final wave with refined points (P0 refined, P1-P5 already refined during detection)
         refined_wave_indices = [close_prices.index.get_loc(date) for date in refined_wave_points]
         
         wave = {
