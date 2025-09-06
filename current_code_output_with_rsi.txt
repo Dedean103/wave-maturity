@@ -10,11 +10,11 @@ Parameters: lookback_days=50, trend_threshold=0.95
 P0 candidate: 2021-12-21 (RSI: 100.00, Price: $48889.88)
 6-point wave candidate:
   P0: 2021-12-21 - $48889.88 (RSI: 100.00)
-  P1: 2022-01-22 - $35071.42 (RSI: 30.86)
-  P2: 2022-02-09 - $44372.72 (RSI: 67.03)
-  P3: 2022-02-13 - $42053.66 (RSI: 55.50)
-  P4: 2022-02-15 - $44544.86 (RSI: 64.33)
-  P5: 2022-02-21 - $37008.16 (RSI: 36.16)
+  P1: 2021-12-23 - $50838.81 (RSI: 98.94)
+  P2: 2022-01-22 - $35071.42 (RSI: 30.86)
+  P3: 2022-02-09 - $44372.72 (RSI: 67.03)
+  P4: 2022-02-21 - $37008.16 (RSI: 36.16)
+  P5: 2022-03-01 - $44421.20 (RSI: 61.82)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
 --- Wave Search 2 ---
@@ -22,11 +22,11 @@ Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 P0 candidate: 2021-12-23 (RSI: 98.94, Price: $50838.81)
 6-point wave candidate:
   P0: 2021-12-23 - $50838.81 (RSI: 98.94)
-  P1: 2022-01-22 - $35071.42 (RSI: 30.86)
-  P2: 2022-02-09 - $44372.72 (RSI: 67.03)
-  P3: 2022-02-13 - $42053.66 (RSI: 55.50)
-  P4: 2022-02-15 - $44544.86 (RSI: 64.33)
-  P5: 2022-02-21 - $37008.16 (RSI: 36.16)
+  P1: 2021-12-26 - $50775.49 (RSI: 97.12)
+  P2: 2022-01-22 - $35071.42 (RSI: 30.86)
+  P3: 2022-02-09 - $44372.72 (RSI: 67.03)
+  P4: 2022-02-21 - $37008.16 (RSI: 36.16)
+  P5: 2022-03-01 - $44421.20 (RSI: 61.82)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
 --- Wave Search 3 ---
@@ -34,11 +34,11 @@ Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 P0 candidate: 2021-12-26 (RSI: 97.12, Price: $50775.49)
 6-point wave candidate:
   P0: 2021-12-26 - $50775.49 (RSI: 97.12)
-  P1: 2022-01-22 - $35071.42 (RSI: 30.86)
-  P2: 2022-02-09 - $44372.72 (RSI: 67.03)
-  P3: 2022-02-13 - $42053.66 (RSI: 55.50)
-  P4: 2022-02-15 - $44544.86 (RSI: 64.33)
-  P5: 2022-02-21 - $37008.16 (RSI: 36.16)
+  P1: 2021-12-28 - $47543.74 (RSI: 82.95)
+  P2: 2022-01-22 - $35071.42 (RSI: 30.86)
+  P3: 2022-02-09 - $44372.72 (RSI: 67.03)
+  P4: 2022-02-21 - $37008.16 (RSI: 36.16)
+  P5: 2022-03-01 - $44421.20 (RSI: 61.82)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
 --- Wave Search 4 ---
@@ -46,11 +46,11 @@ Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 P0 candidate: 2021-12-28 (RSI: 82.95, Price: $47543.74)
 6-point wave candidate:
   P0: 2021-12-28 - $47543.74 (RSI: 82.95)
-  P1: 2021-12-31 - $46216.93 (RSI: 75.91)
-  P2: 2022-01-01 - $47722.65 (RSI: 77.71)
-  P3: 2022-01-22 - $35071.42 (RSI: 30.86)
-  P4: 2022-02-09 - $44372.72 (RSI: 67.03)
-  P5: 2022-02-13 - $42053.66 (RSI: 55.50)
+  P1: 2021-12-30 - $47120.87 (RSI: 79.48)
+  P2: 2022-01-22 - $35071.42 (RSI: 30.86)
+  P3: 2022-02-09 - $44372.72 (RSI: 67.03)
+  P4: 2022-02-21 - $37008.16 (RSI: 36.16)
+  P5: 2022-03-01 - $44421.20 (RSI: 61.82)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
 --- Wave Search 5 ---
@@ -58,11 +58,11 @@ Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 P0 candidate: 2021-12-30 (RSI: 79.48, Price: $47120.87)
 6-point wave candidate:
   P0: 2021-12-30 - $47120.87 (RSI: 79.48)
-  P1: 2022-01-22 - $35071.42 (RSI: 30.86)
-  P2: 2022-02-09 - $44372.72 (RSI: 67.03)
-  P3: 2022-02-13 - $42053.66 (RSI: 55.50)
-  P4: 2022-02-15 - $44544.86 (RSI: 64.33)
-  P5: 2022-02-21 - $37008.16 (RSI: 36.16)
+  P1: 2022-01-01 - $47722.65 (RSI: 77.71)
+  P2: 2022-01-22 - $35071.42 (RSI: 30.86)
+  P3: 2022-02-09 - $44372.72 (RSI: 67.03)
+  P4: 2022-02-13 - $42053.66 (RSI: 55.50)
+  P5: 2022-02-15 - $44544.86 (RSI: 64.33)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
 --- Wave Search 6 ---
@@ -70,11 +70,11 @@ Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 P0 candidate: 2022-01-01 (RSI: 77.71, Price: $47722.65)
 6-point wave candidate:
   P0: 2022-01-01 - $47722.65 (RSI: 77.71)
-  P1: 2022-01-07 - $41566.48 (RSI: 55.06)
-  P2: 2022-01-12 - $43902.66 (RSI: 61.70)
-  P3: 2022-01-22 - $35071.42 (RSI: 30.86)
-  P4: 2022-02-09 - $44372.72 (RSI: 67.03)
-  P5: 2022-02-13 - $42053.66 (RSI: 55.50)
+  P1: 2022-01-03 - $46446.10 (RSI: 72.53)
+  P2: 2022-01-22 - $35071.42 (RSI: 30.86)
+  P3: 2022-02-09 - $44372.72 (RSI: 67.03)
+  P4: 2022-02-13 - $42053.66 (RSI: 55.50)
+  P5: 2022-02-15 - $44544.86 (RSI: 64.33)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
 --- Wave Search 7 ---
@@ -106,109 +106,138 @@ Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 P0 candidate: 2022-03-29 (RSI: 70.16, Price: $47434.80)
 6-point wave candidate:
   P0: 2022-03-29 - $47434.80 (RSI: 70.16)
-  P1: 2022-04-11 - $39530.45 (RSI: 35.40)
-  P2: 2022-04-19 - $41493.18 (RSI: 47.50)
-  P3: 2022-04-26 - $38112.65 (RSI: 36.60)
-  P4: 2022-05-04 - $39690.00 (RSI: 48.53)
-  P5: 2022-05-09 - $30076.31 (RSI: 24.54)
-✓ Valid strict wave pattern found! Trend ratio: 0.634
-Applying price refinement to optimize wave points...
-   -> Price refinement: Valley from 2022-05-09 ($30076.31) to 2022-05-11 ($29103.94)
-Price refinement results:
-  P0: 2022-03-29 (no change)
-  P1: 2022-04-11 (no change)
-  P2: 2022-04-19 (no change)
-  P3: 2022-04-26 (no change)
-  P4: 2022-05-04 (no change)
-  P5: 2022-05-09 ($30076.31) -> 2022-05-11 ($29103.94)
-Wave completed! Advancing to position 143
+  P1: 2022-04-04 - $46580.51 (RSI: 62.59)
+  P2: 2022-04-11 - $39530.45 (RSI: 35.40)
+  P3: 2022-04-19 - $41493.18 (RSI: 47.50)
+  P4: 2022-04-26 - $38112.65 (RSI: 36.60)
+  P5: 2022-05-04 - $39690.00 (RSI: 48.53)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
 --- Wave Search 10 ---
+   Found RSI peak: 2022-04-04 (RSI: 62.59)
+P0 candidate: 2022-04-04 (RSI: 62.59, Price: $46580.51)
+6-point wave candidate:
+  P0: 2022-04-04 - $46580.51 (RSI: 62.59)
+  P1: 2022-04-07 - $43444.19 (RSI: 48.04)
+  P2: 2022-04-11 - $39530.45 (RSI: 35.40)
+  P3: 2022-04-19 - $41493.18 (RSI: 47.50)
+  P4: 2022-04-26 - $38112.65 (RSI: 36.60)
+  P5: 2022-05-04 - $39690.00 (RSI: 48.53)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
+
+--- Wave Search 11 ---
+   Found RSI peak: 2022-05-04 (RSI: 48.53)
+P0 candidate: 2022-05-04 (RSI: 48.53, Price: $39690.00)
+6-point wave candidate:
+  P0: 2022-05-04 - $39690.00 (RSI: 48.53)
+  P1: 2022-05-06 - $36013.77 (RSI: 36.85)
+  P2: 2022-05-09 - $30076.31 (RSI: 24.54)
+  P3: 2022-06-06 - $31373.10 (RSI: 51.38)
+  P4: 2022-06-18 - $18970.79 (RSI: 20.31)
+  P5: 2022-07-07 - $21624.98 (RSI: 47.57)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
+
+--- Wave Search 12 ---
    Found RSI peak: 2022-06-06 (RSI: 51.38)
 P0 candidate: 2022-06-06 (RSI: 51.38, Price: $31373.10)
 6-point wave candidate:
   P0: 2022-06-06 - $31373.10 (RSI: 51.38)
-  P1: 2022-06-18 - $18970.79 (RSI: 20.31)
-  P2: 2022-07-07 - $21624.98 (RSI: 47.57)
-  P3: 2022-07-12 - $19328.75 (RSI: 34.71)
-  P4: 2022-07-19 - $23396.62 (RSI: 61.41)
-  P5: 2022-07-26 - $21254.67 (RSI: 45.71)
+  P1: 2022-06-08 - $30204.77 (RSI: 46.24)
+  P2: 2022-06-18 - $18970.79 (RSI: 20.31)
+  P3: 2022-07-07 - $21624.98 (RSI: 47.57)
+  P4: 2022-07-12 - $19328.75 (RSI: 34.71)
+  P5: 2022-07-19 - $23396.62 (RSI: 61.41)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 11 ---
+--- Wave Search 13 ---
    Found RSI peak: 2022-07-19 (RSI: 61.41)
 P0 candidate: 2022-07-19 (RSI: 61.41, Price: $23396.62)
 6-point wave candidate:
   P0: 2022-07-19 - $23396.62 (RSI: 61.41)
-  P1: 2022-07-26 - $21254.67 (RSI: 45.71)
-  P2: 2022-08-13 - $24441.38 (RSI: 61.93)
-  P3: 2022-08-28 - $19555.61 (RSI: 29.25)
-  P4: 2022-09-12 - $22395.74 (RSI: 61.35)
-  P5: 2022-09-21 - $18461.36 (RSI: 36.14)
+  P1: 2022-07-21 - $23152.19 (RSI: 59.59)
+  P2: 2022-07-26 - $21254.67 (RSI: 45.71)
+  P3: 2022-08-13 - $24441.38 (RSI: 61.93)
+  P4: 2022-08-28 - $19555.61 (RSI: 29.25)
+  P5: 2022-09-12 - $22395.74 (RSI: 61.35)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 12 ---
+--- Wave Search 14 ---
    Found RSI peak: 2022-08-13 (RSI: 61.93)
 P0 candidate: 2022-08-13 (RSI: 61.93, Price: $24441.38)
 6-point wave candidate:
   P0: 2022-08-13 - $24441.38 (RSI: 61.93)
-  P1: 2022-08-28 - $19555.61 (RSI: 29.25)
-  P2: 2022-09-12 - $22395.74 (RSI: 61.35)
-  P3: 2022-09-21 - $18461.36 (RSI: 36.14)
-  P4: 2022-10-04 - $20337.82 (RSI: 55.72)
-  P5: 2022-10-11 - $19060.00 (RSI: 43.05)
-✓ Valid relaxed wave pattern found! Trend ratio: 0.780
-Applying price refinement to optimize wave points...
-Price refinement results:
-  P0: 2022-08-13 (no change)
-  P1: 2022-08-28 (no change)
-  P2: 2022-09-12 (no change)
-  P3: 2022-09-21 (no change)
-  P4: 2022-10-04 (no change)
-  P5: 2022-10-11 (no change)
-Wave completed! Advancing to position 296
+  P1: 2022-08-15 - $24094.82 (RSI: 58.14)
+  P2: 2022-08-28 - $19555.61 (RSI: 29.25)
+  P3: 2022-09-12 - $22395.74 (RSI: 61.35)
+  P4: 2022-09-21 - $18461.36 (RSI: 36.14)
+  P5: 2022-10-04 - $20337.82 (RSI: 55.72)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 13 ---
+--- Wave Search 15 ---
+   Found RSI peak: 2022-09-12 (RSI: 61.35)
+P0 candidate: 2022-09-12 (RSI: 61.35, Price: $22395.74)
+6-point wave candidate:
+  P0: 2022-09-12 - $22395.74 (RSI: 61.35)
+  P1: 2022-09-21 - $18461.36 (RSI: 36.14)
+  P2: 2022-10-04 - $20337.82 (RSI: 55.72)
+  P3: 2022-10-11 - $19060.00 (RSI: 43.05)
+  P4: 2022-10-26 - $20771.59 (RSI: 65.54)
+  P5: 2022-11-02 - $20151.84 (RSI: 53.21)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
+
+--- Wave Search 16 ---
    Found RSI peak: 2022-10-26 (RSI: 65.54)
 P0 candidate: 2022-10-26 (RSI: 65.54, Price: $20771.59)
 6-point wave candidate:
   P0: 2022-10-26 - $20771.59 (RSI: 65.54)
-  P1: 2022-11-02 - $20151.84 (RSI: 53.21)
-  P2: 2022-11-05 - $21299.37 (RSI: 65.41)
-  P3: 2022-11-09 - $15922.81 (RSI: 24.49)
-  P4: 2022-12-14 - $17803.15 (RSI: 59.16)
-  P5: 2022-12-19 - $16438.88 (RSI: 40.51)
+  P1: 2022-10-28 - $20591.84 (RSI: 61.27)
+  P2: 2022-10-29 - $20809.67 (RSI: 63.23)
+  P3: 2022-11-02 - $20151.84 (RSI: 53.21)
+  P4: 2022-11-05 - $21299.37 (RSI: 65.41)
+  P5: 2022-11-09 - $15922.81 (RSI: 24.49)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 14 ---
+--- Wave Search 17 ---
    Found RSI peak: 2022-11-05 (RSI: 65.41)
 P0 candidate: 2022-11-05 (RSI: 65.41, Price: $21299.37)
 6-point wave candidate:
   P0: 2022-11-05 - $21299.37 (RSI: 65.41)
-  P1: 2022-11-09 - $15922.81 (RSI: 24.49)
-  P2: 2022-12-14 - $17803.15 (RSI: 59.16)
-  P3: 2022-12-19 - $16438.88 (RSI: 40.51)
-  P4: 2023-01-14 - $20954.92 (RSI: 89.40)
-  P5: 2023-01-18 - $20677.47 (RSI: 78.08)
+  P1: 2022-11-07 - $20591.13 (RSI: 54.88)
+  P2: 2022-11-09 - $15922.81 (RSI: 24.49)
+  P3: 2022-12-14 - $17803.15 (RSI: 59.16)
+  P4: 2022-12-19 - $16438.88 (RSI: 40.51)
+  P5: 2023-01-14 - $20954.92 (RSI: 89.40)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 15 ---
+--- Wave Search 18 ---
    Found RSI peak: 2022-12-14 (RSI: 59.16)
 P0 candidate: 2022-12-14 (RSI: 59.16, Price: $17803.15)
 6-point wave candidate:
   P0: 2022-12-14 - $17803.15 (RSI: 59.16)
   P1: 2022-12-19 - $16438.88 (RSI: 40.51)
   P2: 2023-01-14 - $20954.92 (RSI: 89.40)
-  P3: 2023-01-18 - $20677.47 (RSI: 78.08)
-  P4: 2023-01-21 - $22783.55 (RSI: 86.02)
-  P5: 2023-02-10 - $21625.19 (RSI: 45.67)
+  P3: 2023-02-10 - $21625.19 (RSI: 45.67)
+  P4: 2023-02-15 - $24324.05 (RSI: 68.13)
+  P5: 2023-02-25 - $23157.07 (RSI: 50.21)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 16 ---
+--- Wave Search 19 ---
    Found RSI peak: 2023-01-14 (RSI: 89.40)
 P0 candidate: 2023-01-14 (RSI: 89.40, Price: $20954.92)
 6-point wave candidate:
   P0: 2023-01-14 - $20954.92 (RSI: 89.40)
+  P1: 2023-01-16 - $21185.65 (RSI: 88.57)
+  P2: 2023-01-18 - $20677.47 (RSI: 78.08)
+  P3: 2023-01-21 - $22783.55 (RSI: 86.02)
+  P4: 2023-02-10 - $21625.19 (RSI: 45.67)
+  P5: 2023-02-15 - $24324.05 (RSI: 68.13)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
+
+--- Wave Search 20 ---
+   Found RSI peak: 2023-01-16 (RSI: 88.57)
+P0 candidate: 2023-01-16 (RSI: 88.57, Price: $21185.65)
+6-point wave candidate:
+  P0: 2023-01-16 - $21185.65 (RSI: 88.57)
   P1: 2023-01-18 - $20677.47 (RSI: 78.08)
   P2: 2023-01-21 - $22783.55 (RSI: 86.02)
   P3: 2023-02-10 - $21625.19 (RSI: 45.67)
@@ -216,67 +245,55 @@ P0 candidate: 2023-01-14 (RSI: 89.40, Price: $20954.92)
   P5: 2023-03-10 - $20150.69 (RSI: 28.24)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 17 ---
-   Found RSI peak: 2023-01-16 (RSI: 88.57)
-P0 candidate: 2023-01-16 (RSI: 88.57, Price: $21185.65)
-6-point wave candidate:
-  P0: 2023-01-16 - $21185.65 (RSI: 88.57)
-  P1: 2023-01-30 - $22826.15 (RSI: 68.55)
-  P2: 2023-02-01 - $23732.66 (RSI: 73.82)
-  P3: 2023-02-10 - $21625.19 (RSI: 45.67)
-  P4: 2023-02-15 - $24324.05 (RSI: 68.13)
-  P5: 2023-03-10 - $20150.69 (RSI: 28.24)
-Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
-
---- Wave Search 18 ---
+--- Wave Search 21 ---
    Found RSI peak: 2023-01-21 (RSI: 86.02)
 P0 candidate: 2023-01-21 (RSI: 86.02, Price: $22783.55)
 6-point wave candidate:
   P0: 2023-01-21 - $22783.55 (RSI: 86.02)
   P1: 2023-01-24 - $22632.89 (RSI: 80.37)
   P2: 2023-01-29 - $23742.30 (RSI: 83.54)
-  P3: 2023-01-30 - $22826.15 (RSI: 68.55)
-  P4: 2023-02-01 - $23732.66 (RSI: 73.82)
-  P5: 2023-02-10 - $21625.19 (RSI: 45.67)
-Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
-
---- Wave Search 19 ---
-   Found RSI peak: 2023-01-23 (RSI: 85.38)
-P0 candidate: 2023-01-23 (RSI: 85.38, Price: $22916.45)
-6-point wave candidate:
-  P0: 2023-01-23 - $22916.45 (RSI: 85.38)
-  P1: 2023-01-28 - $23022.60 (RSI: 80.42)
-  P2: 2023-01-29 - $23742.30 (RSI: 83.54)
-  P3: 2023-01-30 - $22826.15 (RSI: 68.55)
-  P4: 2023-02-01 - $23732.66 (RSI: 73.82)
-  P5: 2023-02-10 - $21625.19 (RSI: 45.67)
-Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
-
---- Wave Search 20 ---
-   Found RSI peak: 2023-01-29 (RSI: 83.54)
-P0 candidate: 2023-01-29 (RSI: 83.54, Price: $23742.30)
-6-point wave candidate:
-  P0: 2023-01-29 - $23742.30 (RSI: 83.54)
-  P1: 2023-02-06 - $22762.52 (RSI: 59.83)
-  P2: 2023-02-07 - $23240.46 (RSI: 63.95)
-  P3: 2023-02-10 - $21625.19 (RSI: 45.67)
-  P4: 2023-02-15 - $24324.05 (RSI: 68.13)
-  P5: 2023-03-10 - $20150.69 (RSI: 28.24)
-Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
-
---- Wave Search 21 ---
-   Found RSI peak: 2023-02-01 (RSI: 73.82)
-P0 candidate: 2023-02-01 (RSI: 73.82, Price: $23732.66)
-6-point wave candidate:
-  P0: 2023-02-01 - $23732.66 (RSI: 73.82)
-  P1: 2023-02-06 - $22762.52 (RSI: 59.83)
-  P2: 2023-02-07 - $23240.46 (RSI: 63.95)
   P3: 2023-02-10 - $21625.19 (RSI: 45.67)
   P4: 2023-02-15 - $24324.05 (RSI: 68.13)
   P5: 2023-03-10 - $20150.69 (RSI: 28.24)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
 --- Wave Search 22 ---
+   Found RSI peak: 2023-01-23 (RSI: 85.38)
+P0 candidate: 2023-01-23 (RSI: 85.38, Price: $22916.45)
+6-point wave candidate:
+  P0: 2023-01-23 - $22916.45 (RSI: 85.38)
+  P1: 2023-01-28 - $23022.60 (RSI: 80.42)
+  P2: 2023-01-29 - $23742.30 (RSI: 83.54)
+  P3: 2023-02-10 - $21625.19 (RSI: 45.67)
+  P4: 2023-02-15 - $24324.05 (RSI: 68.13)
+  P5: 2023-03-10 - $20150.69 (RSI: 28.24)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
+
+--- Wave Search 23 ---
+   Found RSI peak: 2023-01-29 (RSI: 83.54)
+P0 candidate: 2023-01-29 (RSI: 83.54, Price: $23742.30)
+6-point wave candidate:
+  P0: 2023-01-29 - $23742.30 (RSI: 83.54)
+  P1: 2023-02-01 - $23732.66 (RSI: 73.82)
+  P2: 2023-02-10 - $21625.19 (RSI: 45.67)
+  P3: 2023-02-15 - $24324.05 (RSI: 68.13)
+  P4: 2023-03-10 - $20150.69 (RSI: 28.24)
+  P5: 2023-03-17 - $27395.13 (RSI: 72.16)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
+
+--- Wave Search 24 ---
+   Found RSI peak: 2023-02-01 (RSI: 73.82)
+P0 candidate: 2023-02-01 (RSI: 73.82, Price: $23732.66)
+6-point wave candidate:
+  P0: 2023-02-01 - $23732.66 (RSI: 73.82)
+  P1: 2023-02-03 - $23431.90 (RSI: 69.50)
+  P2: 2023-02-10 - $21625.19 (RSI: 45.67)
+  P3: 2023-02-15 - $24324.05 (RSI: 68.13)
+  P4: 2023-03-10 - $20150.69 (RSI: 28.24)
+  P5: 2023-03-17 - $27395.13 (RSI: 72.16)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
+
+--- Wave Search 25 ---
    Found RSI peak: 2023-03-17 (RSI: 72.16)
 P0 candidate: 2023-03-17 (RSI: 72.16, Price: $27395.13)
 6-point wave candidate:
@@ -288,7 +305,7 @@ P0 candidate: 2023-03-17 (RSI: 72.16, Price: $27395.13)
   P5: 2023-04-17 - $29430.27 (RSI: 58.87)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 23 ---
+--- Wave Search 26 ---
    Found RSI peak: 2023-03-19 (RSI: 71.86)
 P0 candidate: 2023-03-19 (RSI: 71.86, Price: $27972.87)
 6-point wave candidate:
@@ -300,19 +317,19 @@ P0 candidate: 2023-03-19 (RSI: 71.86, Price: $27972.87)
   P5: 2023-04-17 - $29430.27 (RSI: 58.87)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 24 ---
+--- Wave Search 27 ---
    Found RSI peak: 2023-04-11 (RSI: 71.40)
 P0 candidate: 2023-04-11 (RSI: 71.40, Price: $30200.42)
 6-point wave candidate:
   P0: 2023-04-11 - $30200.42 (RSI: 71.40)
-  P1: 2023-04-17 - $29430.27 (RSI: 58.87)
-  P2: 2023-04-18 - $30380.01 (RSI: 64.82)
-  P3: 2023-04-21 - $27262.84 (RSI: 41.97)
-  P4: 2023-04-27 - $29472.77 (RSI: 57.57)
-  P5: 2023-05-01 - $28068.26 (RSI: 46.47)
+  P1: 2023-04-13 - $30373.84 (RSI: 70.37)
+  P2: 2023-04-14 - $30466.93 (RSI: 70.81)
+  P3: 2023-04-17 - $29430.27 (RSI: 58.87)
+  P4: 2023-04-18 - $30380.01 (RSI: 64.82)
+  P5: 2023-04-21 - $27262.84 (RSI: 41.97)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 25 ---
+--- Wave Search 28 ---
    Found RSI peak: 2023-04-14 (RSI: 70.81)
 P0 candidate: 2023-04-14 (RSI: 70.81, Price: $30466.93)
 6-point wave candidate:
@@ -334,7 +351,7 @@ Price refinement results:
   P5: 2023-05-01 (no change)
 Wave completed! Advancing to position 498
 
---- Wave Search 26 ---
+--- Wave Search 29 ---
    Found RSI peak: 2023-06-21 (RSI: 70.57)
 P0 candidate: 2023-06-21 (RSI: 70.57, Price: $29993.89)
 6-point wave candidate:
@@ -346,7 +363,7 @@ P0 candidate: 2023-06-21 (RSI: 70.57, Price: $29993.89)
   P5: 2023-07-24 - $29176.50 (RSI: 42.17)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 27 ---
+--- Wave Search 30 ---
    Found RSI peak: 2023-06-23 (RSI: 72.68)
 P0 candidate: 2023-06-23 (RSI: 72.68, Price: $30688.50)
 6-point wave candidate:
@@ -358,7 +375,7 @@ P0 candidate: 2023-06-23 (RSI: 72.68, Price: $30688.50)
   P5: 2023-07-24 - $29176.50 (RSI: 42.17)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 28 ---
+--- Wave Search 31 ---
    Found RSI peak: 2023-06-25 (RSI: 70.45)
 P0 candidate: 2023-06-25 (RSI: 70.45, Price: $30462.66)
 6-point wave candidate:
@@ -370,19 +387,19 @@ P0 candidate: 2023-06-25 (RSI: 70.45, Price: $30462.66)
   P5: 2023-07-24 - $29176.50 (RSI: 42.17)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 29 ---
+--- Wave Search 32 ---
    Found RSI peak: 2023-06-27 (RSI: 70.42)
 P0 candidate: 2023-06-27 (RSI: 70.42, Price: $30692.44)
 6-point wave candidate:
   P0: 2023-06-27 - $30692.44 (RSI: 70.42)
-  P1: 2023-07-06 - $29895.43 (RSI: 55.53)
-  P2: 2023-07-13 - $31454.23 (RSI: 66.02)
-  P3: 2023-07-24 - $29176.50 (RSI: 42.17)
-  P4: 2023-08-08 - $29770.42 (RSI: 54.89)
-  P5: 2023-08-18 - $26054.00 (RSI: 18.64)
+  P1: 2023-06-29 - $30447.31 (RSI: 66.02)
+  P2: 2023-07-03 - $31156.20 (RSI: 70.16)
+  P3: 2023-07-06 - $29895.43 (RSI: 55.53)
+  P4: 2023-07-13 - $31454.23 (RSI: 66.02)
+  P5: 2023-07-24 - $29176.50 (RSI: 42.17)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 30 ---
+--- Wave Search 33 ---
    Found RSI peak: 2023-07-03 (RSI: 70.16)
 P0 candidate: 2023-07-03 (RSI: 70.16, Price: $31156.20)
 6-point wave candidate:
@@ -394,31 +411,31 @@ P0 candidate: 2023-07-03 (RSI: 70.16, Price: $31156.20)
   P5: 2023-08-18 - $26054.00 (RSI: 18.64)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 31 ---
+--- Wave Search 34 ---
    Found RSI peak: 2023-07-13 (RSI: 66.02)
 P0 candidate: 2023-07-13 (RSI: 66.02, Price: $31454.23)
 6-point wave candidate:
   P0: 2023-07-13 - $31454.23 (RSI: 66.02)
-  P1: 2023-07-22 - $29794.00 (RSI: 48.57)
-  P2: 2023-07-23 - $30083.75 (RSI: 52.20)
-  P3: 2023-07-24 - $29176.50 (RSI: 42.17)
-  P4: 2023-08-08 - $29770.42 (RSI: 54.89)
-  P5: 2023-08-18 - $26054.00 (RSI: 18.64)
+  P1: 2023-07-15 - $30289.52 (RSI: 53.74)
+  P2: 2023-07-24 - $29176.50 (RSI: 42.17)
+  P3: 2023-08-08 - $29770.42 (RSI: 54.89)
+  P4: 2023-08-18 - $26054.00 (RSI: 18.64)
+  P5: 2023-08-29 - $27716.34 (RSI: 52.52)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 32 ---
+--- Wave Search 35 ---
    Found RSI peak: 2023-08-08 (RSI: 54.89)
 P0 candidate: 2023-08-08 (RSI: 54.89, Price: $29770.42)
 6-point wave candidate:
   P0: 2023-08-08 - $29770.42 (RSI: 54.89)
-  P1: 2023-08-13 - $29303.84 (RSI: 46.67)
-  P2: 2023-08-14 - $29430.93 (RSI: 49.33)
-  P3: 2023-08-18 - $26054.00 (RSI: 18.64)
-  P4: 2023-08-29 - $27716.34 (RSI: 52.52)
-  P5: 2023-09-01 - $25805.05 (RSI: 35.52)
+  P1: 2023-08-10 - $29455.75 (RSI: 49.48)
+  P2: 2023-08-18 - $26054.00 (RSI: 18.64)
+  P3: 2023-08-29 - $27716.34 (RSI: 52.52)
+  P4: 2023-09-01 - $25805.05 (RSI: 35.52)
+  P5: 2023-09-07 - $26255.00 (RSI: 43.35)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 33 ---
+--- Wave Search 36 ---
    Found RSI peak: 2023-09-19 (RSI: 59.13)
 P0 candidate: 2023-09-19 (RSI: 59.13, Price: $27210.26)
 6-point wave candidate:
@@ -430,91 +447,91 @@ P0 candidate: 2023-09-19 (RSI: 59.13, Price: $27210.26)
   P5: 2023-10-12 - $26759.63 (RSI: 45.04)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 34 ---
+--- Wave Search 37 ---
    Found RSI peak: 2023-10-25 (RSI: 87.94)
 P0 candidate: 2023-10-25 (RSI: 87.94, Price: $34496.05)
 6-point wave candidate:
   P0: 2023-10-25 - $34496.05 (RSI: 87.94)
-  P1: 2023-11-03 - $34716.78 (RSI: 75.42)
-  P2: 2023-11-10 - $37301.63 (RSI: 84.42)
+  P1: 2023-10-27 - $33892.02 (RSI: 80.83)
+  P2: 2023-11-01 - $35421.43 (RSI: 84.55)
   P3: 2023-11-14 - $35551.19 (RSI: 61.64)
   P4: 2023-11-15 - $37858.20 (RSI: 72.66)
-  P5: 2023-11-16 - $36163.51 (RSI: 59.20)
+  P5: 2023-11-21 - $35741.65 (RSI: 52.83)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 35 ---
+--- Wave Search 38 ---
    Found RSI peak: 2023-11-01 (RSI: 84.55)
 P0 candidate: 2023-11-01 (RSI: 84.55, Price: $35421.43)
 6-point wave candidate:
   P0: 2023-11-01 - $35421.43 (RSI: 84.55)
-  P1: 2023-11-14 - $35551.19 (RSI: 61.64)
-  P2: 2023-11-15 - $37858.20 (RSI: 72.66)
-  P3: 2023-11-16 - $36163.51 (RSI: 59.20)
-  P4: 2023-11-20 - $37448.78 (RSI: 64.93)
+  P1: 2023-11-03 - $34716.78 (RSI: 75.42)
+  P2: 2023-11-10 - $37301.63 (RSI: 84.42)
+  P3: 2023-11-14 - $35551.19 (RSI: 61.64)
+  P4: 2023-11-15 - $37858.20 (RSI: 72.66)
   P5: 2023-11-21 - $35741.65 (RSI: 52.83)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 36 ---
+--- Wave Search 39 ---
    Found RSI peak: 2023-11-10 (RSI: 84.42)
 P0 candidate: 2023-11-10 (RSI: 84.42, Price: $37301.63)
 6-point wave candidate:
   P0: 2023-11-10 - $37301.63 (RSI: 84.42)
-  P1: 2023-11-14 - $35551.19 (RSI: 61.64)
-  P2: 2023-11-15 - $37858.20 (RSI: 72.66)
-  P3: 2023-11-16 - $36163.51 (RSI: 59.20)
-  P4: 2023-11-20 - $37448.78 (RSI: 64.93)
-  P5: 2023-11-21 - $35741.65 (RSI: 52.83)
+  P1: 2023-11-12 - $37064.13 (RSI: 80.93)
+  P2: 2023-11-14 - $35551.19 (RSI: 61.64)
+  P3: 2023-11-15 - $37858.20 (RSI: 72.66)
+  P4: 2023-11-21 - $35741.65 (RSI: 52.83)
+  P5: 2023-12-05 - $44073.32 (RSI: 81.62)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 37 ---
+--- Wave Search 40 ---
    Found RSI peak: 2023-12-05 (RSI: 81.62)
 P0 candidate: 2023-12-05 (RSI: 81.62, Price: $44073.32)
 6-point wave candidate:
   P0: 2023-12-05 - $44073.32 (RSI: 81.62)
-  P1: 2023-12-11 - $41253.40 (RSI: 57.14)
-  P2: 2023-12-14 - $43022.26 (RSI: 63.80)
-  P3: 2023-12-26 - $42508.93 (RSI: 53.28)
-  P4: 2024-01-02 - $44946.91 (RSI: 63.38)
-  P5: 2024-01-03 - $42845.23 (RSI: 51.84)
+  P1: 2023-12-07 - $43273.14 (RSI: 75.23)
+  P2: 2023-12-08 - $44170.99 (RSI: 77.42)
+  P3: 2023-12-17 - $41374.65 (RSI: 53.80)
+  P4: 2023-12-22 - $43969.04 (RSI: 63.39)
+  P5: 2023-12-29 - $42066.95 (RSI: 50.07)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 38 ---
+--- Wave Search 41 ---
    Found RSI peak: 2023-12-08 (RSI: 77.42)
 P0 candidate: 2023-12-08 (RSI: 77.42, Price: $44170.99)
 6-point wave candidate:
   P0: 2023-12-08 - $44170.99 (RSI: 77.42)
-  P1: 2023-12-11 - $41253.40 (RSI: 57.14)
-  P2: 2023-12-14 - $43022.26 (RSI: 63.80)
-  P3: 2023-12-26 - $42508.93 (RSI: 53.28)
-  P4: 2024-01-02 - $44946.91 (RSI: 63.38)
-  P5: 2024-01-03 - $42845.23 (RSI: 51.84)
+  P1: 2023-12-10 - $43789.51 (RSI: 74.05)
+  P2: 2023-12-17 - $41374.65 (RSI: 53.80)
+  P3: 2023-12-22 - $43969.04 (RSI: 63.39)
+  P4: 2023-12-29 - $42066.95 (RSI: 50.07)
+  P5: 2024-01-02 - $44946.91 (RSI: 63.38)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 39 ---
+--- Wave Search 42 ---
    Found RSI peak: 2023-12-10 (RSI: 74.05)
 P0 candidate: 2023-12-10 (RSI: 74.05, Price: $43789.51)
 6-point wave candidate:
   P0: 2023-12-10 - $43789.51 (RSI: 74.05)
-  P1: 2023-12-15 - $41940.30 (RSI: 57.45)
-  P2: 2023-12-22 - $43969.04 (RSI: 63.39)
-  P3: 2023-12-26 - $42508.93 (RSI: 53.28)
+  P1: 2023-12-12 - $41492.39 (RSI: 58.11)
+  P2: 2023-12-14 - $43022.26 (RSI: 63.80)
+  P3: 2023-12-29 - $42066.95 (RSI: 50.07)
   P4: 2024-01-02 - $44946.91 (RSI: 63.38)
   P5: 2024-01-03 - $42845.23 (RSI: 51.84)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 40 ---
+--- Wave Search 43 ---
    Found RSI peak: 2024-01-08 (RSI: 66.83)
 P0 candidate: 2024-01-08 (RSI: 66.83, Price: $46951.04)
 6-point wave candidate:
   P0: 2024-01-08 - $46951.04 (RSI: 66.83)
-  P1: 2024-01-22 - $39568.02 (RSI: 35.98)
-  P2: 2024-02-16 - $52124.11 (RSI: 81.66)
-  P3: 2024-02-23 - $50744.15 (RSI: 64.71)
-  P4: 2024-02-28 - $62432.10 (RSI: 87.33)
-  P5: 2024-03-05 - $63724.01 (RSI: 69.44)
+  P1: 2024-01-10 - $46653.99 (RSI: 63.94)
+  P2: 2024-01-22 - $39568.02 (RSI: 35.98)
+  P3: 2024-02-16 - $52124.11 (RSI: 81.66)
+  P4: 2024-02-23 - $50744.15 (RSI: 64.71)
+  P5: 2024-02-28 - $62432.10 (RSI: 87.33)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 41 ---
+--- Wave Search 44 ---
    Found RSI peak: 2024-02-28 (RSI: 87.33)
 P0 candidate: 2024-02-28 (RSI: 87.33, Price: $62432.10)
 6-point wave candidate:
@@ -523,136 +540,87 @@ P0 candidate: 2024-02-28 (RSI: 87.33, Price: $62432.10)
   P2: 2024-03-04 - $68245.71 (RSI: 86.16)
   P3: 2024-03-05 - $63724.01 (RSI: 69.44)
   P4: 2024-03-11 - $72078.10 (RSI: 79.29)
-  P5: 2024-03-19 - $61937.40 (RSI: 46.75)
+  P5: 2024-05-01 - $58364.97 (RSI: 33.52)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 42 ---
+--- Wave Search 45 ---
    Found RSI peak: 2024-03-04 (RSI: 86.16)
 P0 candidate: 2024-03-04 (RSI: 86.16, Price: $68245.71)
 6-point wave candidate:
   P0: 2024-03-04 - $68245.71 (RSI: 86.16)
-  P1: 2024-03-19 - $61937.40 (RSI: 46.75)
-  P2: 2024-03-31 - $71280.01 (RSI: 60.23)
-  P3: 2024-04-02 - $65463.99 (RSI: 47.36)
-  P4: 2024-04-08 - $71620.00 (RSI: 59.38)
-  P5: 2024-04-17 - $61277.37 (RSI: 38.71)
+  P1: 2024-03-06 - $66074.04 (RSI: 72.43)
+  P2: 2024-03-11 - $72078.10 (RSI: 79.29)
+  P3: 2024-03-19 - $61937.40 (RSI: 46.75)
+  P4: 2024-03-31 - $71280.01 (RSI: 60.23)
+  P5: 2024-05-01 - $58364.97 (RSI: 33.52)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
---- Wave Search 43 ---
+--- Wave Search 46 ---
    Found RSI peak: 2024-03-11 (RSI: 79.29)
 P0 candidate: 2024-03-11 (RSI: 79.29, Price: $72078.10)
 6-point wave candidate:
   P0: 2024-03-11 - $72078.10 (RSI: 79.29)
+  P1: 2024-03-13 - $73072.41 (RSI: 78.70)
+  P2: 2024-03-19 - $61937.40 (RSI: 46.75)
+  P3: 2024-03-31 - $71280.01 (RSI: 60.23)
+  P4: 2024-04-02 - $65463.99 (RSI: 47.36)
+  P5: 2024-04-08 - $71620.00 (RSI: 59.38)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
+
+--- Wave Search 47 ---
+   Found RSI peak: 2024-03-13 (RSI: 78.70)
+P0 candidate: 2024-03-13 (RSI: 78.70, Price: $73072.41)
+6-point wave candidate:
+  P0: 2024-03-13 - $73072.41 (RSI: 78.70)
+  P1: 2024-03-15 - $69499.85 (RSI: 66.20)
+  P2: 2024-03-19 - $61937.40 (RSI: 46.75)
+  P3: 2024-03-31 - $71280.01 (RSI: 60.23)
+  P4: 2024-04-02 - $65463.99 (RSI: 47.36)
+  P5: 2024-04-08 - $71620.00 (RSI: 59.38)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
+
+--- Wave Search 48 ---
+   Found RSI peak: 2024-03-15 (RSI: 66.20)
+P0 candidate: 2024-03-15 (RSI: 66.20, Price: $69499.85)
+6-point wave candidate:
+  P0: 2024-03-15 - $69499.85 (RSI: 66.20)
+  P1: 2024-03-17 - $68393.48 (RSI: 60.23)
+  P2: 2024-03-19 - $61937.40 (RSI: 46.75)
+  P3: 2024-03-31 - $71280.01 (RSI: 60.23)
+  P4: 2024-04-02 - $65463.99 (RSI: 47.36)
+  P5: 2024-04-08 - $71620.00 (RSI: 59.38)
+Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
+
+--- Wave Search 49 ---
+   Found RSI peak: 2024-03-17 (RSI: 60.23)
+P0 candidate: 2024-03-17 (RSI: 60.23, Price: $68393.48)
+6-point wave candidate:
+  P0: 2024-03-17 - $68393.48 (RSI: 60.23)
   P1: 2024-03-19 - $61937.40 (RSI: 46.75)
   P2: 2024-03-31 - $71280.01 (RSI: 60.23)
   P3: 2024-04-02 - $65463.99 (RSI: 47.36)
   P4: 2024-04-08 - $71620.00 (RSI: 59.38)
   P5: 2024-04-17 - $61277.37 (RSI: 38.71)
-✓ Valid relaxed wave pattern found! Trend ratio: 0.850
-Applying price refinement to optimize wave points...
-   -> Price refinement: Peak from 2024-03-11 ($72078.10) to 2024-03-13 ($73072.41)
-Price refinement results:
-  P0: 2024-03-11 ($72078.10) -> 2024-03-13 ($73072.41)
-  P1: 2024-03-19 (no change)
-  P2: 2024-03-31 (no change)
-  P3: 2024-04-02 (no change)
-  P4: 2024-04-08 (no change)
-  P5: 2024-04-17 (no change)
-Wave completed! Advancing to position 850
-
---- Wave Search 44 ---
-   Found RSI peak: 2024-05-20 (RSI: 66.28)
-P0 candidate: 2024-05-20 (RSI: 66.28, Price: $71446.62)
-6-point wave candidate:
-  P0: 2024-05-20 - $71446.62 (RSI: 66.28)
-  P1: 2024-05-23 - $67969.65 (RSI: 56.33)
-  P2: 2024-06-05 - $71108.00 (RSI: 62.83)
-  P3: 2024-06-24 - $60293.30 (RSI: 25.60)
-  P4: 2024-07-01 - $62899.99 (RSI: 44.33)
-  P5: 2024-07-05 - $56628.79 (RSI: 28.06)
-Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
-
---- Wave Search 45 ---
-   Found RSI peak: 2024-06-05 (RSI: 62.83)
-P0 candidate: 2024-06-05 (RSI: 62.83, Price: $71108.00)
-6-point wave candidate:
-  P0: 2024-06-05 - $71108.00 (RSI: 62.83)
-  P1: 2024-06-08 - $69310.46 (RSI: 55.18)
-  P2: 2024-06-09 - $69648.14 (RSI: 56.35)
-  P3: 2024-06-24 - $60293.30 (RSI: 25.60)
-  P4: 2024-07-01 - $62899.99 (RSI: 44.33)
-  P5: 2024-07-05 - $56628.79 (RSI: 28.06)
-Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
-
---- Wave Search 46 ---
-   Found RSI peak: 2024-07-21 (RSI: 67.73)
-P0 candidate: 2024-07-21 (RSI: 67.73, Price: $68165.34)
-6-point wave candidate:
-  P0: 2024-07-21 - $68165.34 (RSI: 67.73)
-  P1: 2024-07-24 - $65376.00 (RSI: 56.65)
-  P2: 2024-07-28 - $68249.88 (RSI: 64.23)
-  P3: 2024-08-05 - $54018.81 (RSI: 26.66)
-  P4: 2024-08-25 - $64220.00 (RSI: 58.76)
-  P5: 2024-09-01 - $57301.86 (RSI: 40.17)
-Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
-
---- Wave Search 47 ---
-   Found RSI peak: 2024-07-28 (RSI: 64.23)
-P0 candidate: 2024-07-28 (RSI: 64.23, Price: $68249.88)
-6-point wave candidate:
-  P0: 2024-07-28 - $68249.88 (RSI: 64.23)
-  P1: 2024-07-31 - $64628.00 (RSI: 49.58)
-  P2: 2024-08-01 - $65354.02 (RSI: 52.11)
-  P3: 2024-08-05 - $54018.81 (RSI: 26.66)
-  P4: 2024-08-25 - $64220.00 (RSI: 58.76)
-  P5: 2024-09-01 - $57301.86 (RSI: 40.17)
-Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
-
---- Wave Search 48 ---
-   Found RSI peak: 2024-08-25 (RSI: 58.76)
-P0 candidate: 2024-08-25 (RSI: 58.76, Price: $64220.00)
-6-point wave candidate:
-  P0: 2024-08-25 - $64220.00 (RSI: 58.76)
-  P1: 2024-08-28 - $59034.90 (RSI: 44.62)
-  P2: 2024-09-02 - $59132.13 (RSI: 46.40)
-  P3: 2024-09-06 - $53962.97 (RSI: 34.68)
-  P4: 2024-09-28 - $65858.00 (RSI: 66.74)
-  P5: 2024-10-02 - $60649.28 (RSI: 45.31)
-Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
-
---- Wave Search 49 ---
-   Found RSI peak: 2024-09-28 (RSI: 66.74)
-P0 candidate: 2024-09-28 (RSI: 66.74, Price: $65858.00)
-6-point wave candidate:
-  P0: 2024-09-28 - $65858.00 (RSI: 66.74)
-  P1: 2024-10-02 - $60649.28 (RSI: 45.31)
-  P2: 2024-10-06 - $62819.91 (RSI: 53.73)
-  P3: 2024-10-10 - $60326.39 (RSI: 43.44)
-  P4: 2024-10-20 - $69031.99 (RSI: 70.63)
-  P5: 2024-10-23 - $66668.65 (RSI: 57.88)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
 --- Wave Search 50 ---
-   Found RSI peak: 2024-11-11 (RSI: 84.51)
-P0 candidate: 2024-11-11 (RSI: 84.51, Price: $88647.99)
+   Found RSI peak: 2024-03-31 (RSI: 60.23)
+P0 candidate: 2024-03-31 (RSI: 60.23, Price: $71280.01)
 6-point wave candidate:
-  P0: 2024-11-11 - $88647.99 (RSI: 84.51)
-  P1: 2024-11-14 - $87325.59 (RSI: 74.32)
-  P2: 2024-11-22 - $98892.00 (RSI: 82.16)
-  P3: 2024-11-26 - $91965.16 (RSI: 61.50)
-  P4: 2024-12-08 - $101109.59 (RSI: 68.98)
-  P5: 2024-12-10 - $96593.00 (RSI: 56.58)
+  P0: 2024-03-31 - $71280.01 (RSI: 60.23)
+  P1: 2024-04-02 - $65463.99 (RSI: 47.36)
+  P2: 2024-04-08 - $71620.00 (RSI: 59.38)
+  P3: 2024-04-17 - $61277.37 (RSI: 38.71)
+  P4: 2024-04-22 - $66819.32 (RSI: 51.84)
+  P5: 2024-05-01 - $58364.97 (RSI: 33.52)
 Pattern validation FAILED - not a valid Elliott Wave. Moving to next P0.
 
 === Progressive Detection Complete ===
-Total valid waves: 4
+Total valid waves: 1
 
 === Results ===
-Total waves detected: 4
-Wave 1: strict - 2022-03-29 to 2022-05-11
-Wave 2: relaxed - 2022-08-13 to 2022-10-11
-Wave 3: relaxed - 2023-04-14 to 2023-05-01
-Wave 4: relaxed - 2024-03-13 to 2024-04-17
+Total waves detected: 1
+Wave 1: relaxed - 2023-04-14 to 2023-05-01
 
 Generating overview chart...
 Generating individual wave charts...
